@@ -1,0 +1,232 @@
+body,
+div,
+p,
+ul,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+span,
+p {
+  margin: 0;
+  padding: 0;
+  font-family: "Microsoft YaHei", "微软雅黑", "\5fae\8f6f\96c5\9ed1";
+}
+body {
+  overflow-x: hidden;
+  font-size: 14px;
+}
+a {
+  text-decoration: none;
+}
+ul {
+  list-style: none;
+}
+.clearfix:after {
+  content: "\0020";
+  display: block;
+  height: 0;
+  clear: both;
+}
+.clearfix {
+  zoom: 1;
+}
+.header_warp {
+  width: 100%;
+  background: #3f517e;
+}
+.header_warp .header {
+  position: relative;
+  height: 100%;
+}
+.header_warp .header .logo {
+  position: absolute;
+  top: 50%;
+  left: 5%;
+  margin-top: -15px;
+  width: 215px;
+  height: 29px;
+}
+.header_warp .header .logo img {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+.header_warp .header .header_box {
+  position: absolute;
+  top: 50%;
+  right: 5%;
+  margin-top: -17px;
+}
+.header_warp .header .header_box > p {
+  font-size: 18px;
+  color: #EBEBEB;
+  line-height: 35px;
+  float: left;
+  margin-right: 40px;
+}
+.header_warp .header .header_box .tc {
+  float: left;
+}
+.header_warp .header .header_box .tc img {
+  border: 0;
+}
+.nr_warp {
+  width: 100%;
+  position: relative;
+}
+.nr_warp .nr {
+  height: 100%;
+}
+.nr_warp .nr .nr_left {
+  float: left;
+  width: 25%;
+  height: 100%;
+  overflow: hidden;
+  background: #f5f5f5;
+}
+.nr_warp .nr .nr_left .left_box > form {
+  width: 100%;
+  height: 50px;
+  margin-top: 40px;
+}
+.nr_warp .nr .nr_left .left_box > form > input {
+  width: 50%;
+  height: 48px;
+  margin-left: 10%;
+  border: 1px solid #ccc;
+  text-indent: 10px;
+  padding: 0;
+  line-height: 48px;
+}
+.nr_warp .nr .nr_left .left_box > form > button {
+  width: 15%;
+  height: 50px;
+  background: #3F517D;
+  border: 0;
+  padding: 0;
+  font-size: 14px;
+  color: #fff;
+  margin-left: 10%;
+  cursor: pointer;
+}
+.nr_warp .nr .nr_left .left_box .xl {
+  width: 85%;
+  margin-left: 10%;
+  margin-top: 40px;
+}
+.nr_warp .nr .nr_left .left_box .xl .dropdown > li > a {
+  font-size: 18px;
+  color: #2C2C2C;
+  position: relative;
+  cursor: pointer;
+}
+.nr_warp .nr .nr_left .left_box .xl .dropdown > li > a > img {
+  position: absolute;
+  top: 8px;
+  left: 100px;
+  transition: all .5s;
+}
+.nr_warp .nr .nr_left .left_box .xl .dropdown > ul > li {
+  margin-top: 30px;
+}
+.nr_warp .nr .nr_left .left_box .xl .dropdown > ul > li > a > span {
+  font-size: 16px;
+  color: #737373;
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.nr_warp .nr .nr_left .left_box .xl .dropdown > ul > li > a .span1 {
+  float: left;
+  width: 65%;
+}
+.nr_warp .nr .nr_left .left_box .xl .dropdown > ul > li > a .span2 {
+  width: 30%;
+  float: left;
+  text-align: right;
+}
+.nr_warp .nr .nr_left .left_box .xl .dropdown > ul > li.now > a > span {
+  color: #3F517D;
+}
+.nr_warp .nr .nr_left .left_box .xx {
+  display: block;
+  width: 90%;
+  font-size: 18px;
+  color: #2C2C2C;
+  margin: 30px 0 30px 10%;
+}
+.nr_warp .nr .nr_right {
+  float: left;
+  width: 75%;
+  height: 100%;
+  margin-top: 0.1%;
+  position: relative;
+}
+.nr_warp .nr .nr_right .right3 {
+  width: 99%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+.nr_warp .nr .nr_right .right3 .box_mid {
+  width: 226px;
+  height: 336px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -168px;
+  margin-left: -113px;
+}
+.nr_warp .nr .nr_right .right3 .box_mid img {
+  display: block;
+  width: 226px;
+}
+.nr_warp .nr .nr_right .right3 .box_mid > p {
+  font-size: 16px;
+  color: #616161;
+  text-align: center;
+}
+.nr_warp .nr .nr_right .right3 .box_mid > a {
+  display: block;
+  width: 209px;
+  height: 49px;
+  background: #3F517D;
+  color: #fff;
+  text-align: center;
+  line-height: 49px;
+  font-size: 14px;
+  margin: 20px auto;
+  border-radius: 5px;
+}
+.nr_warp .nr .nr_right .box_left {
+  position: absolute;
+  top: 50%;
+  left: -32px;
+  margin-top: -72px;
+  cursor: pointer;
+  z-index: 999;
+}
+.nr_warp .nr .nr_right .box_left .z {
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  margin-top: -10px;
+}
+.nr_warp .nr .nr_right .box_left .y {
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  margin-top: -10px;
+  display: none;
+}
+.nr_warp .nr .nr_right .box_left.now_left .z {
+  display: none;
+}
+.nr_warp .nr .nr_right .box_left.now_left .y {
+  display: block;
+}

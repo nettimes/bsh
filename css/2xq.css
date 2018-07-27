@@ -1,0 +1,582 @@
+body,
+div,
+p,
+ul,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+span,
+p {
+  margin: 0;
+  padding: 0;
+  font-family: "Microsoft YaHei", "微软雅黑", "\5fae\8f6f\96c5\9ed1";
+}
+body {
+  overflow-x: hidden;
+  font-size: 14px;
+}
+a {
+  text-decoration: none;
+}
+ul {
+  list-style: none;
+}
+.clearfix:after {
+  content: "\0020";
+  display: block;
+  height: 0;
+  clear: both;
+}
+.clearfix {
+  zoom: 1;
+}
+.header_warp {
+  width: 100%;
+  height: 80px;
+  background: #3f517e;
+}
+.header_warp .header {
+  position: relative;
+  height: 100%;
+}
+.header_warp .header .logo {
+  position: absolute;
+  top: 50%;
+  left: 5%;
+  margin-top: -15px;
+  width: 215px;
+  height: 29px;
+}
+.header_warp .header .logo img {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+.header_warp .header .header_box {
+  position: absolute;
+  top: 50%;
+  right: 5%;
+  margin-top: -17px;
+}
+.header_warp .header .header_box > p {
+  font-size: 18px;
+  color: #EBEBEB;
+  line-height: 35px;
+  float: left;
+  margin-right: 40px;
+}
+.header_warp .header .header_box .tc {
+  float: left;
+}
+.header_warp .header .header_box .tc img {
+  border: 0;
+}
+.nr_warp {
+  width: 100%;
+  position: relative;
+}
+.nr_warp .nr {
+  height: 100%;
+}
+.nr_warp .nr .nr_left {
+  float: left;
+  width: 25%;
+  overflow: hidden;
+  background: #f5f5f5;
+}
+.nr_warp .nr .nr_left .left_box > form {
+  width: 100%;
+  height: 50px;
+  margin-top: 40px;
+}
+.nr_warp .nr .nr_left .left_box > form > input {
+  width: 50%;
+  height: 48px;
+  margin-left: 10%;
+  border: 1px solid #ccc;
+  text-indent: 10px;
+  padding: 0;
+  line-height: 48px;
+}
+.nr_warp .nr .nr_left .left_box > form > button {
+  width: 15%;
+  height: 50px;
+  background: #3F517D;
+  border: 0;
+  padding: 0;
+  font-size: 14px;
+  color: #fff;
+  margin-left: 10%;
+  cursor: pointer;
+}
+.nr_warp .nr .nr_left .left_box .xl {
+  width: 85%;
+  margin-left: 10%;
+  margin-top: 40px;
+}
+.nr_warp .nr .nr_left .left_box .xl .dropdown > li > a {
+  font-size: 18px;
+  color: #2C2C2C;
+  position: relative;
+  cursor: pointer;
+}
+.nr_warp .nr .nr_left .left_box .xl .dropdown > li > a > img {
+  position: absolute;
+  top: 8px;
+  left: 100px;
+  transition: all .5s;
+}
+.nr_warp .nr .nr_left .left_box .xl .dropdown > li > ul > li {
+  margin-top: 30px;
+}
+.nr_warp .nr .nr_left .left_box .xl .dropdown > li > ul > li > a > span {
+  font-size: 16px;
+  color: #737373;
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.nr_warp .nr .nr_left .left_box .xl .dropdown > li > ul > li > a .span1 {
+  float: left;
+  width: 65%;
+}
+.nr_warp .nr .nr_left .left_box .xl .dropdown > li > ul > li > a .span2 {
+  width: 30%;
+  float: left;
+  text-align: right;
+}
+.nr_warp .nr .nr_left .left_box .xl .dropdown > li > ul > li.now > a > span {
+  color: #3F517D;
+}
+.nr_warp .nr .nr_left .left_box .xl .dropdown > ul > li {
+  margin-top: 30px;
+}
+.nr_warp .nr .nr_left .left_box .xl .dropdown > ul > li > a > span {
+  font-size: 16px;
+  color: #737373;
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.nr_warp .nr .nr_left .left_box .xl .dropdown > ul > li > a .span1 {
+  float: left;
+  width: 65%;
+}
+.nr_warp .nr .nr_left .left_box .xl .dropdown > ul > li > a .span2 {
+  width: 30%;
+  float: left;
+  text-align: right;
+}
+.nr_warp .nr .nr_left .left_box .xl .dropdown > ul > li.now > a > span {
+  color: #3F517D;
+}
+.nr_warp .nr .nr_left .left_box .xx {
+  display: block;
+  width: 90%;
+  font-size: 18px;
+  color: #2C2C2C;
+  margin: 30px 0 30px 10%;
+}
+.nr_warp .nr .nr_right {
+  float: left;
+  width: 75%;
+  margin-top: 10px;
+  position: relative;
+}
+.nr_warp .nr .nr_right .right1 {
+  width: 99%;
+  height: 150px;
+  border: 1px solid #ccc;
+  overflow: hidden;
+  box-shadow: 0 0 5px #ccc;
+  position: relative;
+}
+.nr_warp .nr .nr_right .right1 .r1_big {
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  margin-top: -51px;
+}
+.nr_warp .nr .nr_right .right1 .r1_big .r1_1 {
+  margin-left: 60px;
+  margin-top: 15px;
+}
+.nr_warp .nr .nr_right .right1 .r1_big .r1_1 > p {
+  font-size: 14px;
+  color: #727272;
+}
+.nr_warp .nr .nr_right .right1 .r1_big .r1_1 > p .span1 {
+  width: 60px;
+  font-size: 14px;
+  color: #727272;
+  float: left;
+}
+.nr_warp .nr .nr_right .right1 .r1_big .r1_1 > p .span2 {
+  font-size: 14px;
+  color: #2E2E2E;
+  padding-left: 20px;
+  font-weight: bold;
+}
+.nr_warp .nr .nr_right .right1 .r1_big .r1_1 > p.lp {
+  float: left;
+}
+.nr_warp .nr .nr_right .right1 .r1_big .r1_1 .lp {
+  min-width: 280px;
+  max-width: 320px;
+  float: left;
+}
+.nr_warp .nr .nr_right .right1 .r1_big .r1_1 .rp {
+  float: left;
+  margin-left: 30%;
+}
+.nr_warp .nr .nr_right .right2 {
+  width: 99%;
+  overflow: hidden;
+  margin-top: 10px;
+  box-shadow: 0 0 5px #ccc;
+}
+.nr_warp .nr .nr_right .right2 .r2_one {
+  margin-left: 30px;
+}
+.nr_warp .nr .nr_right .right2 > a {
+  font-size: 18px;
+  color: #3f517e;
+  line-height: 50px;
+  padding-right: 10px;
+}
+.nr_warp .nr .nr_right .right2 > span {
+  font-size: 20px;
+  line-height: 50px;
+  color: #000;
+  padding-right: 10px;
+}
+.nr_warp .nr .nr_right .right3 {
+  width: 99%;
+  overflow: hidden;
+  margin-top: 10px;
+  box-shadow: 0 0 5px #ccc;
+}
+.nr_warp .nr .nr_right .right3 .r3_title {
+  border: 1px solid #ccc;
+  box-shadow: 0 0 5px #ccc;
+}
+.nr_warp .nr .nr_right .right3 .r3_title > p {
+  float: left;
+  width: 16.66%;
+  height: 63px;
+  font-size: 16px;
+  color: #3F3F3F;
+  text-align: center;
+  line-height: 63px;
+  position: relative;
+  cursor: pointer;
+}
+.nr_warp .nr .nr_right .right3 .r3_title > p > img {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  margin-left: -10px;
+}
+.nr_warp .nr .nr_right .right3 .r3_title > p.now {
+  background: #3f517e;
+  color: #fff;
+}
+.nr_warp .nr .nr_right .right3 .title_name {
+  width: 100%;
+  height: 55px;
+  background: #f0f4fe;
+}
+.nr_warp .nr .nr_right .right3 .title_name > p {
+  font-size: 15px;
+  color: #454545;
+  line-height: 55px;
+  text-indent: 4.5%;
+}
+.nr_warp .nr .nr_right .right3 .r3_box {
+  width: 100%;
+  position: relative;
+}
+.nr_warp .nr .nr_right .right3 .r3_box .box_left {
+  position: absolute;
+  top: 0;
+  left: 0;
+  cursor: pointer;
+}
+.nr_warp .nr .nr_right .right3 .r3_box .box_left .z {
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  margin-top: -10px;
+}
+.nr_warp .nr .nr_right .right3 .r3_box .box_left .y {
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  margin-top: -10px;
+  display: none;
+}
+.nr_warp .nr .nr_right .right3 .r3_box .box_left.now_left .z {
+  display: none;
+}
+.nr_warp .nr .nr_right .right3 .r3_box .box_left.now_left .y {
+  display: block;
+}
+.nr_warp .nr .nr_right .right3 .r3_box .b {
+  display: none;
+}
+.nr_warp .nr .nr_right .right3 .r3_box .b > p {
+  float: left;
+  width: 50%;
+  margin-top: 20px;
+}
+.nr_warp .nr .nr_right .right3 .r3_box .b .p1 > span {
+  display: inline-block;
+  line-height: 30px;
+}
+.nr_warp .nr .nr_right .right3 .r3_box .b .p1 .p1_l {
+  width: 160px;
+  font-size: 16px;
+  color: #212121;
+  margin-left: 10%;
+  font-weight: bold;
+  margin-right: 8px;
+}
+.nr_warp .nr .nr_right .right3 .r3_box .b .p1 .p1_r {
+  font-size: 14px;
+  color: #989898;
+}
+.nr_warp .nr .nr_right .right3 .r3_box .b .p2 > span {
+  display: inline-block;
+  line-height: 30px;
+}
+.nr_warp .nr .nr_right .right3 .r3_box .b .p2 .p2_l {
+  width: 160px;
+  font-size: 16px;
+  color: #212121;
+  margin-left: 10%;
+  font-weight: bold;
+  margin-right: 8px;
+}
+.nr_warp .nr .nr_right .right3 .r3_box .b .p2 .p2_r {
+  font-size: 14px;
+  color: #989898;
+}
+.nr_warp .nr .nr_right .right3 .r3_box .b .p3 {
+  width: 100%;
+}
+.nr_warp .nr .nr_right .right3 .r3_box .b .p3 > span {
+  display: inline-block;
+  line-height: 30px;
+}
+.nr_warp .nr .nr_right .right3 .r3_box .b .p3 .p1_l {
+  width: 160px;
+  font-size: 16px;
+  color: #212121;
+  margin-left: 5%;
+  font-weight: bold;
+  margin-right: 8px;
+}
+.nr_warp .nr .nr_right .right3 .r3_box .b .p3 .p1_r {
+  font-size: 14px;
+  color: #989898;
+}
+.nr_warp .nr .nr_right .right3 .r3_box .b.block {
+  display: block;
+}
+.nr_warp .nr .nr_right .right3 .r3_box .dz .dzbox {
+  width: 100%;
+  height: 350px;
+  float: left;
+}
+.nr_warp .nr .nr_right .right3 .r3_box .pg .pgbox {
+  width: 100%;
+  height: 200px;
+  float: left;
+}
+.nr_warp .nr .nr_right .right3 .r3_box .qw {
+  float: left;
+  width: 100%;
+  margin-top: 50px;
+  height: 40px;
+  border-bottom: 1px solid #ccc;
+}
+.nr_warp .nr .nr_right .right3 .r3_box .qw > p {
+  width: 50%;
+}
+.nr_warp .nr .nr_right .right3 .r3_box .qw > p > span {
+  font-size: 16px;
+  color: #545454;
+  display: block;
+  margin-left: 10%;
+}
+.nr_warp .nr .nr_right .right3 .r3_box .pic_box {
+  float: left;
+  width: 100%;
+  margin: 40px auto;
+}
+.nr_warp .nr .nr_right .right3 .r3_box .pic_box .pic_box1 {
+  float: left;
+  width: 216px;
+  height: 250px;
+  margin-left: 5%;
+  position: relative;
+}
+.nr_warp .nr .nr_right .right3 .r3_box .pic_box .pic_box1 .zzc1 {
+  width: 180px;
+  height: 180px;
+  background: rgba(213, 213, 213, 0.63);
+  position: absolute;
+  top: 0;
+  left: 50%;
+  margin-left: -90px;
+}
+.nr_warp .nr .nr_right .right3 .r3_box .pic_box .pic_box1 .zzc2 {
+  width: 194px;
+  height: 194px;
+  background: rgba(213, 213, 213, 0.63);
+  position: absolute;
+  top: 5px;
+  left: 50%;
+  margin-left: -97px;
+}
+.nr_warp .nr .nr_right .right3 .r3_box .pic_box .pic_box1 > img {
+  position: absolute;
+  top: 10px;
+  left: 0;
+  width: 216px;
+  height: 200px;
+  cursor: pointer;
+}
+.nr_warp .nr .nr_right .right3 .r3_box .pic_box .pic_box1 > p {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  font-size: 16px;
+  color: #212121;
+  font-weight: bold;
+}
+.nr_warp .nr .nr_right .right3 .r3_box .dy #container {
+  width: 900px;
+  height: 370px;
+  margin: 40px 0 40px 5%;
+}
+.nr_warp .nr .nr_right .right3 .r3_box .fw .p3 {
+  float: left;
+}
+.nr_warp .nr .nr_right .right3 .r3_box .fw .p3 .p3_l {
+  width: 100%;
+  font-size: 16px;
+  color: #212121;
+  margin-left: 5%;
+  font-weight: bold;
+  margin-right: 110px;
+}
+.nr_warp .nr .nr_right .right3 .r3_box .fw .p3 .pic_box1 {
+  float: left;
+  width: 216px;
+  height: 250px;
+  margin-left: 5%;
+  position: relative;
+}
+.nr_warp .nr .nr_right .right3 .r3_box .fw .p3 .pic_box1 .zzc1 {
+  width: 180px;
+  height: 180px;
+  background: rgba(213, 213, 213, 0.63);
+  position: absolute;
+  top: 0;
+  left: 50%;
+  margin-left: -90px;
+}
+.nr_warp .nr .nr_right .right3 .r3_box .fw .p3 .pic_box1 .zzc2 {
+  width: 194px;
+  height: 194px;
+  background: rgba(213, 213, 213, 0.63);
+  position: absolute;
+  top: 5px;
+  left: 50%;
+  margin-left: -97px;
+}
+.nr_warp .nr .nr_right .right3 .r3_box .fw .p3 .pic_box1 > img {
+  position: absolute;
+  top: 10px;
+  left: 0;
+  width: 216px;
+  height: 200px;
+  cursor: pointer;
+}
+.nr_warp .nr .nr_right .right3 .r3_box .fw .p3 .pic_box1 > p {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  font-size: 16px;
+  color: #212121;
+  font-weight: bold;
+}
+.nr_warp .nr .nr_right .right3 .r3_box .fw #container1 {
+  width: 900px;
+  height: 370px;
+  margin: 40px 0 40px 5%;
+}
+.nr_warp .nr .nr_right .box_left {
+  position: absolute;
+  top: 320px;
+  left: -32px;
+  margin-top: -72px;
+  cursor: pointer;
+  z-index: 999;
+}
+.nr_warp .nr .nr_right .box_left .z {
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  margin-top: -10px;
+}
+.nr_warp .nr .nr_right .box_left .y {
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  margin-top: -10px;
+  display: none;
+}
+.nr_warp .nr .nr_right .box_left.now_left .z {
+  display: none;
+}
+.nr_warp .nr .nr_right .box_left.now_left .y {
+  display: block;
+}
+.big_pic {
+  width: 0;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+}
+.big_pic .two_box {
+  width: 1000px;
+  height: 70%;
+  position: absolute;
+  top: 15%;
+  left: 50%;
+  margin-left: -500px;
+  background: #f0f4fe;
+}
+.big_pic .two_box .bx-wrapper {
+  margin: 100px 200px 0 200px;
+}
+.big_pic .two_box .close {
+  position: absolute;
+  top: -60px;
+  right: -50px;
+  cursor: pointer;
+}

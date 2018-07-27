@@ -1,0 +1,56 @@
+
+ol, ul {
+    list-style: none;
+}
+
+blockquote, q {
+    quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: "";
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+* {
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+}
+
+.dropdown {
+    width: 100%;
+    font-family: "Montserrat", sans-serif;
+    font-size: 12px;
+}
+
+.dropdown li {
+}
+
+.dropdown li.selected > a > img{
+    transform: rotate(180deg);
+    transition: all .5s;
+}
+
+.dropdown li a {
+    display: block;
+    width: 100%;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: black;
+}
+
+.dropdown li > ul li {
+}
+
+.dropdown li > ul li a {
+    color: gray;
+}
+
+.dropdown li > ul li > ul li {
+}
