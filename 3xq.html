@@ -18,6 +18,7 @@
     <script src="js/laydate.js"></script>
     <!--高德地图   js-->
     <script type="text/javascript" src="http://webapi.amap.com/maps?v=1.4.6&key=31cb1cb6cb584d26dad68cffd5ea67d6"></script>
+    <script src="js/jquery.tmpl.min.js"></script>
 </head>
 <body>
 <!--header  S-->
@@ -25,8 +26,8 @@
     <div class="header">
         <a class="logo" href="./index.html"><img src="./img/logo.png" alt=""></a>
         <div class="header_box">
-            <p>Feng Cheng</p>
-            <a class="tc" href="./2.html"><img title="退出登录" src="./img/tc.png" alt=""></a>
+            <p id="username">None</p>
+            <a class="tc" href="javascript:;" onclick="bs.logout()"><img title="退出登录" src="./img/tc.png" alt=""></a>
         </div>
     </div>
 </div>
@@ -37,8 +38,8 @@
         <div class="nr_left">
             <div class="left_box">
                 <form action="">
-                    <input type="text" placeholder="请输入搜索的项目名称/档案号/地址">
-                    <a href="./sorry.html">查询</a>
+                    <input type="text" id="q1text" placeholder="请输入搜索的项目名称/档案号/地址">
+                    <button id="query1">查询</button>
                 </form>
                 <div class="xl">
                     <ul class="dropdown">
@@ -48,133 +49,7 @@
                                 <img src="./img/jt.png" alt="">
                             </a>
                         </li>
-                        <ul>
-                            <li class="now">
-                                <a class="clearfix" href="">
-                                    <span class="span1">项目名称项目名称项目名称明项目... </span>
-                                    <span class="span2">2018-04-26</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a class="clearfix" href="">
-                                    <span class="span1">项目名称项目名称项目名称明项目... </span>
-                                    <span class="span2">2018-04-26</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a class="clearfix" href="">
-                                    <span class="span1">项目名称项目名称项目名称明项目... </span>
-                                    <span class="span2">2018-04-26</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a class="clearfix" href="">
-                                    <span class="span1">项目名称项目名称项目名称明项目... </span>
-                                    <span class="span2">2018-04-26</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a class="clearfix" href="">
-                                    <span class="span1">项目名称项目名称项目名称明项目... </span>
-                                    <span class="span2">2018-04-26</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a class="clearfix" href="">
-                                    <span class="span1">项目名称项目名称项目名称明项目... </span>
-                                    <span class="span2">2018-04-26</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a class="clearfix" href="">
-                                    <span class="span1">项目名称项目名称项目名称明项目... </span>
-                                    <span class="span2">2018-04-26</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a class="clearfix" href="">
-                                    <span class="span1">项目名称项目名称项目名称明项目... </span>
-                                    <span class="span2">2018-04-26</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a class="clearfix" href="">
-                                    <span class="span1">项目名称项目名称项目名称明项目... </span>
-                                    <span class="span2">2018-04-26</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a class="clearfix" href="">
-                                    <span class="span1">项目名称项目名称项目名称明项目... </span>
-                                    <span class="span2">2018-04-26</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a class="clearfix" href="">
-                                    <span class="span1">项目名称项目名称项目名称明项目... </span>
-                                    <span class="span2">2018-04-26</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a class="clearfix" href="">
-                                    <span class="span1">项目名称项目名称项目名称明项目... </span>
-                                    <span class="span2">2018-04-26</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a class="clearfix" href="">
-                                    <span class="span1">项目名称项目名称项目名称明项目... </span>
-                                    <span class="span2">2018-04-26</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a class="clearfix" href="">
-                                    <span class="span1">项目名称项目名称项目名称明项目... </span>
-                                    <span class="span2">2018-04-26</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a class="clearfix" href="">
-                                    <span class="span1">项目名称项目名称项目名称明项目... </span>
-                                    <span class="span2">2018-04-26</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a class="clearfix" href="">
-                                    <span class="span1">项目名称项目名称项目名称明项目... </span>
-                                    <span class="span2">2018-04-26</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a class="clearfix" href="">
-                                    <span class="span1">项目名称项目名称项目名称明项目... </span>
-                                    <span class="span2">2018-04-26</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a class="clearfix" href="">
-                                    <span class="span1">项目名称项目名称项目名称明项目... </span>
-                                    <span class="span2">2018-04-26</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a class="clearfix" href="">
-                                    <span class="span1">项目名称项目名称项目名称明项目... </span>
-                                    <span class="span2">2018-04-26</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a class="clearfix" href="">
-                                    <span class="span1">项目名称项目名称项目名称明项目... </span>
-                                    <span class="span2">2018-04-26</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a class="clearfix" href="">
-                                    <span class="span1">项目名称项目名称项目名称明项目... </span>
-                                    <span class="span2">2018-04-26</span>
-                                </a>
-                            </li>
+                        <ul id="pjlist">
                         </ul>
                     </ul>
                 </div>
@@ -182,37 +57,7 @@
         </div>
         <div class="nr_right">
             <div class="right1">
-                <div class="r1_big">
-                    <div class="r1_1 clearfix">
-                        <p class="lp clearfix">
-                            <span class="span1">项目编号</span>
-                            <span class="span2">01</span>
-                        </p>
-                        <p class="rp clearfix">
-                            <span class="span1">信息时点</span>
-                            <span class="span2">2019-08-17</span>
-                        </p>
-                    </div>
-                    <div class="r1_1 clearfix">
-                        <p class="lp clearfix">
-                            <span class="span1">委托方</span>
-                            <span class="span2">上海申新房地产开发有限公司</span>
-                        </p>
-                        <p class="rp clearfix">
-                            <span class="span1">项目名称</span>
-                            <span class="span2">上海申新房地产开发有限公司</span>
-                        </p>
-                    </div>
-                    <div class="r1_1 clearfix">
-                        <p class="lp clearfix">
-                            <span class="span1">记录时间</span>
-                            <span class="span2">2018-09-09</span>
-                        </p>
-                        <p class="rp clearfix">
-                            <span class="span1">记录人员</span>
-                            <span class="span2">eng cehng</span>
-                        </p>
-                    </div>
+                <div class="r1_big" id="pjInfo">
                 </div>
             </div>
             <div class="right2">
@@ -248,1234 +93,23 @@
                     </p>
                 </div>
                 <div class="r3_box">
-                    <div class="lp b clearfix block">
-                        <div class="title_name">
-                            <p class="tn">1</p>
-                            <p class="change change0 block">修改</p>
-                            <p class="change change0">返回</p>
-                        </div>
-                        <form class="clearfix" action="">
-                            <div class="r3_top_box">
-                                <div class="shangchuan">
-                                    导入数据
-                                    <input type="file" accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet">
-                                </div>
-                                <div class="all">
-                                    全选
-                                    <input class="all_ipt" type="checkbox">
-                                </div>
-                            </div>
-                            <p class="p1">
-                                <span class="p1_l">楼盘编号</span>
-                                <span class="p1_r">01</span>
-                                <input class="ckb" type="checkbox" name="che">
-                                <input class="ipt" type="text" placeholder="请输入楼盘名称">
-                            </p>
-                            <p class="p2">
-                                <span class="p2_l">楼盘类型</span>
-                                <span class="p2_r">200m²</span>
-                                <input class="ckb" type="checkbox" name="che">
-                                <select class="ipt" name="" id="">
-                                    <option value="">公寓</option>
-                                    <option value="">别墅</option>
-                                    <option value="">写字楼</option>
-                                    <option value="">住宅底商</option>
-                                    <option value="">商场</option>
-                                </select>
-                            </p>
-                            <div class="p1">
-                                <span class="p1_l">竣工年代</span>
-                                <span class="p1_r">2018</span>
-                                <input class="ckb" type="checkbox" name="che">
-                                <div class="laydate-box">
-                                    <input type="text" id="laydateInput" placeholder="xxxx年xx月xx日" />
-                                    <img src="./img/rili.png" alt="" class="icon data-icon"/>
-                                    <div class="select-date">
-                                        <div class="select-date-header">
-                                            <ul class="heade-ul">
-                                                <li class="header-item header-item-one">
-                                                    <select name="" id="yearList"></select>
-                                                </li>
-                                                <li class="header-item header-item-two" onselectstart="return false">
-                                                    <select name="" id="monthList"></select>
-                                                </li>
-                                                <li class="header-item header-item-three" onselectstart="return false" >
-                                                    <span class="reback">回到今天</span>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <div class="select-date-body">
-                                            <ul class="week-list">
-                                                <li>日</li><li>一</li><li>二</li><li>三</li><li>四</li><li>五</li><li>六</li>
-                                            </ul>
-                                            <ul class="day-tabel"></ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <p class="p2">
-                                <span class="p2_l">总栋数</span>
-                                <span class="p2_r">200m²</span>
-                                <input class="ckb" type="checkbox" name="che">
-                                <input class="ipt" type="text" placeholder="请输入总栋数">
-                            </p>
-                            <p class="p1">
-                                <span class="p1_l">物业公司</span>
-                                <span class="p1_r">上海申鹏物业管理有限公司</span>
-                                <input class="ckb" type="checkbox" name="che">
-                                <input class="ipt" type="text" placeholder="请输入物业公司">
-                            </p>
-                            <p class="p2">
-                                <span class="p2_l">物业管理费（元/平方米·月）</span>
-                                <span class="p2_r">3.20％</span>
-                                <input class="ckb" type="checkbox" name="che">
-                                <input class="ipt" type="text" placeholder="请输入物业费">
-                            </p>
-                            <p class="p1">
-                                <span class="p1_l">停车位（个）</span>
-                                <span class="p1_r">甲级</span>
-                                <input class="ckb" type="checkbox" name="che">
-                                <input class="ipt" type="text" placeholder="请输入停车位数">
-                            </p>
-                            <p class="p2">
-                                <span class="p2_l">建筑结构</span>
-                                <span class="p2_r">50%</span>
-                                <input class="ckb" type="checkbox" name="che">
-                                <select class="ipt" name="">
-                                    <option value="">1</option>
-                                    <option value="">2</option>
-                                    <option value="">3</option>
-                                    <option value="">4</option>
-                                </select>
-                            </p>
-                            <p class="p1">
-                                <span class="p1_l">开发商</span>
-                                <span class="p1_r">瑞金花园</span>
-                                <input class="ckb" type="checkbox" name="che">
-                                <input class="ipt" type="text" placeholder="请输入开发商">
-                            </p>
-                            <p class="p2">
-                                <span class="p2_l">办公楼等级</span>
-                                <span class="p2_r">100%</span>
-                                <input class="ckb" type="checkbox" name="che">
-                                <input class="ipt" type="text" placeholder="请输入办公楼等级">
-                            </p>
-                            <p class="p1">
-                                <span class="p1_l">办公区域</span>
-                                <span class="p1_r">上海申新房地产开发有限公司</span>
-                                <input class="ckb" type="checkbox" name="che">
-                                <input class="ipt" type="text" placeholder="请输入办公区域">
-                            </p>
-                            <p class="p2">
-                                <span class="p2_l">裙房</span>
-                                <span class="p2_r">300（个）</span>
-                                <input class="ckb" type="checkbox" name="che">
-                                <input class="ipt" type="text" placeholder="请输入裙房">
-                            </p>
-                            <p class="p3">
-                                <span class="p1_l">项目特色</span>
-                                <span class="p1_r">XXXXXXX</span>
-                                <input class="ckb" type="checkbox" name="che">
-                                <textarea class="tex" name="" cols="30" rows="10" placeholder="请对轨交房（住），地铁上盖（商、办）进行说明等特别便利因素说明"></textarea>
-                            </p>
-                            <p class="p1">
-                                <span class="p1_l">总占地面积m²</span>
-                                <span class="p1_r">2.2元/m²/月</span>
-                                <input class="ckb" type="checkbox" name="che">
-                                <input class="ipt" type="text" placeholder="请输入总占地面积">
-                            </p>
-                            <p class="p2">
-                                <span class="p2_l">总建筑面积m²</span>
-                                <span class="p2_r">市级</span>
-                                <input class="ckb" type="checkbox" name="che">
-                                <input class="ipt" type="text" placeholder="请输入总建筑面积">
-                            </p>
-                            <p class="p1">
-                                <span class="p1_l">容积率（%）</span>
-                                <span class="p1_r">XXXXXX</span>
-                                <input class="ckb" type="checkbox" name="che">
-                                <input class="ipt" type="text" placeholder="请输入容积率">
-                            </p>
-                            <p class="p2">
-                                <span class="p2_l">绿化覆盖率（%）</span>
-                                <span class="p2_r">XXXXXX</span>
-                                <input class="ckb" type="checkbox" name="che">
-                                <input class="ipt" type="text" placeholder="请输入绿化覆盖率">
-                            </p>
-                            <p class="p1">
-                                <span class="p1_l">入住率（%）</span>
-                                <span class="p1_r">30</span>
-                                <input class="ckb" type="checkbox" name="che">
-                                <input class="ipt" type="text" placeholder="请输入入住率">
-                            </p>
-                            <p class="p2">
-                                <span class="p2_l">商业类型</span>
-                                <span class="p2_r">30</span>
-                                <input class="ckb" type="checkbox" name="che">
-                                <select class="ipt" name="">
-                                    <option value="">市级</option>
-                                    <option value="">区级</option>
-                                    <option value="">社区</option>
-                                    <option value="">步行街</option>
-                                    <option value="">专业市场</option>
-                                </select>
-                            </p>
-                            <p class="p1">
-                                <span class="p1_l">业态配比</span>
-                                <span class="p1_r">写字楼</span>
-                                <input class="ckb" type="checkbox" name="che">
-                                <input class="ipt" type="text" placeholder="请输入业态配比">
-                            </p>
-                            <p class="p2">
-                                <span class="p2_l">主力商户</span>
-                                <span class="p2_r">xxxxxx</span>
-                                <input class="ckb" type="checkbox" name="che">
-                                <input class="ipt" type="text" placeholder="请输入主力商户">
-                            </p>
-                            <p class="p1">
-                                <span class="p1_l">土地使用来源</span>
-                                <span class="p1_r">1231212412</span>
-                                <input class="ckb" type="checkbox" name="che">
-                                <select class="ipt" name="">
-                                    <option value="">划拨</option>
-                                    <option value="">出让</option>
-                                    <option value="">转让</option>
-                                    <option value="">其他</option>
-                                </select>
-                            </p>
-                            <p class="p2">
-                                <span class="p2_l">土地用途</span>
-                                <span class="p2_r">划拨</span>
-                                <input class="ckb" type="checkbox" name="che">
-                                <input class="ipt" type="text" placeholder="请输入土地用途">
-                            </p>
-                            <p class="p1">
-                                <span class="p1_l">土地面积</span>
-                                <span class="p1_r">XXXXXX</span>
-                                <input class="ckb" type="checkbox" name="che">
-                                <input class="ipt" type="text" placeholder="请输入土地面积">
-                            </p>
-                            <p class="p2">
-                                <span class="p2_l">土地使用期限</span>
-                                <span class="p2_r">2018/05/01-2018/06/30</span>
-                                <input class="ckb" type="checkbox" name="che">
-                                <input class="ipt" type="text" placeholder="请输入土地面积">
-                            </p>
-                            <p class="p1" style="width: 100%;">
-                                <span class="p1_l" style="margin-left: 6%;">土地证编号</span>
-                                <span class="p1_r">2018040120160630</span>
-                                <input class="ckb" type="checkbox" name="che">
-                                <input class="ipt" type="text" placeholder="请输入土地证编号">
-                            </p>
-                            <div class="qw">
-                                <p><span>区位信息</span></p>
-                            </div>
-                            <p class="p1">
-                                <span class="p1_l">国省市</span>
-                                <span class="p1_r">上海市/上海市</span>
-                                <input class="ckb" type="checkbox" name="che">
-                                <select class="ipt" name="">
-                                    <option value="">上海市</option>
-                                </select>
-                            </p>
-                            <p class="p2">
-                                <span class="p2_l">区县</span>
-                                <span class="p2_r">xxxxxx</span>
-                                <input class="ckb" type="checkbox" name="che">
-                                <select class="ipt" name="">
-                                    <option value="">黄浦</option>
-                                    <option value="">徐汇</option>
-                                    <option value="">长宁</option>
-                                    <option value="">静安</option>
-                                    <option value="">普陀</option>
-                                    <option value="">虹口</option>
-                                    <option value="">杨浦</option>
-                                    <option value="">闵行</option>
-                                    <option value="">宝山</option>
-                                    <option value="">嘉定</option>
-                                    <option value="">浦东</option>
-                                    <option value="">金山</option>
-                                    <option value="">松江</option>
-                                    <option value="">青浦</option>
-                                    <option value="">奉贤</option>
-                                    <option value="">崇明</option>
-                                </select>
-                            </p>
-                            <p class="p1">
-                                <span class="p1_l">街道</span>
-                                <span class="p1_r">人民广场</span>
-                                <input class="ckb" type="checkbox" name="che">
-                                <input class="ipt" type="text" placeholder="请输入土地用途">
-                            </p>
-                            <p class="p2">
-                                <span class="p2_l">板块</span>
-                                <span class="p2_r">内环以内</span>
-                                <input class="ckb" type="checkbox" name="che">
-                                <select class="ipt" name="">
-                                    <option value="">1</option>
-                                    <option value="">2</option>
-                                    <option value="">3</option>
-                                    <option value="">4</option>
-                                </select>
-                            </p>
-                            <p class="p1">
-                                <span class="p1_l">商圈</span>
-                                <span class="p1_r">xxxxxxx</span>
-                                <input class="ckb" type="checkbox" name="che">
-                                <input class="ipt" type="text" placeholder="请输入商圈">
-                            </p>
-                            <p class="p2">
-                                <span class="p2_l">商务区（CBD）</span>
-                                <span class="p2_r">金科路2889弄</span>
-                                <input class="ckb" type="checkbox" name="che">
-                                <input class="ipt" type="text" placeholder="请输入商务区">
-                            </p>
-                            <p class="p1">
-                                <span class="p1_l">工业园区</span>
-                                <span class="p1_r">xxxxxx</span>
-                                <input class="ckb" type="checkbox" name="che">
-                                <input class="ipt" type="text" placeholder="请输入工业园区">
-                            </p>
-                            <p class="p2">
-                                <span class="p2_l">环线位置</span>
-                                <span class="p2_r">xxxxxx</span>
-                                <input class="ckb" type="checkbox" name="che">
-                                <select class="ipt" name="">
-                                    <option value="">内环以内</option>
-                                    <option value="">内中环间</option>
-                                    <option value="">中外环间</option>
-                                    <option value="">外环以外</option>
-                                    <option value="">外郊环间</option>
-                                    <option value="">郊环以外</option>
-                                </select>
-                            </p>
-                            <p class="p1">
-                                <span class="p1_l">通邮地址</span>
-                                <span class="p1_r">黄浦区</span>
-                                <input class="ckb" type="checkbox" name="che">
-                                <input class="ipt" type="text" placeholder="请输入通邮地址">
-                            </p>
-                            <p class="p2">
-                                <span class="p2_l">四至</span>
-                                <span class="p2_r">xxxxxxx</span>
-                                <input class="ckb" type="checkbox" name="che">
-                                <input class="ipt" type="text" placeholder="请输入通邮地址">
-                            </p>
-                            <div class="pic_box clearfix">
-                                <div class="pic_box1">
-                                    <div class="zzc1"></div>
-                                    <div class="zzc2"></div>
-                                    <img class="open" src="./img/lp.jpg" alt="">
-                                    <p>平面图<span>（4）</span></p>
-                                </div>
-                                <div class="pic_box1">
-                                    <div class="zzc1"></div>
-                                    <div class="zzc2"></div>
-                                    <img class="open" src="./img/lp.jpg" alt="">
-                                    <p>实景图<span>（5）</span></p>
-                                </div>
-                            </div>
-                            <div class="pic_box2">
-                                <span class="p1_l">平面图</span>
-                                <div class="box_img">
-                                    <div class="sc" style="background:url('./img/join.gif') no-repeat center center;">
-                                        <input type="file" name="che" accept="image/*">
-                                    </div>
-                                    <div class="new_img">
-                                        <img class="ni" src="./img/lp.jpg" alt="">
-                                        <img class="cse" src="./img/img_close.gif" alt="">
-                                    </div>
-                                </div>
-                                <input class="ckb" type="checkbox">
-                            </div>
-                            <div class="pic_box2">
-                                <span class="p1_l">现场照片</span>
-                                <div class="box_img">
-                                    <div class="sc" style="background:url('./img/join.gif') no-repeat center center;">
-                                        <input type="file" name="che" accept="image/*">
-                                    </div>
-                                    <div class="new_img">
-                                        <img class="ni" src="./img/lp.jpg" alt="">
-                                        <img class="cse" src="./img/img_close.gif" alt="">
-                                    </div>
-                                </div>
-                                <input class="ckb" type="checkbox">
-                            </div>
-                            <div class="btn">
-                                <button>确认修改</button>
-                            </div>
-                        </form>
+                    <div class="lp b clearfix block" id="tab_estate">
+                        
                     </div>
-                    <div class="dz b clearfix">
-                        <div class="title_name">
-                            <p class="tn">2</p>
-                            <p class="change change1 block">修改</p>
-                            <p class="change change1">返回</p>
-                        </div>
-                        <form class="clearfix" action="">
-                            <div class="r3_top_box">
-                                <div class="shangchuan">
-                                    导入数据
-                                    <input type="file">
-                                </div>
-                                <div class="all">
-                                    全选
-                                    <input class="all_ipt" type="checkbox">
-                                </div>
-                            </div>
-                            <p class="p1">
-                                <span class="p1_l">楼栋编号</span>
-                                <span class="p1_r">01</span>
-                                <input class="ckb" type="checkbox" name="che">
-                                <input class="ipt" type="text" placeholder="请输入楼栋编号">
-                            </p>
-                            <p class="p2">
-                                <span class="p2_l">房屋产权性质</span>
-                                <span class="p2_r">商品房</span>
-                                <input class="ckb" type="checkbox" name="che">
-                                <select class="ipt" name="">
-                                    <option value="">商品房</option>
-                                    <option value="">已购公有住房</option>
-                                    <option value="">经济适用住房</option>
-                                    <option value="">限价商品住房</option>
-                                </select>
-                            </p>
-                            <p class="p1">
-                                <span class="p1_l">产权楼栋名称</span>
-                                <span class="p1_r">1号</span>
-                                <input class="ckb" type="checkbox" name="che">
-                                <input class="ipt" type="text" placeholder="请输入楼栋名称">
-                            </p>
-                            <p class="p2">
-                                <span class="p2_l">现状楼栋名称</span>
-                                <span class="p2_r">2号</span>
-                                <input class="ckb" type="checkbox" name="che">
-                                <input class="ipt" type="text" placeholder="请输入现状楼栋名称">
-                            </p>
-                            <p class="p1">
-                                <span class="p1_l">单元数量</span>
-                                <span class="p1_r">3</span>
-                                <input class="ckb" type="checkbox" name="che">
-                                <input class="ipt" type="text" placeholder="请输入单元数量">
-                            </p>
-                            <p class="p2">
-                                <span class="p2_l">楼栋坐落</span>
-                                <span class="p2_r">鲁班路562弄</span>
-                                <input class="ckb" type="checkbox" name="che">
-                                <input class="ipt" type="text" placeholder="请输入楼栋位置">
-                            </p>
-                            <p class="p1">
-                                <span class="p1_l">楼栋幢号</span>
-                                <span class="p1_r">1幢</span>
-                                <input class="ckb" type="checkbox" name="che">
-                                <input class="ipt" type="text" placeholder="请输入楼栋幢号">
-                            </p>
-                            <p class="p2">
-                                <span class="p2_l">建筑类型</span>
-                                <span class="p2_r">高层</span>
-                                <input class="ckb" type="checkbox" name="che">
-                                <select class="ipt" name="">
-                                    <option value="">高层</option>
-                                    <option value="">多层</option>
-                                    <option value="">低层</option>
-                                </select>
-                            </p>
-                            <p class="p1">
-                                <span class="p1_l">建筑样式</span>
-                                <span class="p1_r">八联</span>
-                                <input class="ckb" type="checkbox" name="che">
-                                <input class="ipt" type="text" placeholder="请输入建筑样式">
-                            </p>
-                            <p class="p2">
-                                <span class="p2_l">建筑结构</span>
-                                <span class="p2_r">钢混</span>
-                                <input class="ckb" type="checkbox" name="che">
-                                <select class="ipt" name="">
-                                    <option value="">钢混</option>
-                                    <option value="">混合</option>
-                                    <option value="">砖木</option>
-                                </select>
-                            </p>
-                            <p class="p1">
-                                <span class="p1_l">外立面</span>
-                                <span class="p1_r">真石漆</span>
-                                <input class="ckb" type="checkbox" name="che">
-                                <input class="ipt" type="text" placeholder="请输入外立面">
-                            </p>
-                            <p class="p2">
-                                <span class="p2_l">地上标注总层数</span>
-                                <span class="p2_r">28</span>
-                                <input class="ckb" type="checkbox" name="che">
-                                <input class="ipt" type="text" placeholder="请输入标注总层数">
-                            </p>
-                            <p class="p1">
-                                <span class="p1_l">地上实际总层数</span>
-                                <span class="p1_r">27</span>
-                                <input class="ckb" type="checkbox" name="che">
-                                <input class="ipt" type="text" placeholder="请输入地上实际总层数">
-                            </p>
-                            <p class="p2">
-                                <span class="p2_l">地下总层数</span>
-                                <span class="p2_r">1</span>
-                                <input class="ckb" type="checkbox" name="che">
-                                <input class="ipt" type="text" placeholder="请输入地下总层数">
-                            </p>
-                            <p class="p1">
-                                <span class="p1_l">建成年代（年）</span>
-                                <span class="p1_r">2000</span>
-                                <input class="ckb" type="checkbox" name="che">
-                                <input class="ipt" type="text" placeholder="请输入建成年代">
-                            </p>
-                            <p class="p2">
-                                <span class="p2_l">在楼盘中位置</span>
-                                <span class="p2_r">XXXXXX</span>
-                                <input class="ckb" type="checkbox" name="che">
-                                <input class="ipt" type="text" placeholder="请输入位置">
-                            </p>
-                            <div class="btn">
-                                <button>确认修改</button>
-                            </div>
-                        </form>
-                        <div class="dzbox"></div>
+                    <div class="dz b clearfix" id="tab_building">
+                        
                     </div>
-                    <div class="dy b clearfix">
-                        <div class="title_name">
-                            <p class="tn">3</p>
-                            <p class="change change2 block">修改</p>
-                            <p class="change change2">返回</p>
-                        </div>
-                        <form action="">
-                            <div class="r3_top_box">
-                                <div class="shangchuan">
-                                    导入数据
-                                    <input type="file">
-                                </div>
-                                <div class="all">
-                                    全选
-                                    <input class="all_ipt" type="checkbox">
-                                </div>
-                            </div>
-                            <p class="p1">
-                                <span class="p1_l">楼栋编号</span>
-                                <span class="p1_r">01</span>
-                                <input class="ckb" type="checkbox" name="che">
-                                <input class="ipt" type="text" placeholder="请输入楼栋编号">
-                            </p>
-                            <p class="p2">
-                                <span class="p2_l">单元标注总层数</span>
-                                <span class="p2_r">28</span>
-                                <input class="ckb" type="checkbox" name="che">
-                                <input class="ipt" type="text" placeholder="请输入标注总层数">
-                            </p>
-                            <p class="p1">
-                                <span class="p1_l">单元实际总层数</span>
-                                <span class="p1_r">28</span>
-                                <input class="ckb" type="checkbox" name="che">
-                                <input class="ipt" type="text" placeholder="请输入实际总层数">
-                            </p>
-                            <p class="p2">
-                                <span class="p2_l">单元层户数</span>
-                                <span class="p2_r">8</span>
-                                <input class="ckb" type="checkbox" name="che">
-                                <input class="ipt" type="text" placeholder="请输入层户数">
-                            </p>
-                            <p class="p1">
-                                <span class="p1_l">产权单元名称</span>
-                                <span class="p1_r">xxxxx</span>
-                                <input class="ckb" type="checkbox" name="che">
-                                <input class="ipt" type="text" placeholder="请输入产权单元名称">
-                            </p>
-                            <p class="p2">
-                                <span class="p2_l">现状单元名称</span>
-                                <span class="p2_r">A座/船研大厦</span>
-                                <input class="ckb" type="checkbox" name="che">
-                                <input class="ipt" type="text" placeholder="请输入现状单元名称">
-                            </p>
-                            <p class="p1">
-                                <span class="p1_l">标准层层高</span>
-                                <span class="p1_r">xxxxxx</span>
-                                <input class="ckb" type="checkbox" name="che">
-                                <input class="ipt" type="text" placeholder="请输入标准层层高">
-                            </p>
-                            <p class="p2">
-                                <span class="p2_l">标准层面积</span>
-                                <span class="p2_r">100m²</span>
-                                <input class="ckb" type="checkbox" name="che">
-                                <input class="ipt" type="text" placeholder="请输入标准层面积">
-                            </p>
-                            <p class="p1">
-                                <span class="p1_l">户型面积</span>
-                                <span class="p1_r">100m²</span>
-                                <input class="ckb" type="checkbox" name="che">
-                                <input class="ipt" type="text" placeholder="请输入户型面积">
-                            </p>
-                            <p class="p2">
-                                <span class="p2_l">单元总户数</span>
-                                <span class="p2_r">60</span>
-                                <input class="ckb" type="checkbox" name="che">
-                                <input class="ipt" type="text" placeholder="请输入单元总户数">
-                            </p>
-                            <p class="p3">
-                                <span class="p1_l">坐标</span>
-                                <span class="p1_r">23.03，113.75</span>
-                                <input class="ckb" type="checkbox" name="che">
-                                <input class="ipt ipt1" type="text" placeholder="请输入坐标">
-                                <input class="ipt ipt1" type="text" placeholder="请输入坐标">
-                            </p>
-                            <div id="container"></div>
-                            <div class="btn">
-                                <button>确认修改</button>
-                            </div>
-                        </form>
+                    <div class="dy b clearfix" id="tab_unit">
+                        
                     </div>
-                    <div class="fw b clearfix">
-                        <div class="title_name">
-                            <p class="tn">4</p>
-                            <p class="change change3 block">修改</p>
-                            <p class="change change3">返回</p>
-                        </div>
-                        <form action="">
-                            <div class="r3_top_box">
-                                <div class="shangchuan">
-                                    导入数据
-                                    <input type="file">
-                                </div>
-                                <div class="all">
-                                    全选
-                                    <input class="all_ipt" type="checkbox">
-                                </div>
-                            </div>
-                            <p class="p1">
-                                <span class="p1_l">房屋编号</span>
-                                <span class="p1_r">01</span>
-                                <input class="ckb" type="checkbox" name="che">
-                                <input class="ipt" type="text" placeholder="请输入房屋编号">
-                            </p>
-                            <p class="p2">
-                                <span class="p2_l">建筑面积</span>
-                                <span class="p2_r">100m²</span>
-                                <input class="ckb" type="checkbox" name="che">
-                                <input class="ipt" type="text" placeholder="请输入建筑面积">
-                            </p>
-                            <p class="p1">
-                                <span class="p1_l">使用面积</span>
-                                <span class="p1_r">100m²</span>
-                                <input class="ckb" type="checkbox" name="che">
-                                <input class="ipt" type="text" placeholder="请输入使用面积">
-                            </p>
-                            <p class="p2">
-                                <span class="p2_l">套内面积</span>
-                                <span class="p2_r">100m²</span>
-                                <input class="ckb" type="checkbox" name="che">
-                                <input class="ipt" type="text" placeholder="请输入套内面积">
-                            </p>
-                            <p class="p1">
-                                <span class="p1_l">各层部位面积</span>
-                                <span class="p1_r">100m²</span>
-                                <input class="ckb" type="checkbox" name="che">
-                                <input class="ipt" type="text" placeholder="请输入各层部位面积">
-                            </p>
-                            <p class="p2">
-                                <span class="p2_l">得房率</span>
-                                <span class="p2_r">100%</span>
-                                <input class="ckb" type="checkbox" name="che">
-                                <input class="ipt" type="text" placeholder="请输入得房率">
-                            </p>
-                            <p class="p1">
-                                <span class="p1_l">入住率</span>
-                                <span class="p1_r">100%</span>
-                                <input class="ckb" type="checkbox" name="che">
-                                <input class="ipt" type="text" placeholder="请输入入住率">
-                            </p>
-                            <p class="p2">
-                                <span class="p2_l">标准层数</span>
-                                <span class="p2_r">30层</span>
-                                <input class="ckb" type="checkbox" name="che">
-                                <input class="ipt" type="text" placeholder="请输入标准层数">
-                            </p>
-                            <p class="p1">
-                                <span class="p1_l">实际层数</span>
-                                <span class="p1_r">30层</span>
-                                <input class="ckb" type="checkbox" name="che">
-                                <input class="ipt" type="text" placeholder="请输入实际层数">
-                            </p>
-                            <p class="p2">
-                                <span class="p2_l">层高</span>
-                                <span class="p2_r">90m</span>
-                                <input class="ckb" type="checkbox" name="che">
-                                <input class="ipt" type="text" placeholder="请输入层高">
-                            </p>
-                            <p class="p1">
-                                <span class="p1_l">净高</span>
-                                <span class="p1_r">90m</span>
-                                <input class="ckb" type="checkbox" name="che">
-                                <input class="ipt" type="text" placeholder="请输入净高">
-                            </p>
-                            <p class="p2">
-                                <span class="p2_l">客梯数量</span>
-                                <span class="p2_r">3</span>
-                                <input class="ckb" type="checkbox" name="che">
-                                <input class="ipt" type="text" placeholder="请输入客梯数量">
-                            </p>
-                            <p class="p1">
-                                <span class="p1_l">客梯品牌</span>
-                                <span class="p1_r">xxxxxxx</span>
-                                <input class="ckb" type="checkbox" name="che">
-                                <input class="ipt" type="text" placeholder="请输入客梯品牌">
-                            </p>
-                            <p class="p2">
-                                <span class="p2_l">货梯数量</span>
-                                <span class="p2_r">3</span>
-                                <input class="ckb" type="checkbox" name="che">
-                                <input class="ipt" type="text" placeholder="请输入货梯数量">
-                            </p>
-                            <p class="p1">
-                                <span class="p1_l">楼层系数</span>
-                                <span class="p1_r">2层系数</span>
-                                <input class="ckb" type="checkbox" name="che">
-                                <input class="ipt" type="text" placeholder="请输入楼层系数">
-                            </p>
-                            <p class="p2">
-                                <span class="p2_l">在楼栋中位置</span>
-                                <span class="p2_r">3</span>
-                                <input class="ckb" type="checkbox" name="che">
-                                <input class="ipt" type="text" placeholder="请输入在楼栋中位置">
-                            </p>
-                            <p class="p1">
-                                <span class="p1_l">产权房号</span>
-                                <span class="p1_r">xxxxxxx</span>
-                                <input class="ckb" type="checkbox" name="che">
-                                <input class="ipt" type="text" placeholder="请输入产权房号">
-                            </p>
-                            <p class="p2">
-                                <span class="p2_l">现状房号</span>
-                                <span class="p2_r">xxxxxx</span>
-                                <input class="ckb" type="checkbox" name="che">
-                                <input class="ipt" type="text" placeholder="请输入现状房号">
-                            </p>
-                            <p class="p1">
-                                <span class="p1_l">证载房屋类型</span>
-                                <span class="p1_r">新工房</span>
-                                <input class="ckb" type="checkbox" name="che">
-                                <input class="ipt" type="text" placeholder="请输入证载房屋类型">
-                            </p>
-                            <p class="p2">
-                                <span class="p2_l">证载房屋用途</span>
-                                <span class="p2_r">住宅</span>
-                                <input class="ckb" type="checkbox" name="che">
-                                <input class="ipt" type="text" placeholder="请输入证载房屋用途">
-                            </p>
-                            <p class="p1">
-                                <span class="p1_l">房屋产权性质</span>
-                                <span class="p1_r">商品房</span>
-                                <input class="ckb" type="checkbox" name="che">
-                                <select class="ipt" name="">
-                                    <option value="">商品房</option>
-                                    <option value="">已购公有住房</option>
-                                    <option value="">经济适用住房</option>
-                                    <option value="">限价商品住房</option>
-                                </select>
-                            </p>
-                            <p class="p2">
-                                <span class="p2_l">不动产单元号</span>
-                                <span class="p2_r">1</span>
-                                <input class="ckb" type="checkbox" name="che">
-                                <input class="ipt" type="text" placeholder="请输入不动产单元号">
-                            </p>
-                            <p class="p1">
-                                <span class="p1_l">户型</span>
-                                <span class="p1_r">二室一厅二卫一厨</span>
-                                <input class="ckb" type="checkbox" name="che">
-                                <input class="ipt" type="text" placeholder="请输入户型">
-                            </p>
-                            <p class="p2">
-                                <span class="p2_l">户型结构</span>
-                                <span class="p2_r">平层</span>
-                                <input class="ckb" type="checkbox" name="che">
-                                <input class="ipt" type="text" placeholder="请输入户型结构">
-                            </p>
-                            <p class="p1">
-                                <span class="p1_l">房屋主力朝向</span>
-                                <span class="p1_r">南</span>
-                                <input class="ckb" type="checkbox" name="che">
-                                <input class="ipt" type="text" placeholder="请输入房屋主力朝向">
-                            </p>
-                            <p class="p2">
-                                <span class="p2_l">地下建筑面积</span>
-                                <span class="p2_r">100m²</span>
-                                <input class="ckb" type="checkbox" name="che">
-                                <input class="ipt" type="text" placeholder="请输入地下建筑面积">
-                            </p>
-                            <p class="p1">
-                                <span class="p1_l">地下室面积</span>
-                                <span class="p1_r">100m²</span>
-                                <input class="ckb" type="checkbox" name="che">
-                                <input class="ipt" type="text" placeholder="请输入地下室面积">
-                            </p>
-                            <p class="p2">
-                                <span class="p2_l">地下室净高</span>
-                                <span class="p2_r">3m</span>
-                                <input class="ckb" type="checkbox" name="che">
-                                <input class="ipt" type="text" placeholder="请输入地下室净高">
-                            </p>
-                            <p class="p1">
-                                <span class="p1_l">是否开发商装修</span>
-                                <span class="p1_r">是，10000元/平方米</span>
-                                <input class="ckb" type="checkbox" name="che">
-                                <input class="ipt" type="text" placeholder="请输入是否开发商装修">
-                            </p>
-                            <p class="p2">
-                                <span class="p2_l">景观</span>
-                                <span class="p2_r">xxx,xxx,xxx</span>
-                                <input class="ckb" type="checkbox" name="che">
-                                <input class="ipt" type="text" placeholder="请输入景观">
-                            </p>
-                            <p class="p1">
-                                <span class="p1_l">商业业态</span>
-                                <span class="p1_r">xxxxxx</span>
-                                <input class="ckb" type="checkbox" name="che">
-                                <input class="ipt" type="text" placeholder="请输入商业业态">
-                            </p>
-                            <p class="p2">
-                                <span class="p2_l">部位</span>
-                                <span class="p2_r">xxxxxx</span>
-                                <input class="ckb" type="checkbox" name="che">
-                                <input class="ipt" type="text" placeholder="请输入部位">
-                            </p>
-                            <p class="p1">
-                                <span class="p1_l">铺位号</span>
-                                <span class="p1_r">xxxxxx</span>
-                                <input class="ckb" type="checkbox" name="che">
-                                <input class="ipt" type="text" placeholder="请输入铺位号">
-                            </p>
-                            <p class="p2">
-                                <span class="p2_l">房屋类型</span>
-                                <span class="p2_r">公寓</span>
-                                <input class="ckb" type="checkbox" name="che">
-                                <select class="ipt" name="">
-                                    <option value="">公寓</option>
-                                    <option value="">新公房</option>
-                                    <option value="">旧工房</option>
-                                    <option value="">商场</option>
-                                    <option value="">店铺</option>
-                                    <option value="">办公楼</option>
-                                    <option value="">工厂</option>
-                                    <option value="">简屋</option>
-                                    <option value="">搭建</option>
-                                    <option value="">车棚</option>
-                                    <option value="">泵房</option>
-                                </select>
-                            </p>
-                            <p class="p1">
-                                <span class="p1_l">开间</span>
-                                <span class="p1_r">4m</span>
-                                <input class="ckb" type="checkbox" name="che">
-                                <input class="ipt" type="text" placeholder="请输入开间">
-                            </p>
-                            <p class="p2">
-                                <span class="p2_l">开间数</span>
-                                <span class="p2_r">3</span>
-                                <input class="ckb" type="checkbox" name="che">
-                                <input class="ipt" type="text" placeholder="请输入开间数">
-                            </p>
-                            <p class="p1">
-                                <span class="p1_l">面宽</span>
-                                <span class="p1_r">12</span>
-                                <input class="ckb" type="checkbox" name="che">
-                                <input class="ipt" type="text" placeholder="请输入面宽">
-                            </p>
-                            <p class="p2">
-                                <span class="p2_l">进深</span>
-                                <span class="p2_r">XXX</span>
-                                <input class="ckb" type="checkbox" name="che">
-                                <input class="ipt" type="text" placeholder="请输入进深">
-                            </p>
-                            <p class="p1">
-                                <span class="p1_l">可使用车位数</span>
-                                <span class="p1_r">12</span>
-                                <input class="ckb" type="checkbox" name="che">
-                                <input class="ipt" type="text" placeholder="请输入可使用车位数">
-                            </p>
-                            <p class="p2">
-                                <span class="p2_l">临街状况</span>
-                                <span class="p2_r">内街</span>
-                                <input class="ckb" type="checkbox" name="che">
-                                <select class="ipt" name="">
-                                    <option value="">内街</option>
-                                    <option value="">外街</option>
-                                    <option value="">内部不临街</option>
-                                </select>
-                            </p>
-                            <p class="p3">
-                                <span class="p1_l">基础设施说明</span>
-                                <span class="p1_r">对水、电、煤等缺失注明；商水、商电、基本水电费要求说明；特殊要求（特定业态）说明</span>
-                                <input class="ckb" type="checkbox" name="che">
-                                <textarea class="tex" name="" cols="30" rows="10" placeholder="对水、电、煤等缺失注明；商水、商电、基本水电费要求说明；特殊要求（特定业态）说明"></textarea>
-                            </p>
-                            <p class="p3">
-                                <span class="p1_l">其他附属说明</span>
-                                <span class="p1_r">对天井、花园、阁楼等说明</span>
-                                <input class="ckb" type="checkbox" name="che">
-                                <textarea class="tex" name="" cols="30" rows="10" placeholder="对天井、花园、阁楼等说明"></textarea>
-                            </p>
-                            <p class="p3">
-                                <span class="p1_l">空间布局</span>
-                                <span class="p1_r">房型较差等</span>
-                                <input class="ckb" type="checkbox" name="che">
-                                <textarea class="tex" name="" cols="30" rows="10" placeholder="房型较差等情况说明"></textarea>
-                            </p>
-                            <div class="pic_box clearfix">
-                                <div class="pic_box1">
-                                    <div class="zzc1"></div>
-                                    <div class="zzc2"></div>
-                                    <img class="open" src="./img/lp.jpg" alt="">
-                                    <p>平面图<span>（4）</span></p>
-                                </div>
-                            </div>
-                            <div class="pic_box2">
-                                <span class="p1_l">现场照片</span>
-                                <div class="box_img">
-                                    <div class="sc" style="background:url('./img/join.gif') no-repeat center center;">
-                                        <input type="file" name="che">
-                                    </div>
-                                    <div class="new_img">
-                                        <img class="ni" src="./img/lp.jpg" alt="">
-                                        <img class="cse" src="./img/img_close.gif" alt="">
-                                    </div>
-                                </div>
-                                <input class="ckb" type="checkbox">
-                            </div>
-                            <p class="p3">
-                                <span class="p1_l">坐标</span>
-                                <span class="p1_r">12.2，20.2</span>
-                                <input class="ckb" type="checkbox" name="che">
-                                <input class="ipt ipt1" type="text" placeholder="请输入坐标">
-                                <input class="ipt ipt1" type="text" placeholder="请输入坐标">
-                            </p>
-                            <div id="container1"></div>
-                            <div class="btn">
-                                <button>确认修改</button>
-                            </div>
-                        </form>
+                    <div class="fw b clearfix" id="tab_house">
+                        
                     </div>
-                    <div class="pg b clearfix">
-                        <div class="title_name">
-                            <p class="tn">5</p>
-                            <p class="change change4 block">修改</p>
-                            <p class="change change4">返回</p>
-                            <p class="change_red">删除</p>
-                        </div>
-                        <form action="">
-                            <div class="r3_top_box">
-                                <div class="shangchuan">
-                                    导入数据
-                                    <input type="file">
-                                </div>
-                                <div class="all">
-                                    全选
-                                    <input class="all_ipt" type="checkbox">
-                                </div>
-                            </div>
-                            <p class="p1">
-                                <span class="p1_l">估价编号</span>
-                                <span class="p1_r">01</span>
-                                <input class="ckb" type="checkbox" name="che">
-                                <input class="ipt" type="text" placeholder="请输入估价编号">
-                            </p>
-                            <p class="p2">
-                                <span class="p2_l">估价期日</span>
-                                <span class="p2_r">2018-04-23</span>
-                                <input class="ckb" type="checkbox" name="che">
-                                <input class="ipt" type="text" placeholder="请输入估价期日">
-                            </p>
-                            <p class="p1">
-                                <span class="p1_l">实际房屋用途</span>
-                                <span class="p1_r">居住</span>
-                                <input class="ckb" type="checkbox" name="che">
-                                <select class="ipt" name="">
-                                    <option value="">居住</option>
-                                    <option value="">办公</option>
-                                    <option value="">商业经营</option>
-                                    <option value="">工业厂房</option>
-                                </select>
-                            </p>
-                            <p class="p2">
-                                <span class="p2_l">租赁情况</span>
-                                <span class="p2_r">新租</span>
-                                <input class="ckb" type="checkbox" name="che">
-                                <select class="ipt" name="">
-                                    <option value="">新租</option>
-                                    <option value="">续租</option>
-                                    <option value="">空置</option>
-                                </select>
-                            </p>
-                            <p class="p1">
-                                <span class="p1_l">不动产权证号</span>
-                                <span class="p1_r">xxxxxxxx</span>
-                                <input class="ckb" type="checkbox" name="che">
-                                <input class="ipt" type="text" placeholder="请输入不动产权证号">
-                            </p>
-                            <p class="p2">
-                                <span class="p2_l">权利人</span>
-                                <span class="p2_r">xxxx</span>
-                                <input class="ckb" type="checkbox" name="che">
-                                <input class="ipt" type="text" placeholder="请输入权利人">
-                            </p>
-                            <p class="p1">
-                                <span class="p1_l">评估日租金</span>
-                                <span class="p1_r">xxx元/m²/天</span>
-                                <input class="ckb" type="checkbox" name="che">
-                                <input class="ipt" type="text" placeholder="请输入评估日租金">
-                            </p>
-                            <p class="p2">
-                                <span class="p2_l">评估月租金</span>
-                                <span class="p2_r">xxx元/套/月</span>
-                                <input class="ckb" type="checkbox" name="che">
-                                <input class="ipt" type="text" placeholder="请输入评估月租金">
-                            </p>
-                            <p class="p1">
-                                <span class="p1_l">评估年租金</span>
-                                <span class="p1_r">xxx元/套/年</span>
-                                <input class="ckb" type="checkbox" name="che">
-                                <input class="ipt" type="text" placeholder="请输入评估年租金">
-                            </p>
-                            <p class="p2">
-                                <span class="p2_l">1F日租金</span>
-                                <span class="p2_r">xxx元/m²/天</span>
-                                <input class="ckb" type="checkbox" name="che">
-                                <input class="ipt" type="text" placeholder="请输入1F日租金">
-                            </p>
-                            <p class="p1">
-                                <span class="p1_l">各部位日租金</span>
-                                <span class="p1_r">xxx元/m²/天</span>
-                                <input class="ckb" type="checkbox" name="che">
-                                <input class="ipt" type="text" placeholder="请输入各部位日租金">
-                            </p>
-                            <p class="p2">
-                                <span class="p2_l">评估年涨幅</span>
-                                <span class="p2_r">xx%</span>
-                                <input class="ckb" type="checkbox" name="che">
-                                <input class="ipt" type="text" placeholder="请输入评估年涨幅">
-                            </p>
-                            <p class="p1">
-                                <span class="p1_l">房地产单价</span>
-                                <span class="p1_r">xx元/m²</span>
-                                <input class="ckb" type="checkbox" name="che">
-                                <input class="ipt" type="text" placeholder="请输入房地产单价">
-                            </p>
-                            <p class="p2">
-                                <span class="p2_l">房地产单价时点</span>
-                                <span class="p2_r">1</span>
-                                <input class="ckb" type="checkbox" name="che">
-                                <input class="ipt" type="text" placeholder="请输入房地产单价时点">
-                            </p>
-                            <p class="p1">
-                                <span class="p1_l">房地产价格来源</span>
-                                <span class="p1_r">xxxxxx</span>
-                                <input class="ckb" type="checkbox" name="che">
-                                <input class="ipt" type="text" placeholder="请输入房地产价格来源">
-                            </p>
-                            <p class="p2">
-                                <span class="p2_l">估价期日时的约定租金</span>
-                                <span class="p2_r">XXXXXX</span>
-                                <input class="ckb" type="checkbox" name="che">
-                                <input class="ipt" type="text" placeholder="请输入估价期日时的约定租金">
-                            </p>
-                            <p class="p3">
-                                <span class="p1_l">租金内涵</span>
-                                <span class="p1_r">xxxxxx</span>
-                                <input class="ckb" type="checkbox" name="che">
-                                <textarea class="tex" name="" cols="30" rows="10" placeholder="租期无涨幅（在初始租金内考虑）等文字说明"></textarea>
-                            </p>
-                            <div class="btn">
-                                <button>确认修改</button>
-                            </div>
-                        </form>
+                    <div class="pg b clearfix" id="tab_assess">
+                        
                     </div>
-                    <div class="zy b clearfix">
-                        <div class="title_name">
-                            <p class="tn">6</p>
-                            <p class="change change5 block">修改</p>
-                            <p class="change change5">返回</p>
-                            <p class="change_red">删除</p>
-                        </div>
-                        <form action="">
-                            <div class="r3_top_box">
-                                <div class="shangchuan">
-                                    导入数据
-                                    <input type="file">
-                                </div>
-                                <div class="all">
-                                    全选
-                                    <input class="all_ipt" type="checkbox">
-                                </div>
-                            </div>
-                            <p class="p1">
-                                <span class="p1_l">估价编号</span>
-                                <span class="p1_r">01</span>
-                                <input class="ckb" type="checkbox" name="che">
-                                <input class="ipt" type="text" placeholder="请输入估价编号">
-                            </p>
-                            <p class="p2">
-                                <span class="p2_l">登记地址</span>
-                                <span class="p2_r">上海市浦东新区金科路2889弄C座11楼</span>
-                                <input class="ckb" type="checkbox" name="che">
-                                <input class="ipt" type="text" placeholder="请输入登记地址">
-                            </p>
-                            <p class="p1">
-                                <span class="p1_l">管理单位</span>
-                                <span class="p1_r">xxxxxxxxxxxxxxxx</span>
-                                <input class="ckb" type="checkbox" name="che">
-                                <input class="ipt" type="text" placeholder="请输入管理单位">
-                            </p>
-                            <p class="p2">
-                                <span class="p2_l">管理单位档案号</span>
-                                <span class="p2_r">xxxxxxxxxxxxxxxx</span>
-                                <input class="ckb" type="checkbox" name="che">
-                                <input class="ipt" type="text" placeholder="请输入单位档案号">
-                            </p>
-                            <p class="p1">
-                                <span class="p1_l">合同编号</span>
-                                <span class="p1_r">xxxxxxxx</span>
-                                <input class="ckb" type="checkbox" name="che">
-                                <input class="ipt" type="text" placeholder="请输入合同编号">
-                            </p>
-                            <p class="p2">
-                                <span class="p2_l">租赁面积</span>
-                                <span class="p2_r">xxxx</span>
-                                <input class="ckb" type="checkbox" name="che">
-                                <input class="ipt" type="text" placeholder="请输入租赁面积">
-                            </p>
-                            <p class="p1">
-                                <span class="p1_l">出租方</span>
-                                <span class="p1_r">xxx</span>
-                                <input class="ckb" type="checkbox" name="che">
-                                <input class="ipt" type="text" placeholder="请输入出租方">
-                            </p>
-                            <p class="p2">
-                                <span class="p2_l">承租方</span>
-                                <span class="p2_r">xxx</span>
-                                <input class="ckb" type="checkbox" name="che">
-                                <input class="ipt" type="text" placeholder="请输入承租方">
-                            </p>
-                            <p class="p1">
-                                <span class="p1_l">上级商户</span>
-                                <span class="p1_r">工商银行</span>
-                                <input class="ckb" type="checkbox" name="che">
-                                <input class="ipt" type="text" placeholder="请输入上级商户">
-                            </p>
-                            <p class="p2">
-                                <span class="p2_l">商户</span>
-                                <span class="p2_r">工商银行正大广场支行</span>
-                                <input class="ckb" type="checkbox" name="che">
-                                <input class="ipt" type="text" placeholder="请输入商户">
-                            </p>
-                            <p class="p1">
-                                <span class="p1_l">商户等级</span>
-                                <span class="p1_r">主力店</span>
-                                <input class="ckb" type="checkbox" name="che">
-                                <input class="ipt" type="text" placeholder="请输入商户等级">
-                            </p>
-                            <p class="p2">
-                                <span class="p2_l">经营业态</span>
-                                <span class="p2_r">xx</span>
-                                <input class="ckb" type="checkbox" name="che">
-                                <input class="ipt" type="text" placeholder="请输入经营业态">
-                            </p>
-                            <p class="p1">
-                                <span class="p1_l">租期</span>
-                                <span class="p1_r">xx</span>
-                                <input class="ckb" type="checkbox" name="che">
-                                <input class="ipt" type="text" placeholder="请输入租期">
-                            </p>
-                            <p class="p2">
-                                <span class="p2_l">合同起止日期</span>
-                                <span class="p2_r">2018/04/23-2019/04/23</span>
-                                <input class="ckb" type="checkbox" name="che">
-                                <input class="ipt" type="text" placeholder="请输入合同起止日期">
-                            </p>
-                            <p class="p1">
-                                <span class="p1_l">签约（起始）日租金</span>
-                                <span class="p1_r">xxx元/m²/天</span>
-                                <input class="ckb" type="checkbox" name="che">
-                                <input class="ipt" type="text" placeholder="请输入签约（起始）日租金">
-                            </p>
-                            <p class="p2">
-                                <span class="p2_l">签约（起始）月租金</span>
-                                <span class="p2_r">xxx元/套/月</span>
-                                <input class="ckb" type="checkbox" name="che">
-                                <input class="ipt" type="text" placeholder="请输入签约（起始）月租金">
-                            </p>
-                            <p class="p1">
-                                <span class="p1_l">折合1F日租金</span>
-                                <span class="p1_r">xxx元/m²/天</span>
-                                <input class="ckb" type="checkbox" name="che">
-                                <input class="ipt" type="text" placeholder="请输入折合1F日租金">
-                            </p>
-                            <p class="p2">
-                                <span class="p2_l">租金是否含物业费</span>
-                                <span class="p2_r">是</span>
-                                <input class="ckb" type="checkbox" name="che">
-                                <input class="ipt" type="text" placeholder="请输入租金是否含物业费">
-                            </p>
-                            <p class="p1">
-                                <span class="p1_l">涨幅方式</span>
-                                <span class="p1_r">第三年涨6.25%</span>
-                                <input class="ckb" type="checkbox" name="che">
-                                <input class="ipt" type="text" placeholder="请输入涨幅方式">
-                            </p>
-                            <p class="p2">
-                                <span class="p2_l">租期内平均年涨幅</span>
-                                <span class="p2_r">xx%</span>
-                                <input class="ckb" type="checkbox" name="che">
-                                <input class="ipt" type="text" placeholder="请输入租期内平均年涨幅">
-                            </p>
-                            <p class="p1">
-                                <span class="p1_l">租期内各期日租金</span>
-                                <span class="p1_r">2018.4.23-2018.4.23xx元/m²·天</span>
-                                <input class="ckb" type="checkbox" name="che">
-                                <input class="ipt" type="text" placeholder="请输入租期内各期日租金">
-                            </p>
-                            <p class="p2">
-                                <span class="p2_l">押金</span>
-                                <span class="p2_r">xx</span>
-                                <input class="ckb" type="checkbox" name="che">
-                                <input class="ipt" type="text" placeholder="请输入押金">
-                            </p>
-                            <p class="p1">
-                                <span class="p1_l">租期内各期月租金</span>
-                                <span class="p1_r">2018.4.23-2018.4.23xx元/套·月</span>
-                                <input class="ckb" type="checkbox" name="che">
-                                <input class="ipt" type="text" placeholder="请输入租期内各期月租金">
-                            </p>
-                            <p class="p2">
-                                <span class="p2_l">免租期（月）</span>
-                                <span class="p2_r">xx</span>
-                                <input class="ckb" type="checkbox" name="che">
-                                <input class="ipt" type="text" placeholder="请输入免租期（月）">
-                            </p>
-                            <p class="p1">
-                                <span class="p1_l">当前租金</span>
-                                <span class="p1_r">xxxxxx</span>
-                                <input class="ckb" type="checkbox" name="che">
-                                <input class="ipt" type="text" placeholder="请输入当前租金">
-                            </p>
-                            <p class="p2">
-                                <span class="p2_l">付款方式</span>
-                                <span class="p2_r">付三押二</span>
-                                <input class="ckb" type="checkbox" name="che">
-                                <input class="ipt" type="text" placeholder="请输入付款方式">
-                            </p>
-                            <p class="p3">
-                                <span class="p1_l">其他</span>
-                                <span class="p1_r">xxx</span>
-                                <input class="ckb" type="checkbox" name="che">
-                                <textarea class="tex" name="" cols="30" rows="10" placeholder="租期无涨幅（在初始租金内考虑）等文字说明"></textarea>
-                            </p>
-                            <div class="btn">
-                                <button>确认修改</button>
-                            </div>
-                        </form>
+                    <div class="zy b clearfix" id="tab_lease">
+                        
                     </div>
                 </div>
             </div>
@@ -1842,6 +476,1374 @@
 
 </script>
 <script type="text/javascript" src="http://webapi.amap.com/demos/js/liteToolbar.js"></script>
+<script type="text/javascript" src="./js/07201716.js"></script>
+<script>
+    $(document).ready(function(){
+        bs.checkAuth();
+        bs.loadProject();
+        $('#query1').on("click", function(e){
+            e.preventDefault();
+            var v = $('#q1text').val();
+            req = JSON.stringify({"token":bs.auth.data.token,"roleId":bs.project[0].roleId,"conditions":v});
+            bs.ajaxfuncURL ('project/search',req,bs.auth.data.token,cbprjsrch);
+        });
+        function cbprjsrch(res){
+            if(res.data.pList.length>0){
+            }else{
+                location.href="sorry.html";
+            }
+        }
+        
+        $(".filterinput").each(function() {
+            $(this).on("change", function(){
+                var k = $(this).attr('data');
+                var v = $(this).val();
+                
+                filtered = $.grep( estate_data.result, function( n, i ) { return n[k]===v;})
+                $("#estate_list").find('.r3_c').remove();
+                $( "#est_item" ).tmpl( filtered ).appendTo( "#estate_list" );
+            });
+            
+        });
+        $('#form_estate').on('submit', function(e) { 
+            e.preventDefault();  //prevent form from submitting
+            var data = JSON.stringify(objectifyForm($('#form_estate').serializeArray()));
+            bs.ajaxfuncURL ('estate/update',data,auth.data.token,estcallback);
+        });
+        $('#form_building').on('submit', function(e) { 
+            e.preventDefault();  //prevent form from submitting
+            var data = JSON.stringify(objectifyForm($('#form_building').serializeArray()));
+            bs.ajaxfuncURL ('building/update',data,auth.data.token,buildingcallback);
+        });
+        $('#form_unit').on('submit', function(e) { 
+            e.preventDefault();  //prevent form from submitting
+            var data = JSON.stringify(objectifyForm($('#form_unit').serializeArray()));
+            bs.ajaxfuncURL ('units/update',data,auth.data.token,unitcallback);
+        });
+        $('#form_house').on('submit', function(e) { 
+            e.preventDefault();  //prevent form from submitting
+            var data = JSON.stringify(objectifyForm($('#form_house').serializeArray()));
+            bs.ajaxfuncURL ('houses/update',data,auth.data.token,housecallback);
+        });
+        $('#form_assess').on('submit', function(e) { 
+            e.preventDefault();  //prevent form from submitting
+            var data = JSON.stringify(objectifyForm($('#form_assess').serializeArray()));
+            bs.ajaxfuncURL ('houses/assessment/update',data,auth.data.token,assesscallback);
+        });
+        $('#form_lease').on('submit', function(e) { 
+            e.preventDefault();  //prevent form from submitting
+            var data = JSON.stringify(objectifyForm($('#form_lease').serializeArray()));
+            bs.ajaxfuncURL ('houses/leases/update',data,auth.data.token,leasecallback);
+        });
+    });
+    function objectifyForm(formArray) {
+        var returnArray = {};
+        for (var i = 0; i < formArray.length; i++){
+            returnArray[formArray[i]['name']] = formArray[i]['value'];
+        }
+        return returnArray;
+    }
+    function estcallback(res){
+        console.log(res);
+    }
+    function unitcallback(res){
+        console.log(res);
+    }
+    function buildingcallback(res){
+        console.log(res);
+    }
+    function housecallback(res){
+        console.log(res);
+    }
+    function assesscallback(res){
+        console.log(res);
+    }
+    function leasecallback(res){
+        console.log(res);
+    }
+    
+    $('#query1').on("click", function(e){
+        var v = $('#q1text').val();
+        filtered = $.grep( proj_data.result, function( n, i ) { return n.id==v || n.pj_name==v;})
+        $("#pjlist").find('.pji').remove();
+        $( "#pjtmpl_left" ).tmpl( filtered ).appendTo( "#pjlist" );
+        e.preventDefault();
+    });
+    $(document).on("click", ".pji", function (event) { 
+	$("#pjInfo").find('.r1_1').remove();
+	var pj = (bs.project);
+	var result = pj.filter(function( obj ) {
+	    return obj.id == $(event.currentTarget).attr("data-id");
+	});
+    $( "#pjinfo" ).tmpl( result[0] ).appendTo( "#pjInfo" );
+});
 
-</body>
+
+</script>
+<script id="pjtmpl_left" type="text/x-jquery-tmpl">
+	<li class="pji" data-id="${id}" data-role="${roleId}"><a class="clearfix" href="javascript:;"><span class="span1">${pjName}</span><span class="span2">${pjCreateTime}</span></a></li>
+</script>
+<script id="pjtmpl_opt" type="text/x-jquery-tmpl">
+	<option value="${id}">${pjName}</option>
+</script>
+<script id="pjinfo" type="text/x-jquery-tmpl">
+	<div class="r1_1 clearfix">
+		<p class="lp clearfix">
+			<span class="span1">项目编号</span>
+			<span class="span2">${id}</span>
+		</p>
+		<p class="rp clearfix">
+			<span class="span1">信息时点</span>
+			<span class="span2">${pjAssessTime}</span>
+		</p>
+	</div>
+	<div class="r1_1 clearfix">
+		<p class="lp clearfix">
+			<span class="span1">委托方</span>
+			<span class="span2">${pjBailor}</span>
+		</p>
+		<p class="rp clearfix">
+			<span class="span1">项目名称</span>
+			<span class="span2">${pjName}</span>
+		</p>
+	</div>
+	<div class="r1_1 clearfix">
+		<p class="lp clearfix">
+			<span class="span1">记录时间</span>
+			<span class="span2">${pjCreateTime}</span>
+		</p>
+		<p class="rp clearfix">
+			<span class="span1">记录人员</span>
+			<span class="span2">${pjOwnId}</span>
+		</p>
+	</div>
+</script>
+<script id="lease_detail" type="text/x-jquery-tmpl">
+    <div class="title_name">
+        <p class="tn">6</p>
+        <p class="change change5 block bedt">修改</p>
+        <p class="change change5 brtn">返回</p>
+        <p class="change_red">删除</p>
+    </div>
+    <form action="" id="form_lease">
+        <div class="r3_top_box">
+            <div class="shangchuan">
+                导入数据
+                <input type="file">
+            </div>
+            <div class="all">
+                全选
+                <input class="all_ipt" type="checkbox">
+            </div>
+        </div>
+        <p class="p1">
+            <span class="p1_l">估价编号</span>
+            <span class="p1_r">${leasesSN}</span>
+            <input class="ckb" type="checkbox" name="che">
+            <input class="ipt" type="text" name="leasesSN" value="${leasesSN}">
+        </p>
+        <p class="p2">
+            <span class="p2_l">登记地址</span>
+            <span class="p2_r">${leAddress}</span>
+            <input class="ckb" type="checkbox" name="che">
+            <input class="ipt" type="text" name="leAddress" value="${leAddress}">
+        </p>
+        <p class="p1">
+            <span class="p1_l">管理单位</span>
+            <span class="p1_r">${leManagerCompary}</span>
+            <input class="ckb" type="checkbox" name="che">
+            <input class="ipt" type="text" name="leManagerCompary" value="${leManagerCompary}">
+        </p>
+        <p class="p2">
+            <span class="p2_l">管理单位档案号</span>
+            <span class="p2_r">${leManagerId}</span>
+            <input class="ckb" type="checkbox" name="che">
+            <input class="ipt" type="text" name="leManagerId" value="${leManagerId}">
+        </p>
+        <p class="p1">
+            <span class="p1_l">合同编号</span>
+            <span class="p1_r">${leRentSN}</span>
+            <input class="ckb" type="checkbox" name="che">
+            <input class="ipt" type="text" name="leRentSN" value="${leRentSN}">
+        </p>
+        <p class="p2">
+            <span class="p2_l">租赁面积</span>
+            <span class="p2_r"></span>
+            <input class="ckb" type="checkbox" name="che">
+            <input class="ipt" type="text" name="rentArea" value="">
+        </p>
+        <p class="p1">
+            <span class="p1_l">出租方</span>
+            <span class="p1_r">${leLessorId}</span>
+            <input class="ckb" type="checkbox" name="che">
+            <input class="ipt" type="text" name="leLessorId" value="${leLessorId}">
+        </p>
+        <p class="p2">
+            <span class="p2_l">承租方</span>
+            <span class="p2_r">${leTenantId}</span>
+            <input class="ckb" type="checkbox" name="che">
+            <input class="ipt" type="text" name="leTenantId" value="${leTenantId}">
+        </p>
+        <p class="p1">
+            <span class="p1_l">上级商户</span>
+            <span class="p1_r">${leBusiness}</span>
+            <input class="ckb" type="checkbox" name="che">
+            <input class="ipt" type="text" name="leBusiness" value="${leBusiness}">
+        </p>
+        <p class="p2">
+            <span class="p2_l">商户</span>
+            <span class="p2_r"></span>
+            <input class="ckb" type="checkbox" name="che">
+            <input class="ipt" type="text" name="business">
+        </p>
+        <p class="p1">
+            <span class="p1_l">商户等级</span>
+            <span class="p1_r">${bLevel}</span>
+            <input class="ckb" type="checkbox" name="che">
+            <input class="ipt" type="text" name="bLevel">
+        </p>
+        <p class="p2">
+            <span class="p2_l">经营业态</span>
+            <span class="p2_r">${leBusinessType}</span>
+            <input class="ckb" type="checkbox" name="che">
+            <input class="ipt" type="text" name="leBusinessType" value="${leBusinessType}">
+        </p>
+        <p class="p1">
+            <span class="p1_l">租期</span>
+            <span class="p1_r">${leTerm}</span>
+            <input class="ckb" type="checkbox" name="che">
+            <input class="ipt" type="text" name="leTerm" value="${leTerm}">
+        </p>
+        <p class="p2">
+            <span class="p2_l">合同起止日期</span>
+            <span class="p2_r">${leContractStart}</span>
+            <input class="ckb" type="checkbox" name="che">
+            <input class="ipt" type="text" name="leContractStart" value="${leContractStart}">
+        </p>
+        <p class="p1">
+            <span class="p1_l">签约（起始）日租金</span>
+            <span class="p1_r">${leBeginDAmount}/m²/天</span>
+            <input class="ckb" type="checkbox" name="che">
+            <input class="ipt" type="text" name="leBeginDAmount" value="${leBeginDAmount}">
+        </p>
+        <p class="p2">
+            <span class="p2_l">签约（起始）月租金</span>
+            <span class="p2_r">${leBeginMAmount}元/套/月</span>
+            <input class="ckb" type="checkbox" name="che">
+            <input class="ipt" type="text" name="leBeginMAmount" value="${leBeginMAmount}">
+        </p>
+        <p class="p1">
+            <span class="p1_l">折合1F日租金</span>
+            <span class="p1_r">${le1FDAcount}元/m²/天</span>
+            <input class="ckb" type="checkbox" name="che">
+            <input class="ipt" type="text" name="le1FDAcount" value="${le1FDAcount}">
+        </p>
+        <p class="p2">
+            <span class="p2_l">租金是否含物业费</span>
+            <span class="p2_r">${leFeeInclude}</span>
+            <input class="ckb" type="checkbox" name="che">
+            <input class="ipt" type="text" name="leFeeInclude" value="${leFeeInclude}">
+        </p>
+        <p class="p1">
+            <span class="p1_l">涨幅方式</span>
+            <span class="p1_r">${leIncreaseWay}</span>
+            <input class="ckb" type="checkbox" name="che">
+            <input class="ipt" type="text" name="leIncreaseWay" value="${leIncreaseWay}">
+        </p>
+        <p class="p2">
+            <span class="p2_l">租期内平均年涨幅</span>
+            <span class="p2_r">${leAVEYRate}</span>
+            <input class="ckb" type="checkbox" name="che">
+            <input class="ipt" type="text" name="leAVEYRate" value="${leAVEYRate}">
+        </p>
+        <p class="p1">
+            <span class="p1_l">租期内各期日租金</span>
+            <span class="p1_r">${leRentAmount}元/m²·天</span>
+            <input class="ckb" type="checkbox" name="che">
+            <input class="ipt" type="text" name="leRentAmount" value="${leRentAmount}">
+        </p>
+        <p class="p2">
+            <span class="p2_l">押金</span>
+            <span class="p2_r">${lePledge}</span>
+            <input class="ckb" type="checkbox" name="che">
+            <input class="ipt" type="text" name="lePledge" value="${lePledge}">
+        </p>
+        <p class="p1">
+            <span class="p1_l">租期内各期月租金</span>
+            <span class="p1_r">2018.4.23-2018.4.23xx元/套·月</span>
+            <input class="ckb" type="checkbox" name="che">
+            <input class="ipt" type="text" placeholder="请输入租期内各期月租金">
+        </p>
+        <p class="p2">
+            <span class="p2_l">免租期（月）</span>
+            <span class="p2_r">${leMFreerent}</span>
+            <input class="ckb" type="checkbox" name="che">
+            <input class="ipt" type="text" name="leMFreerent" value="${leMFreerent}">
+        </p>
+        <p class="p1">
+            <span class="p1_l">当前租金</span>
+            <span class="p1_r">xxxxxx</span>
+            <input class="ckb" type="checkbox" name="che">
+            <input class="ipt" type="text" placeholder="请输入当前租金">
+        </p>
+        <p class="p2">
+            <span class="p2_l">付款方式</span>
+            <span class="p2_r">${lePaymentType}</span>
+            <input class="ckb" type="checkbox" name="che">
+            <input class="ipt" type="text" name="lePaymentType" value="${lePaymentType}">
+        </p>
+        <p class="p3">
+            <span class="p1_l">其他</span>
+            <span class="p1_r">${leOther}</span>
+            <input class="ckb" type="checkbox" name="che">
+            <textarea class="tex" name="leOther" cols="30" rows="10" placeholder="租期无涨幅（在初始租金内考虑）等文字说明">${leOther}</textarea>
+        </p>
+        <div class="btn">
+            <button id="leaseEdit">确认修改</button>
+        </div>
+    </form>
+</script>
+<script id="assess_detail" type="text/x-jquery-tmpl">
+    <div class="title_name">
+        <p class="tn">5</p>
+        <p class="change change4 block bedt">修改</p>
+        <p class="change change4 brtn">返回</p>
+        <p class="change_red">删除</p>
+    </div>
+    <form action="" id="form_assess">
+        <div class="r3_top_box">
+            <div class="shangchuan">
+                导入数据
+                <input type="file">
+            </div>
+            <div class="all">
+                全选
+                <input class="all_ipt" type="checkbox">
+            </div>
+        </div>
+        <p class="p1">
+            <span class="p1_l">估价编号</span>
+            <span class="p1_r">${amSN}</span>
+            <input class="ckb" type="checkbox" name="che">
+            <input class="ipt" type="text" name="amSN" value="${amSN}">
+        </p>
+        <p class="p2">
+            <span class="p2_l">估价期日</span>
+            <span class="p2_r">${amCreateTime}</span>
+            <input class="ckb" type="checkbox" name="che">
+            <input class="ipt" type="text" name="amCreateTime" value="${amCreateTime}">
+        </p>
+        <p class="p1">
+            <span class="p1_l">实际房屋用途</span>
+            <span class="p1_r">${amHousePurpose}</span>
+            <input class="ckb" type="checkbox" name="che">
+            <select class="ipt" name="amHousePurpose">
+                <option {{if amHousePurpose === "居住"}}selected="selected"{{/if}} value="1">居住</option>
+                <option {{if amHousePurpose === "办公"}}selected="selected"{{/if}} value="2">办公</option>
+                <option {{if amHousePurpose === "商业经营"}}selected="selected"{{/if}} value="3">商业经营</option>
+                <option {{if amHousePurpose === "工业厂房"}}selected="selected"{{/if}} value="4">工业厂房</option>
+            </select>
+        </p>
+        <p class="p2">
+            <span class="p2_l">租赁情况</span>
+            <span class="p2_r">${rentStatus}</span>
+            <input class="ckb" type="checkbox" name="che">
+            <select class="ipt" name="rentStatus">
+                <option {{if rentStatus === "新租"}}selected="selected"{{/if}} value="1">新租</option>
+                <option {{if rentStatus === "续租"}}selected="selected"{{/if}} value="2">续租</option>
+                <option {{if rentStatus === "空置"}}selected="selected"{{/if}} value="3">空置</option>
+            </select>
+        </p>
+        <p class="p1">
+            <span class="p1_l">不动产权证号</span>
+            <span class="p1_r">${amHouseSN}</span>
+            <input class="ckb" type="checkbox" name="che">
+            <input class="ipt" type="text" name="amHouseSN" value="${amHouseSN}">
+        </p>
+        <p class="p2">
+            <span class="p2_l">权利人</span>
+            <span class="p2_r">${amObligee}</span>
+            <input class="ckb" type="checkbox" name="che">
+            <input class="ipt" type="text" am="amOblicgee" value="${amObligee}">
+        </p>
+        <p class="p1">
+            <span class="p1_l">评估日租金</span>
+            <span class="p1_r">${amRentDaily}元/m²/天</span>
+            <input class="ckb" type="checkbox" name="che">
+            <input class="ipt" type="text" name="amRentDaily" value="${amRentDaily}">
+        </p>
+        <p class="p2">
+            <span class="p2_l">评估月租金</span>
+            <span class="p2_r">${amRentMonthly}元/套/月</span>
+            <input class="ckb" type="checkbox" name="che">
+            <input class="ipt" type="text" name="amRentMonthly" value="${amRentMonthly}">
+        </p>
+        <p class="p1">
+            <span class="p1_l">评估年租金</span>
+            <span class="p1_r">${amRentYearly}元/套/年</span>
+            <input class="ckb" type="checkbox" name="che">
+            <input class="ipt" type="text" name="amRentYearly" value="${amRentYearly}">
+        </p>
+        <p class="p2">
+            <span class="p2_l">1F日租金</span>
+            <span class="p2_r">${amRentDaily1F}元/m²/天</span>
+            <input class="ckb" type="checkbox" name="che">
+            <input class="ipt" type="text" name="amRentDaily1F" value="${amRentDaily1F}">
+        </p>
+        <p class="p1">
+            <span class="p1_l">各部位日租金</span>
+            <span class="p1_r">元/m²/天</span>
+            <input class="ckb" type="checkbox" name="che">
+            <input class="ipt" type="text" name="" value="">
+        </p>
+        <p class="p2">
+            <span class="p2_l">评估年涨幅</span>
+            <span class="p2_r">${amIncreaseYearly}</span>
+            <input class="ckb" type="checkbox" name="che">
+            <input class="ipt" type="text" name="amIncreaseYearly" value="${amIncreaseYearly}">
+        </p>
+        <p class="p1">
+            <span class="p1_l">房地产单价</span>
+            <span class="p1_r">${amPerPrices}元/m²</span>
+            <input class="ckb" type="checkbox" name="che">
+            <input class="ipt" type="text" name="amPerPrices" value="${amPerPrices}">
+        </p>
+        <p class="p2">
+            <span class="p2_l">房地产单价时点</span>
+            <span class="p2_r">${amPriceTime}</span>
+            <input class="ckb" type="checkbox" name="che">
+            <input class="ipt" type="text" name="amPriceTime" value="${amPriceTime}">
+        </p>
+        <p class="p1">
+            <span class="p1_l">房地产价格来源</span>
+            <span class="p1_r">${amPriceSource}</span>
+            <input class="ckb" type="checkbox" name="che">
+            <input class="ipt" type="text" name="amPriceSource" value="${amPriceSource}">
+        </p>
+        <p class="p2">
+            <span class="p2_l">估价期日时的约定租金</span>
+            <span class="p2_r">${amAssessPrice}</span>
+            <input class="ckb" type="checkbox" name="che">
+            <input class="ipt" type="text" name="amAssessPrice" value="${amAssessPrice}">
+        </p>
+        <p class="p3">
+            <span class="p1_l">租金内涵</span>
+            <span class="p1_r">${amRentMeaning}</span>
+            <input class="ckb" type="checkbox" name="che">
+            <textarea class="tex" name="amRentMeaning" cols="30" rows="10" placeholder="租期无涨幅（在初始租金内考虑）等文字说明">${amRentMeaning}</textarea>
+        </p>
+        <div class="btn">
+            <button id="assessEdit">确认修改</button>
+        </div>
+    </form>
+</script>
+<script id="house_detail" type="text/x-jquery-tmpl">
+    <div class="title_name">
+        <p class="tn">4</p>
+        <p class="change change3 block bedt">修改</p>
+        <p class="change change3 brtn">返回</p>
+    </div>
+    <form action="" id="form_house">
+        <div class="r3_top_box">
+            <div class="shangchuan">
+                导入数据
+                <input type="file">
+            </div>
+            <div class="all">
+                全选
+                <input class="all_ipt" type="checkbox">
+            </div>
+        </div>
+        <p class="p1">
+            <span class="p1_l">房屋编号</span>
+            <span class="p1_r">${houseSN}</span>
+            <input class="ckb" type="checkbox" name="che">
+            <input class="ipt" type="text" name="houseSN" value="${houseSN}">
+        </p>
+        <p class="p2">
+            <span class="p2_l">建筑面积</span>
+            <span class="p2_r">${houseArea}m²</span>
+            <input class="ckb" type="checkbox" name="che">
+            <input class="ipt" type="text" name="houseArea" value="${houseArea}">
+        </p>
+        <p class="p1">
+            <span class="p1_l">使用面积</span>
+            <span class="p1_r">${useableArea}m²</span>
+            <input class="ckb" type="checkbox" name="che">
+            <input class="ipt" type="text" name="useableArea" value="${useableArea}">
+        </p>
+        <p class="p2">
+            <span class="p2_l">套内面积</span>
+            <span class="p2_r">${insideArea}m²</span>
+            <input class="ckb" type="checkbox" name="che">
+            <input class="ipt" type="text" name="insideArea" value="${insideArea}">
+        </p>
+        <p class="p1">
+            <span class="p1_l">各层部位面积</span>
+            <span class="p1_r">${houseLayerArea}m²</span>
+            <input class="ckb" type="checkbox" name="che">
+            <input class="ipt" type="text" name="houseLayerArea" value="${houseLayerArea}">
+        </p>
+        <p class="p2">
+            <span class="p2_l">得房率</span>
+            <span class="p2_r">${roomRate}%</span>
+            <input class="ckb" type="checkbox" name="che">
+            <input class="ipt" type="text" name="roomRate" value="${roomRate}">
+        </p>
+        <p class="p1">
+            <span class="p1_l">入住率</span>
+            <span class="p1_r">${accupancyRate}%</span>
+            <input class="ckb" type="checkbox" name="che">
+            <input class="ipt" type="text" name="accupancyRate" value="${accupancyRate}">
+        </p>
+        <p class="p2">
+            <span class="p2_l">标准层数</span>
+            <span class="p2_r">${layerLabel}层</span>
+            <input class="ckb" type="checkbox" name="che">
+            <input class="ipt" type="text" name="layerLabel" value="${layerLabel}">
+        </p>
+        <p class="p1">
+            <span class="p1_l">实际层数</span>
+            <span class="p1_r">${layerReal}层</span>
+            <input class="ckb" type="checkbox" name="che">
+            <input class="ipt" type="text" name="layerReal" value="${layerReal}">
+        </p>
+        <p class="p2">
+            <span class="p2_l">层高</span>
+            <span class="p2_r">${layerHeight}m</span>
+            <input class="ckb" type="checkbox" name="che">
+            <input class="ipt" type="text" name="layerHeight" value="${layerHeight}">
+        </p>
+        <p class="p1">
+            <span class="p1_l">净高</span>
+            <span class="p1_r">${clearHeight}m</span>
+            <input class="ckb" type="checkbox" name="che">
+            <input class="ipt" type="text" name="clearHeight" value="${clearHeight}">
+        </p>
+        <p class="p2">
+            <span class="p2_l">客梯数量</span>
+            <span class="p2_r">${liftCounts}</span>
+            <input class="ckb" type="checkbox" name="che">
+            <input class="ipt" type="text" name="liftCounts" value="${liftCounts}">
+        </p>
+        <p class="p1">
+            <span class="p1_l">客梯品牌</span>
+            <span class="p1_r">${liftBrand}</span>
+            <input class="ckb" type="checkbox" name="che">
+            <input class="ipt" type="text" name="liftBrand" value="${liftBrand}">
+        </p>
+        <p class="p2">
+            <span class="p2_l">货梯数量</span>
+            <span class="p2_r">${liftGoodCounts}</span>
+            <input class="ckb" type="checkbox" name="che">
+            <input class="ipt" type="text" name="liftGoodCounts" value="${liftGoodCounts}">
+        </p>
+        <p class="p1">
+            <span class="p1_l">楼层系数</span>
+            <span class="p1_r">${layerCoefficient}</span>
+            <input class="ckb" type="checkbox" name="che">
+            <input class="ipt" type="text" name="layerCoefficient" value="${layerCoefficient}">
+        </p>
+        <p class="p2">
+            <span class="p2_l">在楼栋中位置</span>
+            <span class="p2_r">${locationInBuilding}</span>
+            <input class="ckb" type="checkbox" name="che">
+            <input class="ipt" type="text" name="locationInBuilding" value="${locationInBuilding}">
+        </p>
+        <p class="p1">
+            <span class="p1_l">产权房号</span>
+            <span class="p1_r">${propertyHN}</span>
+            <input class="ckb" type="checkbox" name="che">
+            <input class="ipt" type="text" name="propertyHN" value="${propertyHN}">
+        </p>
+        <p class="p2">
+            <span class="p2_l">现状房号</span>
+            <span class="p2_r">${realHN}</span>
+            <input class="ckb" type="checkbox" name="che">
+            <input class="ipt" type="text" name="realHN" value="${realHN}">
+        </p>
+        <p class="p1">
+            <span class="p1_l">证载房屋类型</span>
+            <span class="p1_r">${housePtype}</span>
+            <input class="ckb" type="checkbox" name="che">
+            <input class="ipt" type="text" name="housePtype" value="${housePtype}">
+        </p>
+        <p class="p2">
+            <span class="p2_l">证载房屋用途</span>
+            <span class="p2_r">${housePurpose}</span>
+            <input class="ckb" type="checkbox" name="che">
+            <input class="ipt" type="text" name="housePurpose" value="${housePurpose}">
+        </p>
+        <p class="p1">
+            <span class="p1_l">房屋产权性质</span>
+            <span class="p1_r">${property}</span>
+            <input class="ckb" type="checkbox" name="che">
+            <select class="ipt" name="property">
+                <option {{if property === "商品房"}}selected="selected"{{/if}} value="1">商品房</option>
+                <option {{if property === "已购公有住房"}}selected="selected"{{/if}} value="2">已购公有住房</option>
+                <option {{if property === "经济适用住房"}}selected="selected"{{/if}} value="3">经济适用住房</option>
+                <option {{if property === "限价商品住房"}}selected="selected"{{/if}} value="4">限价商品住房</option>
+            </select>
+        </p>
+        <p class="p2">
+            <span class="p2_l">不动产单元号</span>
+            <span class="p2_r">${realNumber}</span>
+            <input class="ckb" type="checkbox" name="che">
+            <input class="ipt" type="text" name="realNumber" value="${realNumber}">
+        </p>
+        <p class="p1">
+            <span class="p1_l">户型</span>
+            <span class="p1_r">$roomNumber{}</span>
+            <input class="ckb" type="checkbox" name="che">
+            <input class="ipt" type="text" name="roomNumber" value="${roomNumber}">
+        </p>
+        <p class="p2">
+            <span class="p2_l">户型结构</span>
+            <span class="p2_r">${houseStructure}</span>
+            <input class="ckb" type="checkbox" name="che">
+            <input class="ipt" type="text" name"houseStructure" value="${houseStructure}">
+        </p>
+        <p class="p1">
+            <span class="p1_l">房屋主力朝向</span>
+            <span class="p1_r">${houseOrientations}</span>
+            <input class="ckb" type="checkbox" name="che">
+            <input class="ipt" type="text" name="houseOrientations" value="${houseOrientations}">
+        </p>
+        <p class="p2">
+            <span class="p2_l">地下建筑面积</span>
+            <span class="p2_r">${basementCoverdArea}m²</span>
+            <input class="ckb" type="checkbox" name="che">
+            <input class="ipt" type="text" name="basementCoverdArea" value="${basementCoverdArea}">
+        </p>
+        <p class="p1">
+            <span class="p1_l">地下室面积</span>
+            <span class="p1_r">${basementRealArea}m²</span>
+            <input class="ckb" type="checkbox" name="che">
+            <input class="ipt" type="text" name="basementRealArea" value="${basementRealArea}">
+        </p>
+        <p class="p2">
+            <span class="p2_l">地下室净高</span>
+            <span class="p2_r">${basementClearHei}m</span>
+            <input class="ckb" type="checkbox" name="che">
+            <input class="ipt" type="text" name="basementClearHei" value="${basementClearHei}">
+        </p>
+        <p class="p1">
+            <span class="p1_l">是否开发商装修</span>
+            <span class="p1_r">${finishing}</span>
+            <input class="ckb" type="checkbox" name="che">
+            <input class="ipt" type="text" name="finishing" value="${finishing}">
+        </p>
+        <p class="p2">
+            <span class="p2_l">景观</span>
+            <span class="p2_r">${scenery}</span>
+            <input class="ckb" type="checkbox" name="che">
+            <input class="ipt" type="text" name="scenery" value="${scenery}">
+        </p>
+        <p class="p1">
+            <span class="p1_l">商业业态</span>
+            <span class="p1_r">${commercialStatus}</span>
+            <input class="ckb" type="checkbox" name="che">
+            <input class="ipt" type="text" name="commercialStatus" value="${commercialStatus}">
+        </p>
+        <p class="p2">
+            <span class="p2_l">部位</span>
+            <span class="p2_r">${position}</span>
+            <input class="ckb" type="checkbox" name="che">
+            <input class="ipt" type="text" name="position" value="${position}">
+        </p>
+        <p class="p1">
+            <span class="p1_l">铺位号</span>
+            <span class="p1_r">${bayNumber}</span>
+            <input class="ckb" type="checkbox" name="che">
+            <input class="ipt" type="text" name="bayNumber" value="${bayNumber}">
+        </p>
+        <p class="p2">
+            <span class="p2_l">房屋类型</span>
+            <span class="p2_r">${houseType}</span>
+            <input class="ckb" type="checkbox" name="che">
+            <select class="ipt" name="houseType">
+                <option {{if houseType === "公寓"}}selected="selected"{{/if}} value="1">公寓</option>
+                <option {{if houseType === "新公房"}}selected="selected"{{/if}} value="">新公房</option>
+                <option {{if houseType === "旧工房"}}selected="selected"{{/if}} value="">旧工房</option>
+                <option {{if houseType === "商场"}}selected="selected"{{/if}} value="">商场</option>
+                <option {{if houseType === "店铺"}}selected="selected"{{/if}} value="">店铺</option>
+                <option {{if houseType === "办公楼"}}selected="selected"{{/if}} value="">办公楼</option>
+                <option {{if houseType === "工厂"}}selected="selected"{{/if}} value="">工厂</option>
+                <option {{if houseType === "简屋"}}selected="selected"{{/if}} value="">简屋</option>
+                <option {{if houseType === "搭建"}}selected="selected"{{/if}} value="">搭建</option>
+                <option {{if houseType === "车棚"}}selected="selected"{{/if}} value="">车棚</option>
+                <option {{if houseType === "泵房"}}selected="selected"{{/if}} value="">泵房</option>
+            </select>
+        </p>
+        <p class="p1">
+            <span class="p1_l">开间</span>
+            <span class="p1_r">4m</span>
+            <input class="ckb" type="checkbox" name="che">
+            <input class="ipt" type="text" placeholder="请输入开间">
+        </p>
+        <p class="p2">
+            <span class="p2_l">开间数</span>
+            <span class="p2_r">${bayNumber}</span>
+            <input class="ckb" type="checkbox" name="che">
+            <input class="ipt" type="text" name="bayNumber" value="${bayNumber}">
+        </p>
+        <p class="p1">
+            <span class="p1_l">面宽</span>
+            <span class="p1_r">${bayArea}</span>
+            <input class="ckb" type="checkbox" name="che">
+            <input class="ipt" type="text" name="bayArea" value="${bayArea}">
+        </p>
+        <p class="p2">
+            <span class="p2_l">进深</span>
+            <span class="p2_r">${bayDepth}</span>
+            <input class="ckb" type="checkbox" name="che">
+            <input class="ipt" type="text" name="bayDepth" value="${bayDepth}">
+        </p>
+        <p class="p1">
+            <span class="p1_l">可使用车位数</span>
+            <span class="p1_r">${carportNumber}</span>
+            <input class="ckb" type="checkbox" name="che">
+            <input class="ipt" type="text" name="carportNumber" value="${carportNumber}">
+        </p>
+        <p class="p2">
+            <span class="p2_l">临街状况</span>
+            <span class="p2_r">${streetFrontage}</span>
+            <input class="ckb" type="checkbox" name="che">
+            <select class="ipt" name="streetFrontage">
+                <option {{if streetFrontage === "内街"}}selected="selected"{{/if}} value="1">内街</option>
+                <option {{if streetFrontage === "外街"}}selected="selected"{{/if}} value="2">外街</option>
+                <option {{if streetFrontage === "内部不临街"}}selected="selected"{{/if}} value="3">内部不临街</option>
+            </select>
+        </p>
+        <p class="p3">
+            <span class="p1_l">基础设施说明</span>
+            <span class="p1_r">对水、电、煤等缺失注明；商水、商电、基本水电费要求说明；特殊要求（特定业态）说明</span>
+            <input class="ckb" type="checkbox" name="che">
+            <textarea class="tex" name="" cols="30" rows="10" placeholder="对水、电、煤等缺失注明；商水、商电、基本水电费要求说明；特殊要求（特定业态）说明"></textarea>
+        </p>
+        <p class="p3">
+            <span class="p1_l">其他附属说明</span>
+            <span class="p1_r">对天井、花园、阁楼等说明</span>
+            <input class="ckb" type="checkbox" name="che">
+            <textarea class="tex" name="" cols="30" rows="10" placeholder="对天井、花园、阁楼等说明"></textarea>
+        </p>
+        <p class="p3">
+            <span class="p1_l">空间布局</span>
+            <span class="p1_r">房型较差等</span>
+            <input class="ckb" type="checkbox" name="che">
+            <textarea class="tex" name="" cols="30" rows="10" placeholder="房型较差等情况说明"></textarea>
+        </p>
+        <div class="pic_box clearfix">
+            <div class="pic_box1">
+                <div class="zzc1"></div>
+                <div class="zzc2"></div>
+                <img class="open" src="./img/lp.jpg" alt="">
+                <p>平面图<span>（4）</span></p>
+            </div>
+        </div>
+        <div class="pic_box2">
+            <span class="p1_l">现场照片</span>
+            <div class="box_img">
+                <div class="sc" style="background:url('./img/join.gif') no-repeat center center;">
+                    <input type="file" name="che">
+                </div>
+                <div class="new_img">
+                    <img class="ni" src="./img/lp.jpg" alt="">
+                    <img class="cse" src="./img/img_close.gif" alt="">
+                </div>
+            </div>
+            <input class="ckb" type="checkbox">
+        </div>
+        <p class="p3">
+            <span class="p1_l">坐标</span>
+            <span class="p1_r">12.2，20.2</span>
+            <input class="ckb" type="checkbox" name="che">
+            <input class="ipt ipt1" type="text" placeholder="请输入坐标">
+            <input class="ipt ipt1" type="text" placeholder="请输入坐标">
+        </p>
+        <div id="container1"></div>
+        <div class="btn">
+            <button id="houseEdit">确认修改</button>
+        </div>
+    </form>
+</script>
+<script id="unit_detail" type="text/x-jquery-tmpl">
+    <div class="title_name">
+        <p class="tn">3</p>
+        <p class="change change2 block bedt">修改</p>
+        <p class="change change2 brtn">返回</p>
+    </div>
+    <form action="" id="form_unit">
+        <div class="r3_top_box">
+            <div class="shangchuan">
+                导入数据
+                <input type="file">
+            </div>
+            <div class="all">
+                全选
+                <input class="all_ipt" type="checkbox">
+            </div>
+        </div>
+        <p class="p1">
+            <span class="p1_l">楼栋编号</span>
+            <span class="p1_r">${buildingId}</span>
+            <input class="ckb" type="checkbox" name="che">
+            <input class="ipt" type="text" name="buildingId" value="${buildingId}">
+        </p>
+        <p class="p2">
+            <span class="p2_l">单元标注总层数</span>
+            <span class="p2_r">${unitLayer}</span>
+            <input class="ckb" type="checkbox" name="che">
+            <input class="ipt" type="text" name="unitLayer" value="${unitLayer}">
+        </p>
+        <p class="p1">
+            <span class="p1_l">单元实际总层数</span>
+            <span class="p1_r">${unitRawlayer}</span>
+            <input class="ckb" type="checkbox" name="che">
+            <input class="ipt" type="text" name="unitRawlayer" value="${unitRawlayer}">
+        </p>
+        <p class="p2">
+            <span class="p2_l">单元层户数</span>
+            <span class="p2_r">${unitHHLayer}</span>
+            <input class="ckb" type="checkbox" name="che">
+            <input class="ipt" type="text" name="unitHHLayer" value="${unitHHLayer}">
+        </p>
+        <p class="p1">
+            <span class="p1_l">产权单元名称</span>
+            <span class="p1_r">${unitPropertyName}</span>
+            <input class="ckb" type="checkbox" name="che">
+            <input class="ipt" type="text" name="unitPropertyName" value="${unitPropertyName}">
+        </p>
+        <p class="p2">
+            <span class="p2_l">现状单元名称</span>
+            <span class="p2_r">${unitName}</span>
+            <input class="ckb" type="checkbox" name="che">
+            <input class="ipt" type="text" name="unitName" value="${unitName}">
+        </p>
+        <p class="p1">
+            <span class="p1_l">标准层层高</span>
+            <span class="p1_r">${unitLayerHeight}</span>
+            <input class="ckb" type="checkbox" name="che">
+            <input class="ipt" type="text" name="unitLayerHeight" value="${unitLayerHeight}">
+        </p>
+        <p class="p2">
+            <span class="p2_l">标准层面积</span>
+            <span class="p2_r">${unitLayerArea}m²</span>
+            <input class="ckb" type="checkbox" name="che">
+            <input class="ipt" type="text" name="unitLayerArea" value="${unitLayerArea}">
+        </p>
+        <p class="p1">
+            <span class="p1_l">户型面积</span>
+            <span class="p1_r">${unitEachragneArea}m²</span>
+            <input class="ckb" type="checkbox" name="che">
+            <input class="ipt" type="text" name="unitEachragneArea" value="${unitEachragneArea}">
+        </p>
+        <p class="p2">
+            <span class="p2_l">单元总户数</span>
+            <span class="p2_r">${unitHHTotal}</span>
+            <input class="ckb" type="checkbox" name="che">
+            <input class="ipt" type="text" name="unitHHTotal" value="${unitHHTotal}">
+        </p>
+        <p class="p3">
+            <span class="p1_l">坐标</span>
+            <span class="p1_r">23.03，113.75</span>
+            <input class="ckb" type="checkbox" name="che">
+            <input class="ipt ipt1" type="text" placeholder="请输入坐标">
+            <input class="ipt ipt1" type="text" placeholder="请输入坐标">
+        </p>
+        <div id="container"></div>
+        <div class="btn">
+            <button id="unitEdit">确认修改</button>
+        </div>
+    </form>
+</script>
+<script id="building_detail" type="text/x-jquery-tmpl">
+    <div class="title_name">
+        <p class="tn">2</p>
+        <p class="change change1 block bedt">修改</p>
+        <p class="change change1 brtn">返回</p>
+    </div>
+    <form action="" id="form_building">
+        <div class="r3_top_box">
+            <div class="shangchuan">
+                导入数据
+                <input type="file">
+            </div>
+            <div class="all">
+                全选
+                <input class="all_ipt" type="checkbox">
+            </div>
+        </div>
+        <p class="p1">
+            <span class="p1_l">楼栋编号</span>
+            <span class="p1_r">${buildingId}</span>
+            <input class="ckb" type="checkbox" name="che">
+            <input class="ipt" type="text" name"buildingId" value="${buildingId}">
+        </p>
+        <p class="p2">
+            <span class="p2_l">房屋产权性质</span>
+            <span class="p2_r">${propertyRightType}</span>
+            <input class="ckb" type="checkbox" name="che">
+            <select class="ipt" name="propertyRightType">
+                <option {{if propertyRightType==="商品房"}}selected="selected"{{/if}} value="1">商品房</option>
+                <option {{if propertyRightType==="已购公有住房"}}selected="selected"{{/if}} value="2">已购公有住房</option>
+                <option {{if propertyRightType==="经济适用住房"}}selected="selected"{{/if}} value="3">经济适用住房</option>
+                <option {{if propertyRightType==="限价商品住房"}}selected="selected"{{/if}} value="4">限价商品住房</option>
+            </select>
+        </p>
+        <p class="p1">
+            <span class="p1_l">产权楼栋名称</span>
+            <span class="p1_r">${buildingRawname}</span>
+            <input class="ckb" type="checkbox" name="che">
+            <input class="ipt" type="text" name="buildingRawname" value="${buildingRawname}">
+        </p>
+        <p class="p2">
+            <span class="p2_l">现状楼栋名称</span>
+            <span class="p2_r">${buildingName}</span>
+            <input class="ckb" type="checkbox" name="che">
+            <input class="ipt" type="text" name="buildingName" value="${buildingName}">
+        </p>
+        <p class="p1">
+            <span class="p1_l">单元数量</span>
+            <span class="p1_r">${buildingCounts}</span>
+            <input class="ckb" type="checkbox" name="che">
+            <input class="ipt" type="text" name="buildingCounts" value="${buildingCounts}">
+        </p>
+        <p class="p2">
+            <span class="p2_l">楼栋坐落</span>
+            <span class="p2_r">${buildingLocation}</span>
+            <input class="ckb" type="checkbox" name="che">
+            <input class="ipt" type="text" name="buildingLocation" value="${buildingLocation}">
+        </p>
+        <p class="p1">
+            <span class="p1_l">楼栋幢号</span>
+            <span class="p1_r">${buildingNumber}</span>
+            <input class="ckb" type="checkbox" name="che">
+            <input class="ipt" type="text" name="buildingNumber" value="${buildingNumber}">
+        </p>
+        <p class="p2">
+            <span class="p2_l">建筑类型</span>
+            <span class="p2_r">${buildingType}</span>
+            <input class="ckb" type="checkbox" name="che">
+            <select class="ipt" name="buildingType">
+                <option {{if buildingType==="高层"}}selected="selected"{{/if}} value="1">高层</option>
+                <option {{if buildingType==="多层"}}selected="selected"{{/if}} value="2">多层</option>
+                <option {{if buildingType==="低层"}}selected="selected"{{/if}} value="3">低层</option>
+            </select>
+        </p>
+        <p class="p1">
+            <span class="p1_l">建筑样式</span>
+            <span class="p1_r">${buildingStyle}</span>
+            <input class="ckb" type="checkbox" name="che">
+            <input class="ipt" type="text" name="buildingStyle" value="${buildingStyle}">
+        </p>
+        <p class="p2">
+            <span class="p2_l">建筑结构</span>
+            <span class="p2_r">${buildingStructure}</span>
+            <input class="ckb" type="checkbox" name="che">
+            <select class="ipt" name="buildingStructure">
+                <option {{if buildingStructure==="钢混"}}selected="selected"{{/if}} value="1">钢混</option>
+                <option {{if buildingStructure==="混合"}}selected="selected"{{/if}} value="2">混合</option>
+                <option {{if buildingStructure==="砖木"}}selected="selected"{{/if}} value="3">砖木</option>
+            </select>
+        </p>
+        <p class="p1">
+            <span class="p1_l">外立面</span>
+            <span class="p1_r">${buildingSkin}</span>
+            <input class="ckb" type="checkbox" name="che">
+            <input class="ipt" type="text" name="buildingSkin" value="${buildingSkin}">
+        </p>
+        <p class="p2">
+            <span class="p2_l">地上标注总层数</span>
+            <span class="p2_r">${buildingFloors}</span>
+            <input class="ckb" type="checkbox" name="che">
+            <input class="ipt" type="text" name="buildingFloors" value="${buildingFloors}">
+        </p>
+        <p class="p1">
+            <span class="p1_l">地上实际总层数</span>
+            <span class="p1_r">${buildingRawfloors}</span>
+            <input class="ckb" type="checkbox" name="che">
+            <input class="ipt" type="text" name="buildingRawfloors" value="${buildingRawfloors}">
+        </p>
+        <p class="p2">
+            <span class="p2_l">地下总层数</span>
+            <span class="p2_r">${buildingUnderfloors}</span>
+            <input class="ckb" type="checkbox" name="che">
+            <input class="ipt" type="text" name="buildingUnderfloors" value="${buildingUnderfloors}">
+        </p>
+        <p class="p1">
+            <span class="p1_l">建成年代（年）</span>
+            <span class="p1_r">${buildingCompletion}</span>
+            <input class="ckb" type="checkbox" name="che">
+            <input class="ipt" type="text" name="buildingCompletion" value="${buildingCompletion}">
+        </p>
+        <p class="p2">
+            <span class="p2_l">在楼盘中位置</span>
+            <span class="p2_r">${buildingInlocation}</span>
+            <input class="ckb" type="checkbox" name="che">
+            <input class="ipt" type="text" name="buildingInlocation" value="${buildingInlocation}">
+        </p>
+        <div class="btn">
+            <button id="buildingEdit">确认修改</button>
+        </div>
+    </form>
+</script>
+<script id="estate_detail" type="text/x-jquery-tmpl">
+    <div class="title_name">
+        <p class="tn">1</p>
+        <p class="change change0 block bedt">修改</p>
+        <p class="change change0 brtn" id="rtnbtnEstate">返回</p>
+    </div>
+    <form class="clearfix" id="form_estate">
+        <div class="r3_top_box">
+            <div class="shangchuan">
+                导入数据
+                <input type="file" accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet">
+            </div>
+            <div class="all">
+                全选
+                <input class="all_ipt" type="checkbox">
+            </div>
+        </div>
+        <p class="p1">
+            <span class="p1_l">楼盘编号</span>
+            <span class="p1_r">${SN}</span>
+            <input class="ckb" type="checkbox" name="che">
+            <input class="ipt" type="text" name="SN" value="${SN}">
+        </p>
+        <p class="p2">
+            <span class="p2_l">楼盘类型</span>
+            <span class="p2_r">${estateType}</span>
+            <input class="ckb" type="checkbox" name="che">
+            <select class="ipt" name="estateType" id="">
+                <option {{if estateType === "公寓"}}selected="selected"{{/if}} value="公寓">公寓</option>
+                <option {{if estateType === "别墅"}}selected="selected"{{/if}} value="别墅">别墅</option>
+                <option {{if estateType === "写字楼"}}selected="selected"{{/if}}value="写字楼">写字楼</option>
+                <option {{if estateType === "住宅底商"}}selected="selected"{{/if}}value="住宅底商">住宅底商</option>
+                <option {{if estateType === "商场"}}selected="selected"{{/if}}value="商场">商场</option>
+            </select>
+        </p>
+        <div class="p1">
+            <span class="p1_l">竣工年代</span>
+            <span class="p1_r">${completionDate}</span>
+            <input class="ckb" type="checkbox" name="che">
+            <div class="laydate-box">
+                <input type="text" id="laydateInput" value="${completionDate}" name="completionDate"/>
+                <img src="./img/rili.png" alt="" class="icon data-icon"/>
+                <div class="select-date">
+                    <div class="select-date-header">
+                        <ul class="heade-ul">
+                            <li class="header-item header-item-one">
+                                <select name="" id="yearList"></select>
+                            </li>
+                            <li class="header-item header-item-two" onselectstart="return false">
+                                <select name="" id="monthList"></select>
+                            </li>
+                            <li class="header-item header-item-three" onselectstart="return false" >
+                                <span class="reback">回到今天</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="select-date-body">
+                        <ul class="week-list">
+                            <li>日</li><li>一</li><li>二</li><li>三</li><li>四</li><li>五</li><li>六</li>
+                        </ul>
+                        <ul class="day-tabel"></ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <p class="p2">
+            <span class="p2_l">总栋数</span>
+            <span class="p2_r">${buildsCounts}</span>
+            <input class="ckb" type="checkbox" name="che">
+            <input class="ipt" type="text" placeholder="请输入总栋数" value="${buildsCounts}">
+        </p>
+        <p class="p1">
+            <span class="p1_l">物业公司</span>
+            <span class="p1_r">${propertyCompany}</span>
+            <input class="ckb" type="checkbox" name="che">
+            <input class="ipt" type="text" placeholder="请输入物业公司" value="${propertyCompany}">
+        </p>
+        <p class="p2">
+            <span class="p2_l">物业管理费（元/平方米·月）</span>
+            <span class="p2_r">${propertyCost}</span>
+            <input class="ckb" type="checkbox" name="che">
+            <input class="ipt" type="text" value="${properyCost}">
+        </p>
+        <p class="p1">
+            <span class="p1_l">停车位（个）</span>
+            <span class="p1_r">${parkingNumber}</span>
+            <input class="ckb" type="checkbox" name="che">
+            <input class="ipt" type="text" placeholder="请输入停车位数" value="${parkingNumber}">
+        </p>
+        <p class="p2">
+            <span class="p2_l">建筑结构</span>
+            <span class="p2_r">50%</span>
+            <input class="ckb" type="checkbox" name="che">
+            <select class="ipt" name="buildingStructure">
+                <option {{if buildingStructure === 1 }}selected="selected"{{/if}} value="1">1</option>
+                <option {{if buildingStructure === 2 }}selected="selected"{{/if}} value="2">2</option>
+                <option {{if buildingStructure === 3 }}selected="selected"{{/if}} value="3">3</option>
+                <option {{if buildingStructure === 4 }}selected="selected"{{/if}} value="4">4</option>
+            </select>
+        </p>
+        <p class="p1">
+            <span class="p1_l">开发商</span>
+            <span class="p1_r">${developers}</span>
+            <input class="ckb" type="checkbox" name="che">
+            <input class="ipt" type="text" name="developers" value="${developers}">
+        </p>
+        <p class="p2">
+            <span class="p2_l">办公楼等级</span>
+            <span class="p2_r">${officeLevel}</span>
+            <input class="ckb" type="checkbox" name="che">
+            <input class="ipt" type="text" name="officeLevel" value="${officeLevel}">
+        </p>
+        <p class="p1">
+            <span class="p1_l">办公区域</span>
+            <span class="p1_r">${officeArea}</span>
+            <input class="ckb" type="checkbox" name="che">
+            <input class="ipt" type="text" name="officeArea" value="${officeArea}">
+        </p>
+        <p class="p2">
+            <span class="p2_l">裙房</span>
+            <span class="p2_r">${officeAnnex}</span>
+            <input class="ckb" type="checkbox" name="che">
+            <input class="ipt" type="text" name="officeAnnex" value="${officeAnnex}">
+        </p>
+        <p class="p3">
+            <span class="p1_l">项目特色</span>
+            <span class="p1_r">${feature}</span>
+            <input class="ckb" type="checkbox" name="che">
+            <textarea class="tex" name="" cols="30" rows="10" name="feature">${feature}</textarea>
+        </p>
+        <p class="p1">
+            <span class="p1_l">总占地面积m²</span>
+            <span class="p1_r">${floorSpace}</span>
+            <input class="ckb" type="checkbox" name="che">
+            <input class="ipt" type="text" name="floorSpace" value="${floorSpace}">
+        </p>
+        <p class="p2">
+            <span class="p2_l">总建筑面积m²</span>
+            <span class="p2_r">${structureSpace}</span>
+            <input class="ckb" type="checkbox" name="che">
+            <input class="ipt" type="text" name="structureSpace" value="${structureSpace}">
+        </p>
+        <p class="p1">
+            <span class="p1_l">容积率（%）</span>
+            <span class="p1_r">${volumeRatio}</span>
+            <input class="ckb" type="checkbox" name="che">
+            <input class="ipt" type="text" name="volumeRatio" value="${volumeRatio}">
+        </p>
+        <p class="p2">
+            <span class="p2_l">绿化覆盖率（%）</span>
+            <span class="p2_r">${greeneryRatio}</span>
+            <input class="ckb" type="checkbox" name="che">
+            <input class="ipt" type="text" name="greeneryRatio" value="${greeneryRatio}">
+        </p>
+        <p class="p1">
+            <span class="p1_l">入住率（%）</span>
+            <span class="p1_r">${occupancyRatio}</span>
+            <input class="ckb" type="checkbox" name="che">
+            <input class="ipt" type="text" name="occupancyRatio" value="${occupancyRatio}">
+        </p>
+        <p class="p2">
+            <span class="p2_l">商业类型</span>
+            <span class="p2_r">${commercialType}}</span>
+            <input class="ckb" type="checkbox" name="che">
+            <select class="ipt" name="commercialType">
+                <option {{if commercialType === "百货公司" }}selected="selected"{{/if}} value="百货公司">百货公司</option>
+                <option {{if commercialType === "超级市场" }}selected="selected"{{/if}} value="超级市场">超级市场</option>
+                <option {{if commercialType === "专业市场" }}selected="selected"{{/if}} value="专业市场">专业市场</option>
+                <option {{if commercialType === "大型娱乐设施" }}selected="selected"{{/if}} value="大型娱乐设施">大型娱乐设施</option>
+                <option {{if commercialType === "金融中介" }}selected="selected"{{/if}} value="金融中介">金融中介</option>
+                <option {{if commercialType === "餐饮" }}selected="selected"{{/if}} value="餐饮">餐饮</option>
+                <option {{if commercialType === "综合零售" }}selected="selected"{{/if}} value="综合零售">综合零售</option>
+                <option {{if commercialType === "休闲养生" }}selected="selected"{{/if}} value="休闲养生">休闲养生</option>
+                <option {{if commercialType === "生活服务" }}selected="selected"{{/if}} value="生活服务">生活服务</option>
+                <option {{if commercialType === "住宿" }}selected="selected"{{/if}} value="住宿">住宿</option>
+            </select>
+        </p>
+        <p class="p1">
+            <span class="p1_l">业态配比</span>
+            <span class="p1_r">${distributionRatio}</span>
+            <input class="ckb" type="checkbox" name="che">
+            <input class="ipt" type="text" name="distributionRatio" value="${distributionRatio}">
+        </p>
+        <p class="p2">
+            <span class="p2_l">主力商户</span>
+            <span class="p2_r">${mainTenant}</span>
+            <input class="ckb" type="checkbox" name="che">
+            <input class="ipt" type="text" name="mainTenant" value="${mainTenant}">
+        </p>
+        <p class="p1">
+            <span class="p1_l">土地使用来源</span>
+            <span class="p1_r">${landSource}</span>
+            <input class="ckb" type="checkbox" name="che">
+            <select class="ipt" name="landSource">
+                <option {{if landSource === "划拨" }}selected="selected"{{/if}} value="划拨">划拨</option>
+                <option {{if landSource === "出让" }}selected="selected"{{/if}} value="出让">出让</option>
+                <option {{if landSource === "转让" }}selected="selected"{{/if}} value="转让">转让</option>
+                <option {{if landSource === "其他" }}selected="selected"{{/if}} value="其他">其他</option>
+            </select>
+        </p>
+        <p class="p2">
+            <span class="p2_l">土地用途</span>
+            <span class="p2_r">${landUse}}</span>
+            <input class="ckb" type="checkbox" name="che">
+            <input class="ipt" type="text" name="landUse" value="${landUse}">
+        </p>
+        <p class="p1">
+            <span class="p1_l">土地面积</span>
+            <span class="p1_r">${landArea}</span>
+            <input class="ckb" type="checkbox" name="che">
+            <input class="ipt" type="text" name="landArea" value="${landArea}">
+        </p>
+        <p class="p2">
+            <span class="p2_l">土地使用期限</span>
+            <span class="p2_r">${landTerm}</span>
+            <input class="ckb" type="checkbox" name="che">
+            <input class="ipt" type="text" name="landTerm" value="${landTerm}">
+        </p>
+        <p class="p1" style="width: 100%;">
+            <span class="p1_l" style="margin-left: 5%;">土地证编号</span>
+            <span class="p1_r">${landId}</span>
+            <input class="ckb" type="checkbox" name="che">
+            <input class="ipt" type="text" name="landId" value="${landId}">
+        </p>
+        <div class="qw">
+            <p><span>区位信息</span></p>
+        </div>
+        <p class="p1">
+            <span class="p1_l">国省市</span>
+            <span class="p1_r">${province}</span>
+            <input class="ckb" type="checkbox" name="che">
+            <select class="ipt" name="province">
+                <option value="">上海市</option>
+            </select>
+        </p>
+        <p class="p2">
+            <span class="p2_l">区县</span>
+            <span class="p2_r">${city}</span>
+            <input class="ckb" type="checkbox" name="che">
+            <select class="ipt" name="city">
+                <option value="">黄浦</option>
+                <option value="">徐汇</option>
+                <option value="">长宁</option>
+                <option value="">静安</option>
+                <option value="">普陀</option>
+                <option value="">虹口</option>
+                <option value="">杨浦</option>
+                <option value="">闵行</option>
+                <option value="">宝山</option>
+                <option value="">嘉定</option>
+                <option value="">浦东</option>
+                <option value="">金山</option>
+                <option value="">松江</option>
+                <option value="">青浦</option>
+                <option value="">奉贤</option>
+                <option value="">崇明</option>
+            </select>
+        </p>
+        <p class="p1">
+            <span class="p1_l">街道</span>
+            <span class="p1_r">${street}</span>
+            <input class="ckb" type="checkbox" name="che">
+            <input class="ipt" type="text" name="street" value="${street}">
+        </p>
+        <p class="p2">
+            <span class="p2_l">板块</span>
+            <span class="p2_r">${plate}</span>
+            <input class="ckb" type="checkbox" name="che">
+            <select class="ipt" name="plate">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+            </select>
+        </p>
+        <p class="p1">
+            <span class="p1_l">商圈</span>
+            <span class="p1_r">${circle}</span>
+            <input class="ckb" type="checkbox" name="che">
+            <input class="ipt" type="text" name="circle" value="${circle}">
+        </p>
+        <p class="p2">
+            <span class="p2_l">商务区（CBD）</span>
+            <span class="p2_r">${CBD}</span>
+            <input class="ckb" type="checkbox" name="che">
+            <input class="ipt" type="text" name="CBD" value="${CBD}">
+        </p>
+        <p class="p1">
+            <span class="p1_l">工业园区</span>
+            <span class="p1_r">${industry}</span>
+            <input class="ckb" type="checkbox" name="che">
+            <input class="ipt" type="text" name="industry" value="${industry}">
+        </p>
+        <p class="p2">
+            <span class="p2_l">环线位置</span>
+            <span class="p2_r">${position}</span>
+            <input class="ckb" type="checkbox" name="che">
+            <select class="ipt" name="position">
+                <option value="">内环以内</option>
+                <option value="">内中环间</option>
+                <option value="">中外环间</option>
+                <option value="">外环以外</option>
+                <option value="">外郊环间</option>
+                <option value="">郊环以外</option>
+            </select>
+        </p>
+        <p class="p1">
+            <span class="p1_l">通邮地址</span>
+            <span class="p1_r">${address}</span>
+            <input class="ckb" type="checkbox" name="che">
+            <input class="ipt" type="text" name="address" value="${address}">
+        </p>
+        
+        <div class="pic_box clearfix">
+            <div class="pic_box1">
+                <div class="zzc1"></div>
+                <div class="zzc2"></div>
+                <img class="open" src="./img/lp.jpg" alt="">
+                <p>平面图<span>（4）</span></p>
+            </div>
+            <div class="pic_box1">
+                <div class="zzc1"></div>
+                <div class="zzc2"></div>
+                <img class="open" src="./img/lp.jpg" alt="">
+                <p>实景图<span>（5）</span></p>
+            </div>
+        </div>
+        <div class="pic_box2">
+            <span class="p1_l">平面图</span>
+            <div class="box_img">
+                <div class="sc" style="background:url('./img/join.gif') no-repeat center center;">
+                    <input type="file" name="plangraphicGpid" accept="image/*">
+                </div>
+                <div class="new_img">
+                    <img class="ni" src="./img/lp.jpg" alt="">
+                    <img class="cse" src="./img/img_close.gif" alt="">
+                </div>
+            </div>
+            <input class="ckb" type="checkbox">
+        </div>
+        <div class="pic_box2">
+            <span class="p1_l">现场照片</span>
+            <div class="box_img">
+                <div class="sc" style="background:url('./img/join.gif') no-repeat center center;">
+                    <input type="file" name="liveGpid" accept="image/*">
+                </div>
+                <div class="new_img">
+                    <img class="ni" src="./img/lp.jpg" alt="">
+                    <img class="cse" src="./img/img_close.gif" alt="">
+                </div>
+            </div>
+            <input class="ckb" type="checkbox">
+        </div>
+        <div class="btn">
+            <button id="estateEdit">确认修改</button>
+        </div>
+    </form>
+</script></body>
 </html>
