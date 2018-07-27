@@ -1,0 +1,948 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <title>2详情</title>
+    <link rel="stylesheet" href="./css/2xq.css">
+    <!--下拉  css-->
+    <link rel="stylesheet" href="./css/xiala.css">
+    <!--banner   css-->
+    <link href="css/bxslider.css" rel="stylesheet" type="text/css">
+    <script src="./js/jquery-3.2.1.js"></script>
+    <script type="text/javascript" src="./js/jquery-1.9.1.js"></script>
+    <!--banner   js-->
+    <script type="text/javascript" src="js/bxslider.js"></script>
+
+    <!--高德地图   js-->
+    <script type="text/javascript" src="http://webapi.amap.com/maps?v=1.4.6&key=31cb1cb6cb584d26dad68cffd5ea67d6"></script>
+    <script src="js/jquery.tmpl.min.js"></script>
+</head>
+<body>
+<!--header  S-->
+<div class="header_warp">
+    <div class="header">
+        <a class="logo" href="./index.html"><img src="./img/logo.png" alt=""></a>
+        <div class="header_box">
+            <p id="username">None</p>
+            <a class="tc" href="javascript:;" onclick="bs.logout()"><img title="退出登录" src="./img/tc.png" alt=""></a>
+        </div>
+    </div>
+</div>
+
+<!--内容   S-->
+<div class="nr_warp">
+    <div class="nr clearfix">
+        <div class="nr_left">
+            <div class="left_box">
+                <form action="">
+                    <input type="text" id="q1text" placeholder="请输入搜索的项目名称/档案号/地址">
+                    <button id="query1">查询</button>
+                </form>
+                <div class="xl">
+                    <ul class="dropdown">
+                        <li class="has_li">
+                            <a class="xl_title">
+                                项目管理
+                                <img src="./img/jt.png" alt="">
+                            </a>
+                        </li>
+                        <ul id="pjlist">
+                        </ul>
+                    </ul>
+                </div>
+                <a class="xx" href="./seonde.html">汇总信息</a>
+            </div>
+        </div>
+        <div class="nr_right">
+            <div class="right1">
+                <div class="r1_big" id="pjInfo">
+                </div>
+            </div>
+            <div class="right2">
+                <a class="r2_one" href="./2.html">评估信息</a>
+                <span>></span>
+                <a href="./2xq.html">详情</a>
+            </div>
+            <div class="right3">
+                <div class="r3_title clearfix">
+                    <p class="now">
+                        楼盘
+                        <img src="./img/xq_sjx.png" alt="">
+                    </p>
+                    <p>
+                        地址
+                        <img src="./img/xq_sjx.png" alt="">
+                    </p>
+                    <p>
+                        单元
+                        <img src="./img/xq_sjx.png" alt="">
+                    </p>
+                    <p>
+                        房屋
+                        <img src="./img/xq_sjx.png" alt="">
+                    </p>
+                    <p>
+                        评估
+                        <img src="./img/xq_sjx.png" alt="">
+                    </p>
+                    <p>
+                        租约
+                        <img src="./img/xq_sjx.png" alt="">
+                    </p>
+                </div>
+                <div class="title_name">
+                    <p>1</p>
+                </div>
+                <div class="r3_box">
+                    <div class="lp b block" id="tab_estate">
+                        
+                    </div>
+                    <div class="dz b" id="tab_building">
+                        
+                    </div>
+                    <div class="dy b" id="tab_unit">
+                        
+                    </div>
+                    <div class="fw b" id="tab_house">
+                        
+                    </div>
+                    <div class="pg b" id="tab_assess">
+                        
+                    </div>
+                    <div class="zy b" id="tab_lease">
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="box_left">
+                <img src="./img/lashen.png" alt="">
+                <img class="z" src="./img/ls_l.png" alt="">
+                <img class="y" src="./img/ls_r.png" alt="">
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--查看大图   S-->
+<div class="big_pic">
+    <div class="two_box">
+        <div class="slider8">
+            <div class="slide">
+                <img src="./img/lp.jpg">
+            </div>
+            <div class="slide">
+                <img src="./img/lp.jpg">
+            </div>
+            <div class="slide">
+                <img src="./img/lp.jpg">
+            </div>
+            <div class="slide">
+                <img src="./img/lp.jpg">
+            </div>
+        </div>
+        <img class="close" src="./img/xqclose.png" alt="">
+    </div>
+</div>
+
+<script src="./js/2xq.js"></script>
+
+<!--下拉   js-->
+<script src="./js/xiala.js"></script>
+
+
+
+<!--banner   js-->
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('.slider8').bxSlider({
+            slideWidth: 600,
+            adaptiveHeight: true,
+            startSlides: 0,
+            slideMargin: 10
+        });
+    });
+
+    $(".close").click(function () {
+        $('.big_pic').animate({width:"0"},300)
+    })
+
+    $(".open").click(function () {
+        $('.big_pic').animate({width:"100%"},300)
+    })
+</script>
+
+<script>
+    var $r3_title_p = $(".r3_title p");
+    var $b = $(".b");
+    var $title_name_p = $(".title_name p");
+    var a = ['1','2','3','4','5','6'];
+    $r3_title_p.each(function (i,ele) {
+        $r3_title_p.eq(i).click(function () {
+            $r3_title_p.removeClass("now").eq(i).addClass("now");
+            $b.removeClass("block").eq(i).addClass("block");
+            $title_name_p.html(a[i]);
+        })
+    })
+
+</script>
+
+<!--高德地图    js-->
+<script>
+
+    function map1() {
+        var marker, map = new AMap.Map("container", {
+            resizeEnable: true,
+            center: [114.397428, 39.90923],
+            zoom: 18
+        });
+        addMarker();
+        //添加marker标记
+        function addMarker() {
+            map.clearMap();
+            var marker = new AMap.Marker({
+                map: map,
+                position: [116.397428, 39.90923]
+            });
+            //鼠标点击marker弹出自定义的信息窗体
+            AMap.event.addListener(marker, 'click', function() {
+                infoWindow.open(map, marker.getPosition());
+            });
+        }
+    }
+    map1();
+
+    function map2() {
+        var marker, map = new AMap.Map("container1", {
+            resizeEnable: true,
+            center: [115.397428, 39.90923],
+            zoom: 13
+        });
+        addMarker();
+        //添加marker标记
+        function addMarker() {
+            map.clearMap();
+            var marker = new AMap.Marker({
+                map: map,
+                position: [115.397428, 39.90923]
+            });
+            //鼠标点击marker弹出自定义的信息窗体
+            AMap.event.addListener(marker, 'click', function() {
+                infoWindow.open(map, marker.getPosition());
+            });
+        }
+    }
+    map2();
+
+
+</script>
+<script type="text/javascript" src="http://webapi.amap.com/demos/js/liteToolbar.js"></script>
+<script src="./js/07201716.js"></script>
+<script>
+$(document).ready(function(){
+	bs.checkAuth();
+	bs.loadProject();
+
+});
+$(document).on("click", ".pji", function (event) { 
+	$("#pjInfo").find('.r1_1').remove();
+	var pj = bs.project;//(proj_data.result);
+	var result = pj.filter(function( obj ) {
+		return obj.id == $(event.currentTarget).attr("data-id");
+	});
+	$( "#pjinfo" ).tmpl( result ).appendTo( "#pjInfo" );
+});
+/*项目查询*/
+$('#query1').on("click", function(e){
+    e.preventDefault();
+    var v = $('#q1text').val();
+    req = JSON.stringify({"token":bs.auth.data.token,"roleId":bs.project[0].roleId,"conditions":v});
+    bs.ajaxfuncURL ('project/search',req,bs.auth.data.token,cbprjsrch);
+});
+function cbprjsrch(res){
+    if(res.data.pList.length>0){
+    }else{
+        location.href="sorry.html";
+    }
+}
+</script>
+<script id="pjtmpl_left" type="text/x-jquery-tmpl">
+	<li class="pji" data-id="${id}" data-role="${roleId}"><a class="clearfix" href="javascript:;"><span class="span1">${pjName}</span><span class="span2">${pjCreateTime}</span></a></li>
+</script>
+<script id="pjinfo" type="text/x-jquery-tmpl">
+	<div class="r1_1 clearfix">
+		<p class="lp clearfix">
+			<span class="span1">项目编号</span>
+			<span class="span2">${id}</span>
+		</p>
+		<p class="rp clearfix">
+			<span class="span1">信息时点</span>
+			<span class="span2">${pjAssessTime}</span>
+		</p>
+	</div>
+	<div class="r1_1 clearfix">
+		<p class="lp clearfix">
+			<span class="span1">委托方</span>
+			<span class="span2">${pjBailor}</span>
+		</p>
+		<p class="rp clearfix">
+			<span class="span1">项目名称</span>
+			<span class="span2">${pjName}</span>
+		</p>
+	</div>
+	<div class="r1_1 clearfix">
+		<p class="lp clearfix">
+			<span class="span1">记录时间</span>
+			<span class="span2">${pjCreateTime}</span>
+		</p>
+		<p class="rp clearfix">
+			<span class="span1">记录人员</span>
+			<span class="span2">${pjOwnId}</span>
+		</p>
+	</div>
+</script>
+<script id="lease_detail" type="text/x-jquery-tmpl">
+    <p class="p1">
+        <span class="p1_l">估价编号</span>
+        <span class="p1_r">${leasesSN}</span>
+    </p>
+    <p class="p2">
+        <span class="p2_l">登记地址</span>
+        <span class="p2_r">${leAddress}</span>
+    </p>
+    <p class="p1">
+        <span class="p1_l">管理单位</span>
+        <span class="p1_r">${leManagerCompary}</span>
+    </p>
+    <p class="p2">
+        <span class="p2_l">管理单位档案号</span>
+        <span class="p2_r">${leManagerSn}</span>
+    </p>
+    <p class="p1">
+        <span class="p1_l">合同编号</span>
+        <span class="p1_r">${leRentSN}</span>
+    </p>
+    <p class="p2">
+        <span class="p2_l">租赁面积</span>
+        <span class="p2_r">&nbsp;</span>
+    </p>
+    <p class="p1">
+        <span class="p1_l">出租方</span>
+        <span class="p1_r">${leLessorId}</span>
+    </p>
+    <p class="p2">
+        <span class="p2_l">承租方</span>
+        <span class="p2_r">${leTenantId}</span>
+    </p>
+    <p class="p1">
+        <span class="p1_l">上级商户</span>
+        <span class="p1_r">${leSuperior}</span>
+    </p>
+    <p class="p2">
+        <span class="p2_l">商户</span>
+        <span class="p2_r">${leBusiness}</span>
+    </p>
+    <p class="p1">
+        <span class="p1_l">商户等级</span>
+        <span class="p1_r"></span>
+    </p>
+    <p class="p2">
+        <span class="p2_l">经营业态</span>
+        <span class="p2_r">${leBusinessType}</span>
+    </p>
+    <p class="p1">
+        <span class="p1_l">租期</span>
+        <span class="p1_r">${leTerm}</span>
+    </p>
+    <p class="p2">
+        <span class="p2_l">合同起止日期</span>
+        <span class="p2_r">${leContractStart}-${leContractEnd}</span>
+    </p>
+    <p class="p1">
+        <span class="p1_l">签约（起始）日租金</span>
+        <span class="p1_r">${leBeginDAmount}元/m²/天</span>
+    </p>
+    <p class="p2">
+        <span class="p2_l">签约（起始）月租金</span>
+        <span class="p2_r">${leBeginMAmount}元/套/月</span>
+    </p>
+    <p class="p1">
+        <span class="p1_l">折合1F日租金</span>
+        <span class="p1_r">${le1FDAcount}元/m²/天</span>
+    </p>
+    <p class="p2">
+        <span class="p2_l">租金是否含物业费</span>
+        <span class="p2_r">${leFeeInclude}</span>
+    </p>
+    <p class="p1">
+        <span class="p1_l">涨幅方式</span>
+        <span class="p1_r">${leIncreaseWay}</span>
+    </p>
+    <p class="p2">
+        <span class="p2_l">租期内平均年涨幅</span>
+        <span class="p2_r">${leAVEYRate}%</span>
+    </p>
+    <p class="p1">
+        <span class="p1_l">租期内各期日租金</span>
+        <span class="p1_r">元/m²·天</span>
+    </p>
+    <p class="p2">
+        <span class="p2_l">押金</span>
+        <span class="p2_r">${lePledge}</span>
+    </p>
+    <p class="p1">
+        <span class="p1_l">租期内各期月租金</span>
+        <span class="p1_r">元/套·月</span>
+    </p>
+    <p class="p2">
+        <span class="p2_l">免租期（月）</span>
+        <span class="p2_r">${leMFreerent}</span>
+    </p>
+    <p class="p3">
+        <span class="p1_l">当前租金</span>
+        <span class="p1_r">${leRentAmount}</span>
+    </p>
+    <p class="p3">
+        <span class="p1_l">付款方式</span>
+        <span class="p1_r">${lePaymentType}</span>
+    </p>
+    <p class="p3">
+        <span class="p1_l">其他</span>
+        <span class="p1_r">${leOther}</span>
+    </p>
+</script>
+<!--assessment template-->
+<script id="assess_detail" type="text/x-jquery-tmpl">
+    <p class="p1">
+        <span class="p1_l">估价编号</span>
+        <span class="p1_r">${amSN}</span>
+    </p>
+    <p class="p2">
+        <span class="p2_l">估价期日</span>
+        <span class="p2_r">${amCreateTime}</span>
+    </p>
+    <p class="p1">
+        <span class="p1_l">实际房屋用途</span>
+        <span class="p1_r">${amHousePurpose}</span>
+    </p>
+    <p class="p2">
+        <span class="p2_l">租赁情况</span>
+        <span class="p2_r">${rentStatus}</span>
+    </p>
+    <p class="p1">
+        <span class="p1_l">不动产权证号</span>
+        <span class="p1_r">${amHouseSN}</span>
+    </p>
+    <p class="p2">
+        <span class="p2_l">权利人</span>
+        <span class="p2_r">${amObligee}</span>
+    </p>
+    <p class="p1">
+        <span class="p1_l">评估日租金</span>
+        <span class="p1_r">${amRentDaily}元/m²/天</span>
+    </p>
+    <p class="p2">
+        <span class="p2_l">评估月租金</span>
+        <span class="p2_r">${amRentMonthly}元/套/月</span>
+    </p>
+    <p class="p1">
+        <span class="p1_l">评估年租金</span>
+        <span class="p1_r">${amRentYearly}元/套/年</span>
+    </p>
+    <p class="p2">
+        <span class="p2_l">1F日租金</span>
+        <span class="p2_r">${amRentDaily1F}元/m²/天</span>
+    </p>
+    <p class="p1">
+        <span class="p1_l">各部位日租金</span>
+        <span class="p1_r">${amPriceEach}元/m²/天</span>
+    </p>
+    <p class="p2">
+        <span class="p2_l">评估年涨幅</span>
+        <span class="p2_r">${amIncreaseYearly}%</span>
+    </p>
+    <p class="p1">
+        <span class="p1_l">房地产单价</span>
+        <span class="p1_r">${amAssessPrice}元/m²</span>
+    </p>
+    <p class="p2">
+        <span class="p2_l">房地产单价时点</span>
+        <span class="p2_r">${amPriceTime}</span>
+    </p>
+    <p class="p1">
+        <span class="p1_l">房地产价格来源</span>
+        <span class="p1_r">${amPriceSource}</span>
+    </p>
+    <p class="p2">
+        <span class="p2_l">估价期日时的约定租金</span>
+        <span class="p2_r"></span>
+    </p>
+    <p class="p3">
+        <span class="p1_l">租金内涵</span>
+        <span class="p1_r">${amRentMeaning}</span>
+    </p>
+</script>
+<!--house template-->
+<script id="house_detail" type="text/x-jquery-tmpl">
+    <p class="p1">
+        <span class="p1_l">房屋编号</span>
+        <span class="p1_r">${houseSN}</span>
+    </p>
+    <p class="p2">
+        <span class="p2_l">建筑面积</span>
+        <span class="p2_r">${houseArea}m²</span>
+    </p>
+    <p class="p1">
+        <span class="p1_l">使用面积</span>
+        <span class="p1_r">${useableArea}</span>
+    </p>
+    <p class="p2">
+        <span class="p2_l">套内面积</span>
+        <span class="p2_r">${insideArea}m²</span>
+    </p>
+    <p class="p1">
+        <span class="p1_l">各层部位面积</span>
+        <span class="p1_r">m²</span>
+    </p>
+    <p class="p2">
+        <span class="p2_l">得房率</span>
+        <span class="p2_r">${roomRate}%</span>
+    </p>
+    <p class="p1">
+        <span class="p1_l">入住率</span>
+        <span class="p1_r">${accupancyRate}%</span>
+    </p>
+    <p class="p2">
+        <span class="p2_l">标准层数</span>
+        <span class="p2_r">${layerLabel}</span>
+    </p>
+    <p class="p1">
+        <span class="p1_l">实际层数</span>
+        <span class="p1_r">${layerReal}</span>
+    </p>
+    <p class="p2">
+        <span class="p2_l">层高</span>
+        <span class="p2_r">${layerHeight}m</span>
+    </p>
+    <p class="p1">
+        <span class="p1_l">净高</span>
+        <span class="p1_r">${clearHeight}m</span>
+    </p>
+    <p class="p2">
+        <span class="p2_l">客梯数量</span>
+        <span class="p2_r">${liftCounts}</span>
+    </p>
+    <p class="p1">
+        <span class="p1_l">客梯品牌</span>
+        <span class="p1_r">${liftBrand}</span>
+    </p>
+    <p class="p2">
+        <span class="p2_l">货梯数量</span>
+        <span class="p2_r">${liftGoodCounts}</span>
+    </p>
+    <p class="p1">
+        <span class="p1_l">楼层系数</span>
+        <span class="p1_r">${layerCoefficient}</span>
+    </p>
+    <p class="p2">
+        <span class="p2_l">在楼栋中位置</span>
+        <span class="p2_r">${locationInBuilding}</span>
+    </p>
+    <p class="p1">
+        <span class="p1_l">产权房号</span>
+        <span class="p1_r">${propertyHN}</span>
+    </p>
+    <p class="p2">
+        <span class="p2_l">现状房号</span>
+        <span class="p2_r">${realHN}</span>
+    </p>
+    <p class="p1">
+        <span class="p1_l">证载房屋类型</span>
+        <span class="p1_r"></span>
+    </p>
+    <p class="p2">
+        <span class="p2_l">证载房屋用途</span>
+        <span class="p2_r">${housePurpose}</span>
+    </p>
+    <p class="p1">
+        <span class="p1_l">房屋产权性质</span>
+        <span class="p1_r">${housePtype}</span>
+    </p>
+    <p class="p2">
+        <span class="p2_l">不动产单元号</span>
+        <span class="p2_r">&nbsp;</span>
+    </p>
+    <p class="p1">
+        <span class="p1_l">户型</span>
+        <span class="p1_r">${roomNumber}</span>
+    </p>
+    <p class="p2">
+        <span class="p2_l">户型结构</span>
+        <span class="p2_r">${houseStructure}</span>
+    </p>
+    <p class="p1">
+        <span class="p1_l">房屋主力朝向</span>
+        <span class="p1_r">${houseOrientations}</span>
+    </p>
+    <p class="p2">
+        <span class="p2_l">地下建筑面积</span>
+        <span class="p2_r">${basementCoverdArea}m²</span>
+    </p>
+    <p class="p1">
+        <span class="p1_l">地下室面积</span>
+        <span class="p1_r">${basementRealArea}m²</span>
+    </p>
+    <p class="p2">
+        <span class="p2_l">地下室净高</span>
+        <span class="p2_r">${basementClearHeight}m</span>
+    </p>
+    <p class="p1">
+        <span class="p1_l">是否开发商装修</span>
+        <span class="p1_r"></span>
+    </p>
+    <p class="p2">
+        <span class="p2_l">景观</span>
+        <span class="p2_r">${scenery}</span>
+    </p>
+    <p class="p1">
+        <span class="p1_l">商业业态</span>
+        <span class="p1_r">${commercialStatus}</span>
+    </p>
+    <p class="p2">
+        <span class="p2_l">部位</span>
+        <span class="p2_r">${position}</span>
+    </p>
+    <p class="p1">
+        <span class="p1_l">铺位号</span>
+        <span class="p1_r"></span>
+    </p>
+    <p class="p2">
+        <span class="p2_l">房屋类型</span>
+        <span class="p2_r">${houseType}</span>
+    </p>
+    <p class="p1">
+        <span class="p1_l">开间</span>
+        <span class="p1_r">${bayArea}m</span>
+    </p>
+    <p class="p2">
+        <span class="p2_l">开间数</span>
+        <span class="p2_r">${bayNumber}</span>
+    </p>
+    <p class="p1">
+        <span class="p1_l">面宽</span>
+        <span class="p1_r"></span>
+    </p>
+    <p class="p2">
+        <span class="p2_l">进深</span>
+        <span class="p2_r">${bayDepth}</span>
+    </p>
+    <p class="p1">
+        <span class="p1_l">可使用车位数</span>
+        <span class="p1_r">${carportNumber}</span>
+    </p>
+    <p class="p2">
+        <span class="p2_l">临街状况</span>
+        <span class="p2_r">${streetFrontage}</span>
+    </p>
+    <p class="p3">
+        <span class="p1_l">基础设施说明</span>
+        <span class="p1_r">${infrastructureState}</span>
+    </p>
+    <p class="p3">
+        <span class="p1_l">其他附属说明</span>
+        <span class="p1_r">${houseAppendage}</span>
+    </p>
+    <p class="p3">
+        <span class="p1_l">空间布局</span>
+        <span class="p1_r"></span>
+    </p>
+    <div class="p3 clearfix" style="margin-top: 40px;">
+        <span class="p3_l">空间布局</span>
+        <div class="pic_box1">
+            <div class="zzc1"></div>
+            <div class="zzc2"></div>
+            <img class="open" src="./img/lp.jpg" alt="">
+            <p>平面图<span>（4）</span></p>
+        </div>
+    </div>
+    <p class="p3">
+        <span class="p1_l">坐标</span>
+        <span class="p1_r">${houseGeo}</span>
+    </p>
+    <div id="container1"></div>
+</script>
+<!--unit tempate-->
+<script id="unit_detail" type="text/x-jquery-tmpl">
+    <p class="p1">
+        <span class="p1_l">楼栋编号</span>
+        <span class="p1_r">${unitSN}</span>
+    </p>
+    <p class="p2">
+        <span class="p2_l">单元标注总层数</span>
+        <span class="p2_r">${unitLayer}</span>
+    </p>
+    <p class="p1">
+        <span class="p1_l">单元实际总层数</span>
+        <span class="p1_r">${unitRawlayer}</span>
+    </p>
+    <p class="p2">
+        <span class="p2_l">单元层户数</span>
+        <span class="p2_r">${unitHHLayer}</span>
+    </p>
+    <p class="p1">
+        <span class="p1_l">产权单元名称</span>
+        <span class="p1_r">${unitPropertyName}</span>
+    </p>
+    <p class="p2">
+        <span class="p2_l">现状单元名称</span>
+        <span class="p2_r">${unitName}</span>
+    </p>
+    <p class="p1">
+        <span class="p1_l">标准层层高</span>
+        <span class="p1_r">${unitLayerHeight}</span>
+    </p>
+    <p class="p2">
+        <span class="p2_l">标准层面积</span>
+        <span class="p2_r">${unitLayerArea}m²</span>
+    </p>
+    <p class="p1">
+        <span class="p1_l">户型面积</span>
+        <span class="p1_r">${unitEachragneArea}m²</span>
+    </p>
+    <p class="p2">
+        <span class="p2_l">单元总户数</span>
+        <span class="p2_r">${unitHHTotal}</span>
+    </p>
+    <p class="p3">
+        <span class="p1_l">坐标</span>
+        <span class="p1_r">${unitGeo}</span>
+    </p>
+    <div id="container" style="position:relative"></div>
+</script>
+<script id="building_detail" type="text/x-jquery-tmpl">
+    <p class="p1">
+        <span class="p1_l">楼栋编号</span>
+        <span class="p1_r">${buildingNumber}</span>
+    </p>
+    <p class="p2">
+        <span class="p2_l">房屋产权性质</span>
+        <span class="p2_r">${propertyRightType}</span>
+    </p>
+    <p class="p1">
+        <span class="p1_l">产权楼栋名称</span>
+        <span class="p1_r">${buildingNme}</span>
+    </p>
+    <p class="p2">
+        <span class="p2_l">现状楼栋名称</span>
+        <span class="p2_r">${buildingRawname}</span>
+    </p>
+    <p class="p1">
+        <span class="p1_l">单元数量</span>
+        <span class="p1_r">${buildingCounts}</span>
+    </p>
+    <p class="p2">
+        <span class="p2_l">楼栋坐落</span>
+        <span class="p2_r">${buildingLocation}</span>
+    </p>
+    <p class="p1">
+        <span class="p1_l">楼栋幢号</span>
+        <span class="p1_r"></span>
+    </p>
+    <p class="p2">
+        <span class="p2_l">建筑类型</span>
+        <span class="p2_r">${buildingType}</span>
+    </p>
+    <p class="p1">
+        <span class="p1_l">建筑样式</span>
+        <span class="p1_r">${buildingStyle}</span>
+    </p>
+    <p class="p2">
+        <span class="p2_l">建筑结构</span>
+        <span class="p2_r">${buildingStructure}</span>
+    </p>
+    <p class="p1">
+        <span class="p1_l">外立面</span>
+        <span class="p1_r">${buildingSkin}</span>
+    </p>
+    <p class="p2">
+        <span class="p2_l">地上标注总层数</span>
+        <span class="p2_r">&nbsp;</span>
+    </p>
+    <p class="p1">
+        <span class="p1_l">地上实际总层数</span>
+        <span class="p1_r"></span>
+    </p>
+    <p class="p2">
+        <span class="p2_l">地下总层数</span>
+        <span class="p2_r">${buildingUnderfloors}</span>
+    </p>
+    <p class="p1">
+        <span class="p1_l">建成年代（年）</span>
+        <span class="p1_r">${buildingCompletion}</span>
+    </p>
+    <p class="p2">
+        <span class="p2_l">在楼盘中位置</span>
+        <span class="p2_r">${buildingInlocation}</span>
+    </p>
+</script>
+<script id="estate_detail" type="text/x-jquery-tmpl">
+	<p class="p1">
+        <span class="p1_l">楼盘编号</span>
+        <span class="p1_r">${buildNumber}</span>
+    </p>
+    <p class="p2">
+        <span class="p2_l">占地总面积</span>
+        <span class="p2_r">${floorSpace}m²</span>
+    </p>
+    <p class="p1">
+        <span class="p1_l">竣工年代</span>
+        <span class="p1_r">${completionDate}</span>
+    </p>
+    <p class="p2">
+        <span class="p2_l">总建筑面积</span>
+        <span class="p2_r">${structureSpace}m²</span>
+    </p>
+    <p class="p1">
+        <span class="p1_l">物业公司</span>
+        <span class="p1_r"></span>
+    </p>
+    <p class="p2">
+        <span class="p2_l">容积率</span>
+        <span class="p2_r">${floorRatio}％</span>
+    </p>
+    <p class="p1">
+        <span class="p1_l">办公楼等级</span>
+        <span class="p1_r">${officeLevel}</span>
+    </p>
+    <p class="p2">
+        <span class="p2_l">绿化覆盖率</span>
+        <span class="p2_r">${greeneryRatio}%</span>
+    </p>
+    <p class="p1">
+        <span class="p1_l">楼盘名称</span>
+        <span class="p1_r">${estateName}</span>
+    </p>
+    <p class="p2">
+        <span class="p2_l">入住率</span>
+        <span class="p2_r">${occupancyRatio}%</span>
+    </p>
+    <p class="p1">
+        <span class="p1_l">开发商</span>
+        <span class="p1_r">${developers}</span>
+    </p>
+    <p class="p2">
+        <span class="p2_l">车位数</span>
+        <span class="p2_r">${parkingNumber}（个）</span>
+    </p>
+    <p class="p1">
+        <span class="p1_l">物业管理费</span>
+        <span class="p1_r">${propertyCost}元/m²/月</span>
+    </p>
+    <p class="p2">
+        <span class="p2_l">商务类型</span>
+        <span class="p2_r">${commercialType}</span>
+    </p>
+    <p class="p1">
+        <span class="p1_l">办公区域</span>
+        <span class="p1_r">${officeArea}</span>
+    </p>
+    <p class="p2">
+        <span class="p2_l">业态配比</span>
+        <span class="p2_r">${distributionRatio}</span>
+    </p>
+    <p class="p1">
+        <span class="p1_l">总栋数</span>
+        <span class="p1_r">${buildsCounts}</span>
+    </p>
+    <p class="p2">
+        <span class="p2_l">主力商户</span>
+        <span class="p2_r">${mainTenant}</span>
+    </p>
+    <p class="p1">
+        <span class="p1_l">楼盘类型</span>
+        <span class="p1_r">${estateType}</span>
+    </p>
+    <p class="p2">
+        <span class="p2_l">裙房</span>
+        <span class="p2_r">${officeAnnex}</span>
+    </p>
+    <p class="p1">
+        <span class="p1_l">土地编号</span>
+        <span class="p1_r">${landId}</span>
+    </p>
+    <p class="p2">
+        <span class="p2_l">土地使用权来源</span>
+        <span class="p2_r">&nbsp;</span>
+    </p>
+    <p class="p1">
+        <span class="p1_l">土地用途</span>
+        <span class="p1_r"></span>
+    </p>
+    <p class="p2">
+        <span class="p2_l">土地使用期限</span>
+        <span class="p2_r"></span>
+    </p>
+    <p class="p1">
+        <span class="p1_l">土地面积</span>
+        <span class="p1_r">m²</span>
+    </p>
+    <p class="p2">
+        <span class="p2_l">土地证编号</span>
+        <span class="p2_r"></span>
+    </p>
+    <div class="qw">
+        <p><span>区位信息</span></p>
+    </div>
+    <p class="p1">
+        <span class="p1_l">国省市</span>
+        <span class="p1_r">${province}</span>
+    </p>
+    <p class="p2">
+        <span class="p2_l">商圈</span>
+        <span class="p2_r">&nbsp;</span>
+    </p>
+    <p class="p1">
+        <span class="p1_l">板块</span>
+        <span class="p1_r">${plate}</span>
+    </p>
+    <p class="p2">
+        <span class="p2_l">环线位置</span>
+        <span class="p2_r">${loopLine}</span>
+    </p>
+    <p class="p1">
+        <span class="p1_l">工业园区</span>
+        <span class="p1_r">${industrialArea}</span>
+    </p>
+    <p class="p2">
+        <span class="p2_l">街道</span>
+        <span class="p2_r">${street}</span>
+    </p>
+    <p class="p1">
+        <span class="p1_l">商务区</span>
+        <span class="p1_r">${businessArea}</span>
+    </p>
+    <p class="p2">
+        <span class="p2_l">区县</span>
+        <span class="p2_r">${district}</span>
+    </p>
+    <p class="p1">
+        <span class="p1_l">通邮地址</span>
+        <span class="p1_r">${address}</span>
+    </p>
+    <div class="pic_box clearfix">
+        <div class="pic_box1">
+            <div class="zzc1"></div>
+            <div class="zzc2"></div>
+            <img class="open" src="./img/lp.jpg" alt="">
+            <p>平面图<span>（4）</span></p>
+        </div>
+        <div class="pic_box1">
+            <div class="zzc1"></div>
+            <div class="zzc2"></div>
+            <img class="open" src="./img/lp.jpg" alt="">
+            <p>实景图<span>（5）</span></p>
+        </div>
+    </div>
+</script>
+</body>
+</html>

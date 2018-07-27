@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <title>汇总信息</title>
+    <link rel="stylesheet" href="./css/second.css">
+    <!--下拉  css-->
+    <link rel="stylesheet" href="./css/xiala.css">
+
+    <link rel="stylesheet" href="css/laydate.css" />
+
+    <script type="text/javascript" src="./js/jquery-1.9.1.js"></script>
+    <!--高德地图   js-->
+    <script type="text/javascript" src="http://webapi.amap.com/maps?v=1.4.6&key=31cb1cb6cb584d26dad68cffd5ea67d6"></script>
+    <script src="./js/data.js"></script>
+    <script src="js/laydate.js"></script>
+    <script src="js/jquery.tmpl.min.js"></script>
+</head>
+<body>
+<!--header  S-->
+<div class="header_warp">
+    <div class="header">
+        <a class="logo" href="./index.html"><img src="./img/logo.png" alt=""></a>
+        <div class="header_box">
+            <p id="username">None</p>
+            <a class="tc" href="javascript:;" onclick="bs.logout()"><img title="退出登录" src="./img/tc.png" alt=""></a>
+        </div>
+    </div>
+</div>
+
+<!--内容   S-->
+<div class="nr_warp">
+    <div class="nr">
+        <div class="nr_left">
+            <div class="left_box">
+                <form action="">
+                    <input type="text" id="q1text" placeholder="请输入搜索的项目名称/档案号/地址">
+                    <button id="query1">查询</button>
+                </form>
+                <div class="xl">
+                    <ul class="dropdown">
+                        <li class="has_li">
+                            <a class="xl_title">
+                                项目管理
+                                <img src="./img/jt.png" alt="">
+                            </a>
+                        </li>
+                        <ul class="_slide1down" id="pjlist">
+                        </ul>
+                    </ul>
+                </div>
+                <a class="xx" href="">汇总信息</a>
+            </div>
+        </div>
+        <div class="nr_right">
+            <div class="right1">
+                <div class="r1_big">
+                    <div class="r1_1 clearfix">
+                        <div class="ld clearfix">
+                            <p>估价期日</p>
+                            <div class="ld_r">
+                                <!--<input type="text" placeholder="请选择时间">-->
+                                <div class="laydate-box">
+                                    <input type="text" id="laydateInput" placeholder="xxxx年xx月xx日" />
+                                    <img src="./img/rili.png" alt="" class="icon data-icon"/>
+                                    <div class="select-date">
+                                        <div class="select-date-header">
+                                            <ul class="heade-ul">
+                                                <li class="header-item header-item-one">
+                                                    <select name="" id="yearList"></select>
+                                                </li>
+                                                <li class="header-item header-item-two" onselectstart="return false">
+                                                    <select name="" id="monthList"></select>
+                                                </li>
+                                                <li class="header-item header-item-three" onselectstart="return false" >
+                                                    <span class="reback">回到今天</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="select-date-body">
+                                            <ul class="week-list">
+                                                <li>日</li><li>一</li><li>二</li><li>三</li><li>四</li><li>五</li><li>六</li>
+                                            </ul>
+                                            <ul class="day-tabel"></ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--<img class="rili" src="./img/rili.png" alt="">-->
+                            </div>
+                        </div>
+                        <div class="ld2 clearfix">
+                            <p>项目名称</p>
+                            <div class="ld_r">
+                                <select name="">
+                                    <option value=""></option>
+                                    <option value="">1</option>
+                                    <option value="">2</option>
+                                    <option value="">3</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="ld3 clearfix">
+                            <p>物业公司</p>
+                            <div class="ld_r">
+                                <select name="">
+                                    <option value=""></option>
+                                    <option value="">1</option>
+                                    <option value="">2</option>
+                                    <option value="">3</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="r1_1 clearfix">
+                        <div class="ld2 clearfix">
+                            <p>实际房屋用途</p>
+                            <div class="ld_r">
+                                <select name="">
+                                    <option value=""></option>
+                                    <option value="">居住</option>
+                                    <option value="">办公</option>
+                                    <option value="">商业经营</option>
+                                    <option value="">工业厂房</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="ld2 clearfix">
+                            <p>户型</p>
+                            <div class="ld_r">
+                                <select name="">
+                                    <option value=""></option>
+                                    <option value="">公寓</option>
+                                    <option value="">新公房</option>
+                                    <option value="">旧工房</option>
+                                    <option value="">商场</option>
+                                    <option value="">店铺</option>
+                                    <option value="">办公楼</option>
+                                    <option value="">工厂</option>
+                                    <option value="">简屋</option>
+                                    <option value="">搭建</option>
+                                    <option value="">车棚</option>
+                                    <option value="">泵房</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="ld3 clearfix">
+                            <p>商业业态</p>
+                            <div class="ld_r">
+                                <select name="">
+                                    <option value=""></option>
+                                    <option value="">百货公司</option>
+                                    <option value="">超级市场</option>
+                                    <option value="">专业市场</option>
+                                    <option value="">大型娱乐设施</option>
+                                    <option value="">金融中介</option>
+                                    <option value="">餐饮</option>
+                                    <option value="">综合零售</option>
+                                    <option value="">休闲养生</option>
+                                    <option value="">生活服务</option>
+                                    <option value="">住宿</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="right2">
+                <div class="r2_big">
+                    <p>评估信息</p>
+                    <div class="r2_box">
+                        <form action="">
+                            <input class="tex" type="text" placeholder="请输入搜索的项目名称/档案号/地址">
+                            <button class="cx">查询</button>
+                            <span class="span_dq">当前租金</span>
+                            <div class="dqzj">
+                                <select class="num" name="">
+                                    <option value=""></option>
+                                </select>
+                                <p class="xiaoyu"><</p>
+                            </div>
+                            <span class="span_pg">评估日租金</span>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="right3">
+                <div class="r3_box" id="estate_list">
+                    <div class="r3_title">
+                        <p class="p1">项目名称</p>
+                        <p class="p2">估价期日</p>
+                        <!--<p class="p3">总套数</p>-->
+                        <p class="p4">管理单位</p>
+                        <p class="p5">物业公司</p>
+                        <p class="p6">档案号</p>
+                        <p class="p7">板块</p>
+                        <p class="p8">地址</p>
+                        <p class="p9">
+                            建筑面积
+                            <img class="rjt" src="./img/rjt.png" alt="">
+                        </p>
+                        <p class="p10">部位</p>
+                        <p class="p11">租赁情况</p>
+                        <p class="p12">用途</p>
+                        <p class="p13">户型</p>
+                        <p class="p14">商业业态</p>
+                        <p class="p15">承租方</p>
+                        <p class="p16 pp">当天租金<br>(元/m²·天)</p>
+                        <p class="p17">合同到期日</p>
+                        <p class="p18 pp">评估日租金<br>(元/m²·天)</p>
+                        <p class="p19 pp">评估月租金<br>(元/套·月)</p>
+                        <p class="p20 pp">评估年租金<br>(元/套·年)</p>
+                        <p class="p21 pp">各部位日租金<br>(元/m²·天)</p>
+                        <p class="p22 pp">年涨幅<br>(％)</p>
+                        <p class="p23">租金内涵</p>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="right4">
+                <div class="r4_box">
+                    <a class="lht" href="">首页</a>
+                    <a class="lht now4" href="">1</a>
+                    <a class="lht" href="">2</a>
+                    <a class="lht" href="">3</a>
+                    <a class="lht" href="">></a>
+                    <a class="lht" href="">尾页</a>
+                    <form action="">
+                        <span class="lht">第</span>
+                        <input type="text">
+                        <span class="lht">页</span>
+                        <a href="">GO</a>
+                        <span class="lht">共34页</span>
+                    </form>
+                </div>
+            </div>
+            <div class="right5">
+                <div class="r5_top">
+                    <span>地图</span>
+                    <img class="click_img" src="./img/sjt.png" alt="">
+                </div>
+                <div id="container"></div>
+            </div>
+            <div class="box_left">
+                <img src="./img/lashen.png" alt="">
+                <img class="z" src="./img/ls_l.png" alt="">
+                <img class="y" src="./img/ls_r.png" alt="">
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="./js/common.js"></script>
+
+<!--时间插件-->
+<script>
+    function getSelectDate(result){
+        //这里获取选择的日期
+        console.log(result);
+    }
+</script>
+
+<!--下拉   js-->
+<script src="./js/xiala.js"></script>
+
+
+
+<!--高德地图  js-->
+<script type="text/javascript">
+    var index = '';
+    var x = "";
+    var y = "";
+
+    //  地图box 的箭头点击事件
+    $(".click_img").stop().click(function () {
+        if ($(".right5").hasClass("top")){
+            $(".right5").stop().animate({top:"93%"},1000); $(".right5");
+            $(".right5").removeClass("top");
+            return false;
+        }else if ($(".right1").hasClass("xia")){
+            $(".right5").stop().animate({top:"93%"},1000);
+            $(".right5").removeClass("top");
+            $(".right1").removeClass("xia");
+            return false;
+        }
+        $(".right5").addClass("top");
+        $(".right5").stop().animate({top:"25%"},1000);
+
+        index = $(".p").index(this);
+        mapfun(-1);
+        return false;
+    })
+
+
+    //  每条数据的点击事件
+    $(".zzc").stop().click(function () {
+        if ($(".right5").hasClass("top")){
+            $(".right5").removeClass("top");
+            $(".right5").stop().animate({top:"93%"},1000); $(".right5");
+            return false;
+        }
+        $(".right5").addClass("top");
+        $(".right5").stop().animate({top:"25%"},1000);
+
+        index = $(".zzc").index(this);
+        mapfun(index);
+
+        console.log(x);
+        console.log(y);
+        return false;
+    })
+
+    function mapfun(index) {
+
+        if (index == -1){
+            x = 119;
+            y = 38;
+            //实例化信息窗体
+            var title = 'aa',
+                content = [];
+            content.push('bb');
+            content.push('cc');
+        }
+        else{
+            x = data.result[index].x;
+            y = data.result[index].y;
+            //实例化信息窗体
+            var title = data.result[index].a1,
+                content = [];
+            content.push(data.result[index].a2);
+            content.push(data.result[index].a3);
+        }
+
+        //地图初始化时，在地图上添加一个marker标记,鼠标点击marker可弹出自定义的信息窗体
+        var map = new AMap.Map("container", {
+            resizeEnable: true,
+            center: [x, y],
+            zoom: 16
+        });
+        addMarker();
+        //添加marker标记
+        function addMarker() {
+            map.clearMap();
+            var marker = new AMap.Marker({
+                map: map,
+                position: [x, y]
+            });
+            //鼠标点击marker弹出自定义的信息窗体
+            AMap.event.addListener(marker, 'click', function() {
+                infoWindow.open(map, marker.getPosition());
+            });
+        }
+
+
+        var infoWindow = new AMap.InfoWindow({
+            isCustom: true,  //使用自定义窗体
+            content: createInfoWindow(title, content.join("<br/>")),
+            offset: new AMap.Pixel(16, -45)
+        });
+
+        //构建自定义信息窗体
+        function createInfoWindow(title, content) {
+            var info = document.createElement("div");
+            info.className = "info";
+
+            //可以通过下面的方式修改自定义窗体的宽高
+            info.style.width = "400px";
+            // 定义顶部标题
+            var top = document.createElement("div");
+            var titleD = document.createElement("div");
+            var closeX = document.createElement("img");
+            top.style.backgroundColor = "#fff";
+            top.className = "info-top";
+            closeX.className = "close";
+            titleD.innerHTML = title;
+            closeX.src = "http://webapi.amap.com/images/close2.gif";
+            closeX.onclick = closeInfoWindow;
+
+            top.appendChild(titleD);
+            top.appendChild(closeX);
+            info.appendChild(top);
+
+            // 定义中部内容
+            var middle = document.createElement("div");
+            middle.className = "info-middle";
+            middle.style.backgroundColor = 'white';
+            middle.innerHTML = content;
+            info.appendChild(middle);
+            return info;
+        }
+
+        //关闭信息窗体
+        function closeInfoWindow() {
+            map.clearInfoWindow();
+        }
+    }
+</script>
+<script type="text/javascript" src="http://webapi.amap.com/demos/js/liteToolbar.js"></script>
+<script src="./js/07201716.js"></script>
+<script>
+$(document).ready(function(){
+	bs.checkAuth();
+	bs.loadProject();
+
+});
+$(document).on("click", ".pji", function (event) { 
+	$("#pjInfo").find('.r1_1').remove();
+	var pj = bs.project;//(proj_data.result);
+	var result = pj.filter(function( obj ) {
+		return obj.id == $(event.currentTarget).attr("data-id");
+	});
+	$( "#pjinfo" ).tmpl( result ).appendTo( "#pjInfo" );
+});
+</script>
+<script id="pjtmpl_left" type="text/x-jquery-tmpl">
+	<li class="pji" data-id="${id}" data-role="${roleId}"><a class="clearfix" href="javascript:;"><span class="span1">${pjName}</span><span class="span2">${pjCreateTime}</span></a></li>
+</script>
+<script id="est_item" type="text/x-jquery-tmpl">
+	<div class="r3_c clearfix">
+        <a class="pp1" href="./2xq.html?id=${housesId}">详情</a>
+        <p class="pp2">${amCreateTime}&nbsp;</p>
+        <p class="pp3">${counts}&nbsp;</p>
+        <p class="pp4">${leManagerCompary}&nbsp;</p>
+        <p class="pp5">${leManagerSn}&nbsp;</p>
+        <p class="pp6">${plant}&nbsp;</p>
+        <p class="pp7">${houseAddress}&nbsp;</p>
+        <p class="pp8">${houseArea}m²</p>
+        <p class="pp9">${bunknumber}&nbsp;</p>
+        <p class="pp10">${rentStatus}&nbsp;</p>
+        <p class="pp11">${housePurpose}</p>
+        <p class="pp12">${houseStructure}&nbsp;</p>
+        <p class="pp13">${commercialStatus}</p>
+        <p class="pp14">${leTenantId}</p>
+        <p class="pp15">${lerentamount}&nbsp;</p>
+        <p class="pp16">${leContractEnd}&nbsp;</p>
+        <p class="pp17">${amrentdaily}</p>
+        <p class="pp18">${amrentmonthly}</p>
+        <p class="pp19">${amrentyearly}</p>
+        <p class="pp20">${amPriceEach}&nbsp;</p>
+        <p class="pp21">${amincreaseyearly}</p>
+        <p class="pp22">${amrentmeaning}</p>
+        <div class="zzc"></div>
+    </div>
+</script>
+</body>
+</html>

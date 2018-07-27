@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>登陆</title>
+    <link rel="stylesheet" href="./css/index.css">
+    <script src="./js/jquery-3.2.1.js"></script>
+    <!--[if IE 8]>
+    <script type="text/javascript" src="./js/jquery-1.9.1.js"></script>
+    <![endif]-->
+</head>
+<body>
+    <!--登陆  S-->
+    <div class="dl_warp">
+        <div class="left">
+            <img src="./img/denglu.jpg" alt="">
+            <div class="left_box">
+                <h1>专业服务 诚信至上</h1>
+                <p class="p1">Professional Service  Integrity First</p>
+                <p class="p2">百盛评估</p>
+                <span>BAI SHENG</span>
+            </div>
+        </div>
+        <div class="right">
+            <div class="right_box">
+                <p>登录百盛租金评估管理系统</p>
+                <span id="msg">请输入下面的详细信息</span>
+                <form id="loginform">
+                    <p>用户名</p>
+                    <input type="text" id="login" placeholder="请输入用户名">
+                    <i>请输入正确的用户名</i>
+                    <div class="form_box clearfix">
+                        <p>密码</p>
+                        <a href="">忘记密码？</a>
+                    </div>
+                    <input type="password" id="secu" placeholder="请输入密码">
+                    <button type="submit">登陆</button>
+                </form>
+            </div>
+            <img src="./img/Group.png" alt="">
+        </div>
+    </div>
+
+    <script src="./js/common.js"></script>
+    <script>
+        (function($){
+            function processForm( e ){
+                var l = $("#login").val();
+                var s = $("#secu").val();
+                $.ajax({
+                    url: 'http://rms.shbrea.com:720/parkson/parkson/login',
+                    type: 'post',
+                    contentType: 'application/json',
+                    data: JSON.stringify({"loginName":l,"loginPwd":s}),
+                    success: function( data, textStatus, jQxhr ){
+                        $("#msg").text("登录成功, 跳转中...");
+                        localStorage.setItem('auth', JSON.stringify(data));
+                        setTimeout(explode(data), 2000);
+                    },
+                    error: function( jqXhr, textStatus, errorThrown ){
+                        $("#msg").text( jqXhr.responseJSON.data );
+                    }
+                });
+                e.preventDefault();
+            }
+            function explode(ud){
+                if($("#login").val()==="admin") {
+                    location.href="3.html";
+                } else {
+                    location.href="2.html";
+                }
+            }
+            $('#loginform').submit( processForm );
+        })(jQuery);
+    </script>
+</body>
+</html>

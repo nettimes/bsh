@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <title>找不到项目</title>
+    <link rel="stylesheet" href="./css/sorry.css">
+    <!--下拉  css-->
+    <link rel="stylesheet" href="./css/xiala.css">
+    <link rel="stylesheet" href="css/laydate.css" />
+    <script src="./js/jquery-3.2.1.js"></script>
+    <!--<script type="text/javascript" src="./js/jquery-1.9.1.js"></script>-->
+    <script src="js/jquery.tmpl.min.js"></script>
+</head>
+<body>
+<!--header  S-->
+<div class="header_warp">
+    <div class="header">
+        <a class="logo" href="./index.html"><img src="./img/logo.png" alt=""></a>
+        <div class="header_box">
+            <p id="username">None</p>
+            <a class="tc" href="javascript:;" onclick="bs.logout()"><img title="退出登录" src="./img/tc.png" alt=""></a>
+        </div>
+    </div>
+</div>
+
+<!--内容   S-->
+<div class="nr_warp">
+    <div class="nr clearfix">
+        <div class="nr_left">
+            <div class="left_box">
+                <form action="">
+                    <input type="text" id="q1text" placeholder="请输入搜索的项目名称/档案号/地址">
+                    <button id="query1">查询</button>
+                </form>
+                <div class="xl">
+                    <ul class="dropdown">
+                        <li class="has_li">
+                            <a class="xl_title">
+                                项目管理
+                                <img src="./img/jt.png" alt="">
+                            </a>
+                        </li>
+                        <ul class="slide1down" id="pjlist">
+                        </ul>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="nr_right">
+            <div class="right3">
+                <div class="box_mid">
+                    <img src="./img/sorry.png" alt="">
+                    <p>对不起！系统中未找到该项目</p>
+                    <a href="./4.html">新增项目</a>
+                </div>
+            </div>
+            <div class="box_left">
+                <img src="./img/lashen.png" alt="">
+                <img class="z" src="./img/ls_l.png" alt="">
+                <img class="y" src="./img/ls_r.png" alt="">
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="./js/4.js"></script>
+
+
+
+<!--下拉   js-->
+<script src="./js/xiala.js"></script>
+<script src="./js/07201716.js"></script>
+<script>
+$(document).ready(function(){
+	bs.checkAuth();
+	bs.loadProject();
+
+});
+$(document).on("click", ".pji", function (event) { 
+	$("#pjInfo").find('.r1_1').remove();
+	var pj = bs.project;//(proj_data.result);
+	var result = pj.filter(function( obj ) {
+		return obj.id == $(event.currentTarget).attr("data-id");
+	});
+	$( "#pjinfo" ).tmpl( result ).appendTo( "#pjInfo" );
+});
+/*项目查询*/
+$('#query1').on("click", function(e){
+    e.preventDefault();
+    var v = $('#q1text').val();
+    req = JSON.stringify({"token":bs.auth.data.token,"roleId":bs.project[0].roleId,"conditions":v});
+    bs.ajaxfuncURL ('project/search',req,bs.auth.data.token,cbprjsrch);
+});
+function cbprjsrch(res){
+    if(res.data.pList.length>0){
+    }else{
+        location.href="sorry.html";
+    }
+}
+</script>
+<script id="pjtmpl_left" type="text/x-jquery-tmpl">
+	<li class="pji" data-id="${id}" data-role="${roleId}"><a class="clearfix" href="javascript:;"><span class="span1">${pjName}</span><span class="span2">${pjCreateTime}</span></a></li>
+</script>
+
+</body>
+</html>

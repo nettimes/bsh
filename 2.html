@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <title>2</title>
+    <link rel="stylesheet" href="./css/2.css">
+    <!--下拉  css-->
+    <link rel="stylesheet" href="./css/xiala.css">
+    <link rel="stylesheet" href="http://cache.amap.com/lbs/static/main1119.css"/>
+    <script src="./js/jquery-3.2.1.js"></script>
+    <!--[if IE 8]>
+    <script type="text/javascript" src="./js/jquery-1.9.1.js"></script>
+    <![endif]-->
+    <!--高德地图   js-->
+    <script type="text/javascript" src="http://webapi.amap.com/maps?v=1.4.6&key=31cb1cb6cb584d26dad68cffd5ea67d6&plugin=AMap.MouseTool"></script>
+    <script src="./js/data.js"></script>
+    <script type="text/javascript" src="http://cache.amap.com/lbs/static/addToolbar.js"></script>
+    <script src="js/jquery.tmpl.min.js"></script>
+</head>
+<body>
+<!--header  S-->
+<div class="header_warp">
+    <div class="header">
+        <a class="logo" href="./index.html"><img src="./img/logo.png" alt=""></a>
+        <div class="header_box">
+            <p id="username">None</p>
+            <a class="tc" href="javascript:;" onclick="bs.logout()"><img title="退出登录" src="./img/tc.png" alt=""></a>
+        </div>
+    </div>
+</div>
+
+<!--内容   S-->
+<div class="nr_warp">
+    <div class="nr">
+        <div class="nr_left">
+            <div class="left_box">
+                <form action="">
+                    <input type="text" id="q1text" placeholder="请输入搜索的项目名称/档案号/地址">
+                    <button id="query1">查询</button>
+                </form>
+                <div class="xl">
+                    <ul class="dropdown">
+                        <li class="has_li">
+                            <a class="xl_title">
+                                项目管理
+                                <img src="./img/jt.png" alt="">
+                            </a>
+                        </li>
+                        <ul class="slide1down" id="pjlist">
+                        </ul>
+                    </ul>
+                </div>
+                <a class="xx" href="./seonde.html">汇总信息</a>
+                <script>
+
+                </script>
+            </div>
+        </div>
+        <div class="nr_right">
+            <div class="right1">
+                <div class="r1_big" id="pjInfo">
+                    
+                </div>
+                <img class="sjt" src="./img/xjt.png" alt="">
+            </div>
+            <div class="right2">
+                <div class="r2_big">
+                    <p>评估信息</p>
+                    <div class="r2_box">
+                        <form action="">
+                            <input class="tex" type="text" placeholder="请输入搜索的地址">
+                            <button class="cx">查询</button>
+                            <span class="span_dq">当前租金</span>
+                            <div class="dqzj">
+                                <select class="num" name="">
+                                    <option value=""></option>
+                                </select>
+                                <p class="xiaoyu"><</p>
+                            </div>
+                            <span class="span_pg">评估日租金</span>
+                            <select class="dc" name="">
+                                <option value="">Excel</option>
+                                <option value="">Pdf</option>
+                            </select>
+                            <a href="" download="">导出</a>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="right3">
+                <div class="r3_box" id="estate_list">
+                    <div class="r3_title">
+                        <p class="p1">操作</p>
+                        <p class="p2">估价期日</p>
+                        <!--<p class="p3">总套数</p>-->
+                        <p class="p4">管理单位</p>
+                        <p class="p5">档案号</p>
+                        <p class="p6">板块</p>
+                        <p class="p7">地址</p>
+                        <p class="p8">建筑面积</p>
+                        <p class="p9">部位</p>
+                        <p class="p10">租赁情况</p>
+                        <p class="p11">
+                            用途
+                            <img class="rjt" src="./img/rjt.png" alt="">
+                        </p>
+                        <p class="p12">户型</p>
+                        <p class="p13">商业业态</p>
+                        <p class="p14">承租方</p>
+                        <p class="p15 pp">当天租金<br>(元/m²·天)</p>
+                        <p class="p16">合同到期日</p>
+                        <p class="p17 pp">评估日租金<br>(元/m²·天)</p>
+                        <p class="p18 pp">评估月租金<br>(元/套·月)</p>
+                        <p class="p19 pp">评估年租金<br>(元/套·年)</p>
+                        <p class="p20 pp">各部位日租金<br>(元/m²·天)</p>
+                        <p class="p21 pp">年涨幅<br>(％)</p>
+                        <p class="p22">租金内涵</p>
+                    </div>
+                </div>
+            </div>
+            <div class="right4">
+                <div class="r4_box">
+                    <a class="lht" href="">首页</a>
+                    <a class="lht now4" href="">1</a>
+                    <a class="lht" href="">2</a>
+                    <a class="lht" href="">3</a>
+                    <a class="lht" href="">></a>
+                    <a class="lht" href="">尾页</a>
+                    <form action="">
+                        <span class="lht">第</span>
+                        <input type="text">
+                        <span class="lht">页</span>
+                        <a href="">GO</a>
+                        <span class="lht">共34页</span>
+                    </form>
+                </div>
+            </div>
+            <div class="right5">
+                <div class="r5_top">
+                    <span>地图</span>
+                    <img class="click_img" src="./img/sjt.png" alt="">
+                </div>
+                <div id="container"></div>
+                <div class="button-group">
+                    <!--<input type="button" class="button" value="鼠标绘制面" id="polygon"/>-->
+                    <button class="button" id="polygon">
+                        <img class="pen1" src="./img/pen1.png" alt="">
+                        <img class="pen2" src="./img/pen2.png" alt="">
+                    </button>
+                    <div class="cz">
+                        <img class="reset1" src="./img/reset1.png" alt="">
+                        <img class="reset2" src="./img/reset2.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="box_left">
+                <img src="./img/lashen.png" alt="">
+                <img class="z" src="./img/ls_l.png" alt="">
+                <img class="y" src="./img/ls_r.png" alt="">
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="./js/common.js"></script>
+
+<!--下拉   js-->
+<script src="./js/xiala.js"></script>
+<script src="./js/2htmlMapInteractions.js"></script>
+
+<!--高德地图  js-->
+<script type="text/javascript">
+        //  地图box 的箭头点击事件
+        $(".click_img").stop().click(function () {
+            if ($(".right5").hasClass("top")){
+                $(".right5").stop().animate({top:"95%"},1000);
+                $(".right5").removeClass("top");
+                return false;
+            }else if ($(".right1").hasClass("xia")){
+                $(".right5").stop().animate({top:"95%"},1000);
+                $(".right5").removeClass("top");
+                $(".right1").removeClass("xia");
+                $(".right1").stop().animate({height:"15%"});
+                return false;
+            }
+            $(".right5").addClass("top");
+            $(".right5").stop().animate({top:"25%"},1000);
+
+            index = $(".p").index(this);
+            mapfun(-1);
+            return false;
+        })
+
+        //  每条数据的点击事件
+        $(".zzc").stop().click(function () {
+            if ($(".right5").hasClass("top")){
+                $(".right5").removeClass("top");
+                $(".right5").stop().animate({top:"93%"},1000); $(".right5");
+                return false;
+            }
+            $(".right5").addClass("top");
+            $(".right5").stop().animate({top:"25%"},1000);
+
+            index = $(".zzc").index(this);
+            mapfun(index);
+
+            console.log(x);
+            console.log(y);
+            return false;
+        })
+
+
+
+        $(".right5").resize(function () {
+
+            $(".button-group").css({
+                top:"50%",
+                right:"0",
+                marginTop:"-100px"
+
+            })
+            var ch = $("#container").height();
+            $(".right5").css({
+                height:ch+60+"px"
+            })
+
+        })
+
+
+
+        //  重置地图
+        $(".cz").click(function () {
+            fn2();
+            $("#polygon").removeClass("sy");
+        })
+</script>
+<script type="text/javascript" src="http://webapi.amap.com/demos/js/liteToolbar.js"></script>
+<script src="./js/07201716.js"></script>
+<script>
+$(document).ready(function(){
+	bs.checkAuth();
+	bs.loadProject();
+
+});
+$(document).on("click", ".pji", function (event) { 
+	$("#pjInfo").find('.r1_1').remove();
+	var pj = bs.project;//(proj_data.result);
+	var result = pj.filter(function( obj ) {
+		return obj.id == $(event.currentTarget).attr("data-id");
+	});
+	$( "#pjinfo" ).tmpl( result ).appendTo( "#pjInfo" );
+});
+/*项目查询*/
+$('#query1').on("click", function(e){
+    e.preventDefault();
+    var v = $('#q1text').val();
+    req = JSON.stringify({"token":bs.auth.data.token,"roleId":bs.project[0].roleId,"conditions":v});
+    bs.ajaxfuncURL ('project/search',req,bs.auth.data.token,cbprjsrch);
+});
+function cbprjsrch(res){
+    if(res.data.pList.length>0){
+    }else{
+        location.href="sorry.html";
+    }
+}
+</script>
+<script id="pjtmpl_left" type="text/x-jquery-tmpl">
+	<li class="pji" data-id="${id}" data-role="${roleId}"><a class="clearfix" href="javascript:;"><span class="span1">${pjName}</span><span class="span2">${pjCreateTime}</span></a></li>
+</script>
+<script id="pjinfo" type="text/x-jquery-tmpl">
+	<div class="r1_1 clearfix">
+		<p class="lp clearfix">
+			<span class="span1">项目编号</span>
+			<span class="span2">${id}</span>
+		</p>
+		<p class="rp clearfix">
+			<span class="span1">信息时点</span>
+			<span class="span2">${pjAssessTime}</span>
+		</p>
+	</div>
+	<div class="r1_1 clearfix">
+		<p class="lp clearfix">
+			<span class="span1">委托方</span>
+			<span class="span2">${pjBailor}</span>
+		</p>
+		<p class="rp clearfix">
+			<span class="span1">项目名称</span>
+			<span class="span2">${pjName}</span>
+		</p>
+	</div>
+	<div class="r1_1 clearfix">
+		<p class="lp clearfix">
+			<span class="span1">记录时间</span>
+			<span class="span2">${pjCreateTime}</span>
+		</p>
+		<p class="rp clearfix">
+			<span class="span1">记录人员</span>
+			<span class="span2">${pjOwnId}</span>
+		</p>
+	</div>
+</script>
+<script id="est_item" type="text/x-jquery-tmpl">
+	<div class="r3_c clearfix">
+        <a class="pp1" href="./2xq.html?id=${housesId}">详情</a>
+        <p class="pp2">${amCreateTime}&nbsp;</p>
+        <p class="pp3">${counts}&nbsp;</p>
+        <p class="pp4">${leManagerCompary}&nbsp;</p>
+        <p class="pp5">${leManagerSn}&nbsp;</p>
+        <p class="pp6">${plant}&nbsp;</p>
+        <p class="pp7">${houseAddress}&nbsp;</p>
+        <p class="pp8">${houseArea}m²</p>
+        <p class="pp9">${bunknumber}&nbsp;</p>
+        <p class="pp10">${rentStatus}&nbsp;</p>
+        <p class="pp11">${housePurpose}</p>
+        <p class="pp12">${houseStructure}&nbsp;</p>
+        <p class="pp13">${commercialStatus}</p>
+        <p class="pp14">${leTenantId}</p>
+        <p class="pp15">${lerentamount}&nbsp;</p>
+        <p class="pp16">${leContractEnd}&nbsp;</p>
+        <p class="pp17">${amrentdaily}</p>
+        <p class="pp18">${amrentmonthly}</p>
+        <p class="pp19">${amrentyearly}</p>
+        <p class="pp20">${amPriceEach}&nbsp;</p>
+        <p class="pp21">${amincreaseyearly}</p>
+        <p class="pp22">${amrentmeaning}</p>
+        <div class="zzc"></div>
+    </div>
+</script>
+</body>
+</html>
