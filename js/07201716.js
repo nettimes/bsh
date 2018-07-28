@@ -116,3 +116,17 @@ $.urlParam = function (name) {
     var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.search);
     return (results !== null) ? results[1] || 0 : false;
 }
+/*form validate*/ 
+bsValidate = function (f,b) {	
+	var empty = false;
+	f.each(function() {
+		if ($(this).val() == '') {
+			empty = true;
+		}
+	});
+	if (empty) {
+		b.attr('disabled', true);
+	} else {
+		b.attr('disabled', false).css({"background":"#3f517d"});
+	}	
+}

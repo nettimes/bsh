@@ -132,7 +132,7 @@
                             </p>
                             <div class="btn">
 								<input type="hidden" name="roleId" value="">
-                                <button id="pjAdd">确认新增</button>
+                                <button id="pjAdd" disabled="true">确认新增</button>
                             </div>
                         </form>
                     </div>
@@ -1702,6 +1702,27 @@ function assesscallback(res){
 function leasecallback(res){
     console.log(res);
 }
+$("#form_pj").on("change","input:text",function () {	
+	bsValidate($("#form_pj input:text"),$("#pjAdd"));
+});
+$("#form_esate").on("change","input:text",function () {	
+	bsValidate($("#form_estate input:text"),$("#estateAdd"));
+});
+$("#form_building").on("change","input:text",function () {	
+	bsValidate($("#form_building input:text"),$("#buildingAdd"));
+});
+$("#form_unit").on("change","input:text",function () {	
+	bsValidate($("#form_unit input:text"),$("#unitAdd"));
+});
+$("#form_house").on("change","input:text",function () {	
+	bsValidate($("#form_house input:text"),$("#houseAdd"));
+});
+$("#form_assess").on("change","input:text",function () {	
+	bsValidate($("#form_assess input:text"),$("#assessAdd"));
+});
+$("#form_lease").on("change","input:text",function () {	
+	bsValidate($("#form_lease input:text"),$("#leaseAdd"));
+});
 </script>
 <script id="pjtmpl_left" type="text/x-jquery-tmpl">
 	<li class="pji" data-id="${id}" data-role="${roleId}"><a class="clearfix" href="javascript:;"><span class="span1">${pjName}</span><span class="span2">${pjCreateTime}</span></a></li>
