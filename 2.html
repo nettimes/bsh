@@ -268,13 +268,9 @@ function cbprjsrch(res){
 /*项目查询*/
 $('#exportassessment').on("click", function(e){
     e.preventDefault();    
-    req = JSON.stringify({"token":bs.auth.data.token,"roleId":bs.project[0].roleId});
-    bs.ajaxfuncURL ('excel/exportassessment',req,bs.auth.data.token,cbexas);
+    bs.downloadXlsx('excel/exportassessment', 'Assessment');
 });
-function cbexas(res){
-    var file = new File(res, "test.xlsx", {type: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;charset=UTF-8"});
-    FileSaver.saveAs(file);
-}
+
 </script>
 <script id="pjtmpl_left" type="text/x-jquery-tmpl">
 	<li class="pji" data-id="${id}" data-role="${roleId}"><a class="clearfix" href="javascript:;"><span class="span1">${pjName}</span><span class="span2">${pjCreateTime}</span></a></li>
