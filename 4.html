@@ -97,7 +97,7 @@
                             <div class="r3_top_box">
                                 <div class="shangchuan">
                                     导入数据
-                                    <input type="file" accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet">
+                                    <input type="file" id="importproject" accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet">
                                 </div>
                                 <div class="all">
                                     全选
@@ -1688,6 +1688,24 @@ $("#form_assess").on("change","input:text",function () {
 $("#form_lease").on("change","input:text",function () {	
 	bsValidate($("#form_lease input:text"),$("#leaseAdd"));
 });
+/*data import*/
+$("#importproject").on("change", function (e) {
+    e.preventDefault();
+    var data = new FormData();
+    data.append('file', $("#importproject")[0].files[0]);    
+    jQuery.ajax({
+        url: 'http://rms.shbrea.com:720/parkson/parkson/project/import',
+        headers: {'token': bs.auth.data.token},
+        data: data,
+        cache: false,
+        contentType: false,
+        processData: false,
+        method: 'POST',
+        success: function(data){
+            jQuery.messageTip.success({message:"项目已导入",fadeInTimeOut : 1,contentTimeOut : 3,fadeOutTimeOut : 1});
+        }
+    });
+})
 </script>
 <script id="pjtmpl_left" type="text/x-jquery-tmpl">
 	<li class="pji" data-id="${id}" data-role="${roleId}"><a class="clearfix" href="javascript:;"><span class="span1">${pjName}</span><span class="span2">${pjCreateTime}</span></a></li>

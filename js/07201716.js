@@ -111,6 +111,27 @@ bs.loadProject =function (){
 		}
 	}
 }
+bs.downloadXlsx = function (url,filename) {
+	var xhr = new XMLHttpRequest();
+    xhr.open('POST', 'http://rms.shbrea.com:720/parkson/parkson/'+url, true);
+    xhr.responseType = 'blob';
+    xhr.setRequestHeader("token", bs.auth.data.token);
+    xhr.setRequestHeader('Content-type', 'application/json; charset=utf-8');
+    xhr.onload = function(e) {
+        if (this.status == 200) {
+            var blob = new Blob([this.response], {type: 'application/vnd.ms-excel'});
+            var downloadUrl = URL.createObjectURL(blob);
+            var a = document.createElement("a");
+            a.href = downloadUrl;
+            a.download = filename + ".xlsx";
+            document.body.appendChild(a);
+            a.click();
+        } else {
+            alert('Unable to download excel.')
+        }
+    };
+    xhr.send();
+}
 /*get request params from url*/
 $.urlParam = function (name) {
     var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.search);
