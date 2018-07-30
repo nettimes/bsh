@@ -132,6 +132,29 @@ bs.downloadXlsx = function (url,filename) {
     };
     xhr.send();
 }
+bs.importXlsx = function (url, fobj, txt) {
+	var data = new FormData();
+    data.append('file', fobj[0].files[0]);    
+    jQuery.ajax({
+        url: 'http://rms.shbrea.com:720/parkson/parkson/'+url,
+        headers: {'token': bs.auth.data.token},
+        data: data,
+        cache: false,
+        contentType: false,
+        processData: false,
+        method: 'POST',
+        success: function(res){
+			if (res==true) {
+				jQuery.messageTip.success({message:txt+"已导入",fadeInTimeOut : 1,contentTimeOut : 3,fadeOutTimeOut : 1});
+			}else{
+				jQuery.messageTip.error({message:txt+"导入失败",fadeInTimeOut : 1,contentTimeOut : 3,fadeOutTimeOut : 1});
+			}
+		},
+		error: function( jqXhr, textStatus, errorThrown ){
+			jQuery.messageTip.error({message:"服务端异常",fadeInTimeOut : 1,contentTimeOut : 3,fadeOutTimeOut : 1});
+		}
+    });
+}
 /*get request params from url*/
 $.urlParam = function (name) {
     var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.search);

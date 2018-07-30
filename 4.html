@@ -141,7 +141,7 @@
                             <div class="r3_top_box">
                                 <div class="shangchuan">
                                     导入数据
-                                    <input type="file" accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet">
+                                    <input type="file" id="importestate" accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet">
                                 </div>
                                 <div class="all">
                                     全选
@@ -463,7 +463,7 @@
                             <div class="r3_top_box">
                                 <div class="shangchuan">
                                     导入数据
-                                    <input type="file">
+                                    <input type="file" id="importbuilding">
                                 </div>
                                 <div class="all">
                                     全选
@@ -577,7 +577,7 @@
                             <div class="r3_top_box">
                                 <div class="shangchuan">
                                     导入数据
-                                    <input type="file">
+                                    <input type="file" id="importunit">
                                 </div>
                                 <div class="all">
                                     全选
@@ -657,7 +657,7 @@
                             <div class="r3_top_box">
                                 <div class="shangchuan">
                                     导入数据
-                                    <input type="file">
+                                    <input type="file" id="importhouse">
                                 </div>
                                 <div class="all">
                                     全选
@@ -941,7 +941,7 @@
                             <div class="r3_top_box">
                                 <div class="shangchuan">
                                     导入数据
-                                    <input type="file">
+                                    <input type="file" id="importhouseassessment">
                                 </div>
                                 <div class="all">
                                     全选
@@ -1055,7 +1055,7 @@
                             <div class="r3_top_box">
                                 <div class="shangchuan">
                                     导入数据
-                                    <input type="file">
+                                    <input type="file"  id="importlease">
                                 </div>
                                 <div class="all">
                                     全选
@@ -1691,20 +1691,31 @@ $("#form_lease").on("change","input:text",function () {
 /*data import*/
 $("#importproject").on("change", function (e) {
     e.preventDefault();
-    var data = new FormData();
-    data.append('file', $("#importproject")[0].files[0]);    
-    jQuery.ajax({
-        url: 'http://rms.shbrea.com:720/parkson/parkson/project/import',
-        headers: {'token': bs.auth.data.token},
-        data: data,
-        cache: false,
-        contentType: false,
-        processData: false,
-        method: 'POST',
-        success: function(data){
-            jQuery.messageTip.success({message:"项目已导入",fadeInTimeOut : 1,contentTimeOut : 3,fadeOutTimeOut : 1});
-        }
-    });
+    bs.importXlsx("project/import", $("#importproject"), "项目");
+});
+$("#importestate").on("change", function (e) {
+    e.preventDefault();
+    bs.importXlsx("estate/import", $("#importestate"), "楼盘");
+});
+$("#importbuilding").on("change", function (e) {
+    e.preventDefault();
+    bs.importXlsx("building/import", $("#importbuilding"), "楼栋");
+});
+$("#importunit").on("change", function (e) {
+    e.preventDefault();
+    bs.importXlsx("unit/import", $("#importunit"), "单元");
+});
+$("#importhouse").on("change", function (e) {
+    e.preventDefault();
+    bs.importXlsx("houses/import", $("#importhouse"), "房屋");
+});
+$("#importlease").on("change", function (e) {
+    e.preventDefault();
+    bs.importXlsx("leases/import", $("#importlease"), "租约");
+});
+$("#importhouseassessment").on("change", function (e) {
+    e.preventDefault();
+    bs.importXlsx("houseassessment/import", $("#importhouseassessment"), "房屋评估");
 })
 </script>
 <script id="pjtmpl_left" type="text/x-jquery-tmpl">
