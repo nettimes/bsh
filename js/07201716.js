@@ -176,8 +176,9 @@ $.urlParam = function (name) {
 bsValidate = function (f,b) {	
 	var empty = false;
 	f.each(function() {
-		if ($(this).val() == '') {
-			empty = true;
+		if ($(this).val() !== '') {
+			empty = false;
+			return;
 		}
 	});
 	if (empty) {

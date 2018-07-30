@@ -448,12 +448,12 @@
                                         <img class="cse" src="./img/img_close.gif" alt="">
                                     </div>
                                 </div>
-                                <input class="ckb" type="checkbox">
-                                <input type="hidden" name="token" class="token" name="estate[]" value="liveGpid">
+                                <input class="ckb" type="checkbox" name="estate[]" value="liveGpid">                                
                             </div>
                             <div class="btn">
 								<input type="hidden" name="roleId" value="">
-								<input type="hidden" name="pjId" value="">
+                                <input type="hidden" name="pjId" value="">
+                                <input type="hidden" name="token" value="">
                                 <button id="estAdd">确认新增</button>
                             </div>
                         </form>
@@ -1513,9 +1513,9 @@
 <script src="./js/07201716.js"></script>
 <script>
 $(document).ready(function(){
-	bs.checkAuth();
-	bs.loadProject();
-
+    bs.checkAuth();    
+    bs.loadProject();
+    $("input[name='token']").val(bs.auth.data.token);
 });
 $(document).on("click", ".pji", function (event) { 
     var pjid = $(event.currentTarget).attr("data-id");
@@ -1627,7 +1627,6 @@ function objectifyForm(formArray) {
     return returnArray;
 }
 function estcallback(res){
-    console.log(res);
     if(res.code==="1000"){
         $("input[name='estateId']").val(res.data.e.id);
         $('#form_estate').trigger("reset");
@@ -1635,7 +1634,6 @@ function estcallback(res){
     }
 }
 function unitcallback(res){
-    console.log(res);
 	if(res.code==="1000"){
         $("input[name='unitId']").val(res.data.u.id);
         $('#form_unit').trigger("reset");
@@ -1643,7 +1641,6 @@ function unitcallback(res){
     }
 }
 function buildingcallback(res){
-    console.log(res);
 	if(res.code==="1000"){
         $("input[name='buildingId']").val(res.data.b.id);
         $('#form_building').trigger("reset");
@@ -1651,7 +1648,6 @@ function buildingcallback(res){
     }
 }
 function housecallback(res){
-    console.log(res);
 	if(res.code==="1000"){
         $("input[name='houseId']").val(res.data.h.id);
         $('#form_house').trigger("reset");
@@ -1668,10 +1664,10 @@ function leasecallback(res){
 $("#form_pj").on("change","input:text",function () {	
 	bsValidate($("#form_pj input:text"),$("#pjAdd"));
 });
-$("#form_esate").on("change","input:text",function () {	
-	bsValidate($("#form_estate input:text"),$("#estateAdd"));
+$("#form_estate").on("change","input:text",function () {
+	bsValidate($("#form_estate input:text"),$("#estAdd"));
 });
-$("#form_building").on("change","input:text",function () {	
+$("#form_building").on("change","input:text",function () {
 	bsValidate($("#form_building input:text"),$("#buildingAdd"));
 });
 $("#form_unit").on("change","input:text",function () {	
