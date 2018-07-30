@@ -203,7 +203,11 @@ $(function () {
         } else {
             $(".select-date").css("display", "none")
         }
-        var getDate = $("#yearList").val().split("骞�")[0] + " - " + $("#monthList").val().split("鏈�")[0] + " - " + $(this).html();
+        function Appendzero(obj) {
+			if(obj<10) return "0" +""+ obj;
+			else return obj;
+		};
+        var getDate = $("#yearList").val().split("骞�")[0] + "-" + Appendzero($("#monthList").val().split("鏈�")[0]) + "-" + Appendzero($(this).html());
         getSelectDate(getDate)
     })
 });

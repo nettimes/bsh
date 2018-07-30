@@ -237,12 +237,11 @@
 </script>
 <script type="text/javascript" src="http://webapi.amap.com/demos/js/liteToolbar.js"></script>
 <script src="./js/07201716.js"></script>
-<script src="./js/FileSaver.js"></script>
 <script>
 $(document).ready(function(){
 	bs.checkAuth();
-	bs.loadProject();
-
+    bs.loadProject();
+    //bs.loadMaplist();
 });
 $(document).on("click", ".pji", function (event) { 
 	$("#pjInfo").find('.r1_1').remove();

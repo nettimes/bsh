@@ -64,6 +64,18 @@ bs.formatDate = function (d){
 	d = new Date(d );
     return  d.getFullYear() + "-" + (d.getMonth() + 1) + "-"+d.getDate();
 }
+bs.loadMaplist = function () {
+	bs.ajaxfuncURL ('maplist/show',bs.sign, bs.auth.data.token,cbmap);
+	function cbmap(res){
+		data = res.data;
+	}
+}
+bs.loadMappoint = function () {
+	bs.ajaxfuncURL ('mappoint/show',bs.sign, bs.auth.data.token,cbmapp);
+	function cbmapp(res){
+		data = res.data;
+	}
+}
 bs.loadProject =function (){
 	bs.ajaxfuncURL ('project/show',bs.sign, bs.auth.data.token,cbpj);
 	function cbest(res){

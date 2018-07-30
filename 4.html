@@ -1243,11 +1243,10 @@
 
     <!--时间插件-->
 <script>
-        function getSelectDate(result){
-            //这里获取选择的日期
-            console.log(result);
-        }
-    </script>
+    function getSelectDate(result){
+        $("#completionDate").val(result);
+    }
+</script>
 
 <script>
         var $r3_title_p = $(".r3_title p");
@@ -1519,12 +1518,11 @@ $(document).ready(function(){
 
 });
 $(document).on("click", ".pji", function (event) { 
-	$("#pjInfo").find('.r1_1').remove();
-	var pj = bs.project;//(proj_data.result);
-	var result = pj.filter(function( obj ) {
-		return obj.id == $(event.currentTarget).attr("data-id");
-	});
-	$( "#pjinfo" ).tmpl( result ).appendTo( "#pjInfo" );
+    var pjid = $(event.currentTarget).attr("data-id");
+    var roleid = $(event.currentTarget).attr("data-role");
+    $("input[name='pjId']").val(pjid);
+    $("input[name='roleId']").val(pjid);
+    getSelectDate();
 });
 /*项目查询*/
 $('#query1').on("click", function(e){
