@@ -84,7 +84,7 @@ ul {
 }
 .nr_warp .nr .nr_left {
   float: left;
-  width: 25%;
+  width: 25%;height: 100%;
   overflow: hidden;
   background: #f5f5f5;
 }
