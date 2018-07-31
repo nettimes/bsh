@@ -1607,14 +1607,15 @@ $('#leaseAdd').on("click", function(e){
 function pjcallback(res){
     if(res.code==="1000"){
         $('#form_pj').trigger("reset");
-		$("input[name='roleId']").val(res.data.project.roleId);
+		/*$("input[name='roleId']").val(res.data.project.roleId);
 		$("input[name='pjId']").val(res.data.project.id);
         var pj={};
         pj.pjName=res.data.project.pjName;
         pj.pjCreateTime=res.data.project.pjCreateTime;
 		pj.id=res.data.project.id;
-        $( "#pjtmpl_left" ).tmpl( pj ).appendTo( "#pjlist" );
-		jQuery.messageTip.success({message:"项目已新增",fadeInTimeOut : 1,contentTimeOut : 3,fadeOutTimeOut : 1});
+        $( "#pjtmpl_left" ).tmpl( pj ).appendTo( "#pjlist" );*/        
+        jQuery.messageTip.success({message:"项目已新增",fadeInTimeOut : 1,contentTimeOut : 3,fadeOutTimeOut : 1});
+        setTimeout("location.href='4.html'",5000);        
     }
 	
 
